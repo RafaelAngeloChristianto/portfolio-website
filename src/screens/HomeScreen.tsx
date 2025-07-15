@@ -36,8 +36,13 @@ export const HomeScreen: React.FC = () => {
           </h4>
 
           <a target="_blank" href={cv} download="cv">
-            <button className="p-3 mt-4 rounded-[10px] bg-[#152238] text-white font-Inter hover:opacity-95 transition">
+            <button className="p-3 mt-4 rounded-[10px] bg-[#152238] text-white font-Inter hover:opacity-95 transition hover:cursor-pointer">
               Download CV
+            </button>
+          </a>
+          <a target="_blank" href="https://bit.ly/RafaelCertifications">
+            <button className="p-3 mt-4 rounded-[10px] bg-white shadow-lg text-[#152238] font-Inter hover:opacity-95 transition ml-[10px] hover:cursor-pointer">
+              Certifications
             </button>
           </a>
         </div>
@@ -54,7 +59,9 @@ export const HomeScreen: React.FC = () => {
         id="about"
         className="px-6 py-12 text-justify max-w-[900px] w-full shadow-xl mb-[50px] bg-white rounded-[20px] self-start"
       >
-        <h1 className="text-2xl font-bold mb-4 text-[#152238]">About Me</h1>
+        <h1 className="text-2xl font-bold mb-4 text-[#152238] font-Inter">
+          About Me
+        </h1>
         <p className="text-base leading-relaxed text-gray-700">
           My name is Rafael Angelo Christianto, currently pursuing a double
           degree in Computer Science at BINUS International University situated
@@ -66,12 +73,72 @@ export const HomeScreen: React.FC = () => {
         </p>
       </div>
 
-      <section className="flex flex-row">
+      <section className="flex flex-row justify-center items-center gap-50 font mb-[50px]">
         {/* education */}
-        <div></div>
+        <div className="w-[300px] shadow-xl px-5 py-12 rounded-[20px]">
+          <h1 className="text-2xl font-bold mb-4 text-[#152238] font-Inter">
+            Educations
+          </h1>
+
+          <div>
+            <h2 className="font-Roboto ">Lilin Bangsa Intercultural School</h2>
+            <h3>Science</h3>
+            <h4 className="text-gray-600 text-[14px]">July 2020 - May 2023</h4>
+          </div>
+          <br />
+          <div>
+            <h2 className="font-Roboto">BINUS International University</h2>
+            <h3>Computer Science</h3>
+            <h4 className="text-gray-600 text-[14px]">
+              September 2023 - June 2026
+            </h4>
+          </div>
+          <br />
+          <div>
+            <h2 className="font-Roboto">RMIT University</h2>
+            <h3>Computer Science</h3>
+            <h4 className="text-gray-600 text-[14px]">
+              September 2026 - June 2027
+            </h4>
+          </div>
+        </div>
 
         {/* experience */}
-        <div></div>
+        <div className="w-[300px] shadow-xl px-5 py-12 rounded-[20px]">
+          <h1 className="text-2xl font-bold mb-4 text-[#152238] font-Inter">
+            Experiences
+          </h1>
+
+          <div>
+            <h2 className="font-Roboto ">Student Commitee</h2>
+            <h3>Lilin Bangsa Intercultural School</h3>
+            <h4 className="text-gray-600 text-[14px]">
+              September 2022 - May 2023
+            </h4>
+          </div>
+          <br />
+          <div>
+            <h2 className="font-Roboto">Entrepreneurship Finalist</h2>
+            <h3>BINUS International University</h3>
+            <h4 className="text-gray-600 text-[14px]">
+              September 2024 - January 2025
+            </h4>
+          </div>
+          <br />
+          <div>
+            <h2 className="font-Roboto">Freshmen Partner</h2>
+            <h3>BINUS International University</h3>
+            <h4 className="text-gray-600 text-[14px]">
+              September 2025 - May 2026
+            </h4>
+          </div>
+          <br />
+          <div>
+            <h2 className="font-Roboto">Web Developer</h2>
+            <h3>Xlerator</h3>
+            <h4 className="text-gray-600 text-[14px]">July 2025 - Finish</h4>
+          </div>
+        </div>
       </section>
 
       {/* Projects Section */}
@@ -79,7 +146,7 @@ export const HomeScreen: React.FC = () => {
         className="mx-auto mb-[50px] shadow-xl w-[900px] px-6 py-12 bg-[#F9FAFB] rounded-[20px]"
         id="projects"
       >
-        <h1 className="text-3xl font-bold mb-8 text-center text-[#152238]">
+        <h1 className="text-3xl font-bold mb-8 text-center text-[#152238] font-Inter">
           Projects
         </h1>
 
@@ -156,7 +223,7 @@ export const HomeScreen: React.FC = () => {
 
       {/* Contact Section */}
       <div
-        className="shadow-xl mb-[50px] px-6 py-6 rounded-[20px] bg-white w-full md:w-fit self-end"
+        className="shadow-xl font-Inter mb-[50px] px-6 py-6 rounded-[20px] bg-white w-full md:w-fit self-end"
         id="contact"
       >
         <h1 className="text-2xl font-bold mb-2 font-Inter text-[#152238]">
@@ -229,4 +296,3 @@ export const HomeScreen: React.FC = () => {
     </div>
   );
 };
-
