@@ -66,19 +66,13 @@ export const HomeScreen: React.FC = () => {
         </p>
       </div>
 
-
-      <section>
+      <section className="flex flex-row">
         {/* education */}
-        <div>
-
-        </div>
+        <div></div>
 
         {/* experience */}
-        <div>
-          
-        </div>
+        <div></div>
       </section>
-
 
       {/* Projects Section */}
       <div
@@ -97,7 +91,10 @@ export const HomeScreen: React.FC = () => {
             <h5 className="font-Open Sans text-gray-600 mb-4">
               Built with React + Tailwind
             </h5>
-            <a target="_blank" href="https://github.com/RafaelAngeloChristianto/e-commerce_website">
+            <a
+              target="_blank"
+              href="https://github.com/RafaelAngeloChristianto/e-commerce_website"
+            >
               <button className="bg-[#152238] hover:bg-[#1e2e4d] transition-colors text-white px-5 py-2 rounded-[20px] hover:cursor-pointer">
                 Visit Project
               </button>
@@ -111,13 +108,15 @@ export const HomeScreen: React.FC = () => {
             <h5 className="font-Open Sans text-gray-600 mb-4">
               Built with React + Tailwind
             </h5>
-            <a target="_blank" href="https://github.com/RafaelAngeloChristianto/portfolio-website">
+            <a
+              target="_blank"
+              href="https://github.com/RafaelAngeloChristianto/portfolio-website"
+            >
               <button className="bg-[#152238] hover:bg-[#1e2e4d] transition-colors text-white px-5 py-2 rounded-[20px] hover:cursor-pointer">
                 Visit Project
               </button>
             </a>
           </div>
-
 
           <div className="bg-white max-w-[400px] w-full p-6 rounded-[20px] shadow-md border border-gray-200">
             <h3 className="font-Hammersmith One text-[22px] font-bold text-[#152238] mb-1">
@@ -126,13 +125,32 @@ export const HomeScreen: React.FC = () => {
             <h5 className="font-Open Sans text-gray-600 mb-4">
               Built with React + Tailwind
             </h5>
-            <a target="_blank" href="https://github.com/RafaelAngeloChristianto/portfolio-website">
+            <a
+              target="_blank"
+              href="https://github.com/RafaelAngeloChristianto/xlerator_website"
+            >
               <button className="bg-[#152238] hover:bg-[#1e2e4d] transition-colors text-white px-5 py-2 rounded-[20px] hover:cursor-pointer">
                 Visit Project
               </button>
             </a>
           </div>
 
+          <div className="bg-white max-w-[400px] w-full p-6 rounded-[20px] shadow-md border border-gray-200">
+            <h3 className="font-Hammersmith One text-[22px] font-bold text-[#152238] mb-1">
+              Dentalign Ticketing System
+            </h3>
+            <h5 className="font-Open Sans text-gray-600 mb-4">
+              Built with React + Tailwind + Express
+            </h5>
+            <a
+              target="_blank"
+              href="https://github.com/RafaelAngeloChristianto/dentalign-ticketing-system"
+            >
+              <button className="bg-[#152238] hover:bg-[#1e2e4d] transition-colors text-white px-5 py-2 rounded-[20px] hover:cursor-pointer">
+                Visit Project
+              </button>
+            </a>
+          </div>
         </div>
       </div>
 
