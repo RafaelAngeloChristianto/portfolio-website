@@ -66,6 +66,20 @@ export const HomeScreen: React.FC = () => {
         </p>
       </div>
 
+
+      <section>
+        {/* education */}
+        <div>
+
+        </div>
+
+        {/* experience */}
+        <div>
+          
+        </div>
+      </section>
+
+
       {/* Projects Section */}
       <div
         className="mx-auto mb-[50px] shadow-xl w-[900px] px-6 py-12 bg-[#F9FAFB] rounded-[20px]"
@@ -103,6 +117,22 @@ export const HomeScreen: React.FC = () => {
               </button>
             </a>
           </div>
+
+
+          <div className="bg-white max-w-[400px] w-full p-6 rounded-[20px] shadow-md border border-gray-200">
+            <h3 className="font-Hammersmith One text-[22px] font-bold text-[#152238] mb-1">
+              Xlerator Website
+            </h3>
+            <h5 className="font-Open Sans text-gray-600 mb-4">
+              Built with React + Tailwind
+            </h5>
+            <a target="_blank" href="https://github.com/RafaelAngeloChristianto/portfolio-website">
+              <button className="bg-[#152238] hover:bg-[#1e2e4d] transition-colors text-white px-5 py-2 rounded-[20px] hover:cursor-pointer">
+                Visit Project
+              </button>
+            </a>
+          </div>
+
         </div>
       </div>
 
