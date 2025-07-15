@@ -83,7 +83,7 @@ export const HomeScreen: React.FC = () => {
             <h5 className="font-Open Sans text-gray-600 mb-4">
               Built with React + Tailwind
             </h5>
-            <a href="https://github.com/RafaelAngeloChristianto/e-commerce_website">
+            <a target="_blank" href="https://github.com/RafaelAngeloChristianto/e-commerce_website">
               <button className="bg-[#152238] hover:bg-[#1e2e4d] transition-colors text-white px-5 py-2 rounded-[20px] hover:cursor-pointer">
                 Visit Project
               </button>
@@ -97,7 +97,7 @@ export const HomeScreen: React.FC = () => {
             <h5 className="font-Open Sans text-gray-600 mb-4">
               Built with React + Tailwind
             </h5>
-            <a href="https://github.com/RafaelAngeloChristianto/portfolio-website">
+            <a target="_blank" href="https://github.com/RafaelAngeloChristianto/portfolio-website">
               <button className="bg-[#152238] hover:bg-[#1e2e4d] transition-colors text-white px-5 py-2 rounded-[20px] hover:cursor-pointer">
                 Visit Project
               </button>
@@ -124,7 +124,7 @@ export const HomeScreen: React.FC = () => {
           rel="noopener noreferrer"
           href="https://mail.google.com/mail/?view=cm&fs=1&to=angelorafael0508@gmail.com"
         >
-          <button className="w-[170px] h-[35px] text-[12px] font-Inter bg-white text-gray-800 rounded-md mt-2 border border-gray-300 hover:bg-gray-100 transition">
+          <button className="w-[170px] h-[35px] text-[12px] font-Inter bg-white text-gray-800 rounded-md mt-2 border border-gray-300 hover:bg-gray-100 transition hover:cursor-pointer">
             Contact Me Here!
           </button>
         </a>
