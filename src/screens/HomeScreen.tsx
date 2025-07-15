@@ -76,7 +76,6 @@ export const HomeScreen: React.FC = () => {
         </h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 place-items-center">
-
           <div className="bg-white max-w-[400px] w-full p-6 rounded-[20px] shadow-md border border-gray-200">
             <h3 className="font-Hammersmith One text-[22px] font-bold text-[#152238] mb-1">
               E-Commerce Website
@@ -84,7 +83,7 @@ export const HomeScreen: React.FC = () => {
             <h5 className="font-Open Sans text-gray-600 mb-4">
               Built with React + Tailwind
             </h5>
-            <a href="#">
+            <a href="https://github.com/RafaelAngeloChristianto/e-commerce_website">
               <button className="bg-[#152238] hover:bg-[#1e2e4d] transition-colors text-white px-5 py-2 rounded-[20px] hover:cursor-pointer">
                 Visit Project
               </button>
@@ -98,13 +97,12 @@ export const HomeScreen: React.FC = () => {
             <h5 className="font-Open Sans text-gray-600 mb-4">
               Built with React + Tailwind
             </h5>
-            <a href="#">
+            <a href="https://github.com/RafaelAngeloChristianto/portfolio-website">
               <button className="bg-[#152238] hover:bg-[#1e2e4d] transition-colors text-white px-5 py-2 rounded-[20px] hover:cursor-pointer">
                 Visit Project
               </button>
             </a>
           </div>
-
         </div>
       </div>
 
