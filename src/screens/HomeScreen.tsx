@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 import { NavBar } from "../components/NavBar";
 import { Footer } from "../components/Footer";
@@ -12,16 +13,19 @@ import { SiLinkedin } from "react-icons/si";
 import { SiGithub } from "react-icons/si";
 import { SiWhatsapp } from "react-icons/si";
 
-// ...imports stay the same...
-
 export const HomeScreen: React.FC = () => {
+  const [imgLoaded, setImgLoaded] = React.useState(false);
+
   return (
     <div className="flex flex-col min-h-screen">
       <NavBar />
 
       {/* Hero Section */}
-      <div
+      <motion.div
         id="home"
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
         className="flex flex-col md:flex-row justify-center items-center flex-grow px-6 py-20 gap-10"
       >
         <div className="text-center md:text-left">
@@ -35,29 +39,44 @@ export const HomeScreen: React.FC = () => {
             Student at BINUS International University
           </h4>
 
-          <a target="_blank" href={cv} download="cv">
-            <button className="p-3 mt-4 rounded-[10px] bg-[#152238] text-white font-Inter hover:opacity-95 transition hover:cursor-pointer">
-              Download CV
-            </button>
-          </a>
-          <a target="_blank" href="https://bit.ly/RafaelCertifications">
-            <button className="p-3 mt-4 rounded-[10px] bg-white shadow-lg text-[#152238] font-Inter hover:opacity-95 transition ml-[10px] hover:cursor-pointer">
-              Certifications
-            </button>
-          </a>
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-start">
+            <a target="_blank" href={cv} download="cv">
+              <button className="p-3 mt-4 rounded-[10px] bg-[#152238] text-white font-Inter hover:opacity-95 transition hover:cursor-pointer">
+                Download CV
+              </button>
+            </a>
+            <a
+              target="_blank"
+              href="https://bit.ly/RafaelCertifications"
+              className="sm:ml-[10px]"
+            >
+              <button className="p-3 mt-4 rounded-[10px] bg-white shadow-lg text-[#152238] font-Inter hover:opacity-95 transition hover:cursor-pointer">
+                Certifications
+              </button>
+            </a>
+          </div>
         </div>
 
-        <img
-          className="w-[250px] md:w-[350px] rounded-full hover:outline hover:outline-2 hover:outline-[#152238] transition"
+        <motion.img
+          initial={{ opacity: 0 }}
+          animate={imgLoaded ? { opacity: 1 } : {}}
+          transition={{ duration: 0.6 }}
+          onLoad={() => setImgLoaded(true)}
+          decoding="async"
+          className="w-[250px] md:w-[350px] rounded-full hover:outline hover:outline-2 hover:outline-[#152238]"
           src={portrait}
           alt="Portrait"
         />
-      </div>
+      </motion.div>
 
       {/* About Section */}
-      <div
+      <motion.div
         id="about"
-        className="px-6 py-12 text-justify max-w-[900px] w-full shadow-xl mb-[50px] bg-white rounded-[20px] self-start"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="px-6 py-12 text-justify max-w-[900px] w-full shadow-xl mb-[50px] bg-white rounded-[20px] self-center"
       >
         <h1 className="text-2xl font-bold mb-4 text-[#152238] font-Inter">
           About Me
@@ -71,17 +90,24 @@ export const HomeScreen: React.FC = () => {
           a disciplined person, achieving the optimal result in what I do both
           individually or as a group.
         </p>
-      </div>
+      </motion.div>
 
-      <section className="flex flex-row justify-center items-center gap-50 font mb-[50px]">
-        {/* education */}
-        <div className="w-[300px] shadow-xl px-5 py-12 rounded-[20px]">
+      {/* Education & Experience Section */}
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="flex flex-col lg:flex-row justify-center items-center gap-8 font mb-[50px] px-4"
+      >
+        {/* Education */}
+        <div className="w-full max-w-[300px] shadow-xl px-5 py-12 rounded-[20px]">
           <h1 className="text-2xl font-bold mb-4 text-[#152238] font-Inter">
             Educations
           </h1>
 
           <div>
-            <h2 className="font-Roboto ">Lilin Bangsa Intercultural School</h2>
+            <h2 className="font-Roboto">Lilin Bangsa Intercultural School</h2>
             <h3>Science</h3>
             <h4 className="text-gray-600 text-[14px]">July 2020 - May 2023</h4>
           </div>
@@ -103,14 +129,14 @@ export const HomeScreen: React.FC = () => {
           </div>
         </div>
 
-        {/* experience */}
-        <div className="w-[300px] shadow-xl px-5 py-12 rounded-[20px]">
+        {/* Experience */}
+        <div className="w-full max-w-[300px] shadow-xl px-5 py-12 rounded-[20px]">
           <h1 className="text-2xl font-bold mb-4 text-[#152238] font-Inter">
             Experiences
           </h1>
 
           <div>
-            <h2 className="font-Roboto ">Student Commitee</h2>
+            <h2 className="font-Roboto">Student Committee</h2>
             <h3>Lilin Bangsa Intercultural School</h3>
             <h4 className="text-gray-600 text-[14px]">
               September 2022 - May 2023
@@ -139,11 +165,15 @@ export const HomeScreen: React.FC = () => {
             <h4 className="text-gray-600 text-[14px]">July 2025 - Finish</h4>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Projects Section */}
-      <div
-        className="mx-auto mb-[50px] shadow-xl w-[900px] px-6 py-12 bg-[#F9FAFB] rounded-[20px]"
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="mx-auto mb-[50px] shadow-xl w-full max-w-[900px] px-6 py-12 bg-[#F9FAFB] rounded-[20px]"
         id="projects"
       >
         <h1 className="text-3xl font-bold mb-8 text-center text-[#152238] font-Inter">
@@ -151,78 +181,55 @@ export const HomeScreen: React.FC = () => {
         </h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 place-items-center">
-          <div className="bg-white max-w-[400px] w-full p-6 rounded-[20px] shadow-md border border-gray-200">
-            <h3 className="font-Hammersmith One text-[22px] font-bold text-[#152238] mb-1">
-              E-Commerce Website
-            </h3>
-            <h5 className="font-Open Sans text-gray-600 mb-4">
-              Built with React + Tailwind
-            </h5>
-            <a
-              target="_blank"
-              href="https://github.com/RafaelAngeloChristianto/e-commerce_website"
+          {[
+            {
+              title: "E-Commerce Website",
+              tech: "React + Tailwind",
+              url: "https://github.com/RafaelAngeloChristianto/e-commerce_website",
+            },
+            {
+              title: "Portfolio Website",
+              tech: "React + Tailwind",
+              url: "https://github.com/RafaelAngeloChristianto/portfolio-website",
+            },
+            {
+              title: "Xlerator Website",
+              tech: "React + Tailwind",
+              url: "https://github.com/RafaelAngeloChristianto/xlerator_website",
+            },
+            {
+              title: "Dentalign Ticketing System",
+              tech: "React + Tailwind + Express",
+              url: "https://github.com/RafaelAngeloChristianto/dentalign-ticketing-system",
+            },
+          ].map((proj, i) => (
+            <motion.div
+              key={i}
+              whileHover={{ scale: 1.02 }}
+              className="bg-white max-w-[400px] w-full p-6 rounded-[20px] shadow-md border border-gray-200"
             >
-              <button className="bg-[#152238] hover:bg-[#1e2e4d] transition-colors text-white px-5 py-2 rounded-[20px] hover:cursor-pointer">
-                Visit Project
-              </button>
-            </a>
-          </div>
-
-          <div className="bg-white max-w-[400px] w-full p-6 rounded-[20px] shadow-md border border-gray-200">
-            <h3 className="font-Hammersmith One text-[22px] font-bold text-[#152238] mb-1">
-              Portfolio Website
-            </h3>
-            <h5 className="font-Open Sans text-gray-600 mb-4">
-              Built with React + Tailwind
-            </h5>
-            <a
-              target="_blank"
-              href="https://github.com/RafaelAngeloChristianto/portfolio-website"
-            >
-              <button className="bg-[#152238] hover:bg-[#1e2e4d] transition-colors text-white px-5 py-2 rounded-[20px] hover:cursor-pointer">
-                Visit Project
-              </button>
-            </a>
-          </div>
-
-          <div className="bg-white max-w-[400px] w-full p-6 rounded-[20px] shadow-md border border-gray-200">
-            <h3 className="font-Hammersmith One text-[22px] font-bold text-[#152238] mb-1">
-              Xlerator Website
-            </h3>
-            <h5 className="font-Open Sans text-gray-600 mb-4">
-              Built with React + Tailwind
-            </h5>
-            <a
-              target="_blank"
-              href="https://github.com/RafaelAngeloChristianto/xlerator_website"
-            >
-              <button className="bg-[#152238] hover:bg-[#1e2e4d] transition-colors text-white px-5 py-2 rounded-[20px] hover:cursor-pointer">
-                Visit Project
-              </button>
-            </a>
-          </div>
-
-          <div className="bg-white max-w-[400px] w-full p-6 rounded-[20px] shadow-md border border-gray-200">
-            <h3 className="font-Hammersmith One text-[22px] font-bold text-[#152238] mb-1">
-              Dentalign Ticketing System
-            </h3>
-            <h5 className="font-Open Sans text-gray-600 mb-4">
-              Built with React + Tailwind + Express
-            </h5>
-            <a
-              target="_blank"
-              href="https://github.com/RafaelAngeloChristianto/dentalign-ticketing-system"
-            >
-              <button className="bg-[#152238] hover:bg-[#1e2e4d] transition-colors text-white px-5 py-2 rounded-[20px] hover:cursor-pointer">
-                Visit Project
-              </button>
-            </a>
-          </div>
+              <h3 className="font-Hammersmith One text-[22px] font-bold text-[#152238] mb-1">
+                {proj.title}
+              </h3>
+              <h5 className="font-Open Sans text-gray-600 mb-4">
+                Built with {proj.tech}
+              </h5>
+              <a target="_blank" href={proj.url}>
+                <button className="bg-[#152238] hover:bg-[#1e2e4d] transition-colors text-white px-5 py-2 rounded-[20px] hover:cursor-pointer">
+                  Visit Project
+                </button>
+              </a>
+            </motion.div>
+          ))}
         </div>
-      </div>
+      </motion.div>
 
       {/* Contact Section */}
-      <div
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
         className="shadow-xl font-Inter mb-[50px] px-6 py-6 rounded-[20px] bg-white w-full md:w-fit self-end"
         id="contact"
       >
@@ -253,7 +260,6 @@ export const HomeScreen: React.FC = () => {
             <SiGithub className="text-lg" />
             <span>RafaelAngeloChristianto</span>
           </a>
-
           <a
             className="flex items-center gap-2"
             href="https://www.linkedin.com/in/rafaaelangelo/"
@@ -262,7 +268,6 @@ export const HomeScreen: React.FC = () => {
             <SiLinkedin className="text-lg" />
             <span>rafaaelangelo</span>
           </a>
-
           <a
             href="https://www.instagram.com/rafaaelangelo"
             target="_blank"
@@ -271,7 +276,6 @@ export const HomeScreen: React.FC = () => {
             <SiInstagram className="text-lg" />
             <span>rafaaelangelo</span>
           </a>
-
           <a
             href="https://www.tiktok.com/@rafaaelangelo"
             target="_blank"
@@ -280,7 +284,6 @@ export const HomeScreen: React.FC = () => {
             <SiTiktok className="text-lg" />
             <span>rafaaelangelo</span>
           </a>
-
           <a
             href="https://wa.me/6281319727350?text=urlencodedtext"
             target="_blank"
@@ -290,7 +293,7 @@ export const HomeScreen: React.FC = () => {
             <span>+62 813 1972 7350</span>
           </a>
         </div>
-      </div>
+      </motion.div>
 
       <Footer />
     </div>
