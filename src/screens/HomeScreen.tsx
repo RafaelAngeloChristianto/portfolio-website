@@ -65,7 +65,9 @@ export const HomeScreen: React.FC = () => {
             alt="Portrait"
           />
         </motion.div>
-        {/* About Section */}
+
+
+
         {/* About Section */}
         <motion.div
           id="about"
@@ -73,7 +75,7 @@ export const HomeScreen: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="px-6 py-12 text-justify max-w-[900px] w-full shadow-xl mb-[50px] bg-white rounded-[20px]" // <-- removed self-center
+          className="px-6 py-12 text-justify max-w-[900px] w-full shadow-xl mb-[50px] mt-[50px] bg-white rounded-[20px]" // <-- removed self-center
         >
           <h1 className="text-2xl font-bold mb-4 text-[#152238] font-Inter">
             About Me
