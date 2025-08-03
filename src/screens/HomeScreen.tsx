@@ -236,13 +236,13 @@ export const HomeScreen: React.FC = () => {
           </h1>
 
           <h4 className="text-sm text-gray-600 mb-2">
-            ✉️ angelorafael0508@gmail.com
+            ✉️ rafaaelangelo@gmail.com
           </h4>
 
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://mail.google.com/mail/?view=cm&fs=1&to=angelorafael0508@gmail.com"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=rafaaelangelo@gmail.com"
           >
             <button className="w-[170px] h-[35px] text-[12px] font-Inter bg-white text-gray-800 rounded-md mt-2 border border-gray-300 hover:bg-gray-100 transition hover:cursor-pointer">
               Contact Me Here!
