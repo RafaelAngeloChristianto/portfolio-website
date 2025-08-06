@@ -66,8 +66,6 @@ export const HomeScreen: React.FC = () => {
           />
         </motion.div>
 
-
-
         {/* About Section */}
         <motion.div
           id="about"
@@ -283,11 +281,11 @@ export const HomeScreen: React.FC = () => {
               <span>rafaaelangelo</span>
             </a>
             <a
-              href="https://wa.me/6281319727350?text=urlencodedtext"
+              href="https://wa.me/6281514383863?text=Hello%20Rafael%2C%20I%20want%20your%20service%20to%20create%20a%20website%20like%20..."
               target="_blank"
               className="flex items-center gap-2"
             >
-              <SiWhatsapp className="text-lg" />
+              <SiWhatsapp className="text-lg text-[#B91C1C]" />
               <span>+62 813 1972 7350</span>
             </a>
           </div>
