@@ -42,7 +42,7 @@ export const Certifications: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-900">
+    <div className="min-h-screen bg-gray-50 text-gray-900 mt-[50px]">
       <NavBar />
       <div className="max-w-6xl mx-auto px-4 py-12">
         <h1 className="text-4xl font-bold mb-2 text-center">Certifications</h1>

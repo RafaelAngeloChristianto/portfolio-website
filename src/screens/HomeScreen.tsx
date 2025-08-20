@@ -172,7 +172,12 @@ export const HomeScreen: React.FC = () => {
             <div>
               <h3 className="font-Roboto font-semibold">Web Developer</h3>
               <p className="font-Open-Sans text-gray-600">Xlerator</p>
-              <span className="text-gray-400 text-sm">July 2025 - Present</span>
+              <span className="text-gray-400 text-sm">July 2025 - August 2025</span>
+            </div>
+            <div>
+              <h3 className="font-Roboto font-semibold">Web Developer</h3>
+              <p className="font-Open-Sans text-gray-600">Oh My Cake</p>
+              <span className="text-gray-400 text-sm">August 2025 - August 2025</span>
             </div>
           </div>
         </div>
@@ -207,6 +212,12 @@ export const HomeScreen: React.FC = () => {
               tech: "React + Tailwind",
               url: "https://github.com/RafaelAngeloChristianto/xlerator_website",
               web: "https://xlerator-indonesia.com",
+            },
+            {
+              title: "Oh My Cake Website",
+              tech: "React + Tailwind",
+              url: "https://github.com/RafaelAngeloChristianto/ohmycake_website",
+              web: "https://yenniohmycake.vercel.app",
             },
             {
               title: "Dentalign Ticketing System",
