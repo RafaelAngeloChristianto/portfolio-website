@@ -179,6 +179,11 @@ export const HomeScreen: React.FC = () => {
               <p className="font-Open-Sans text-gray-600">Oh My Cake</p>
               <span className="text-gray-400 text-sm">August 2025 - August 2025</span>
             </div>
+            <div>
+              <h3 className="font-Roboto font-semibold">BINUS English Club Speech Talent</h3>
+              <p className="font-Open-Sans text-gray-600">BINUS University</p>
+              <span className="text-gray-400 text-sm">September 2025 - Present</span>
+            </div>
           </div>
         </div>
       </motion.section>
