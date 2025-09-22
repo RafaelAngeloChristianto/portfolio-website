@@ -7,6 +7,10 @@ export const Certifications: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const certificates = [
+    {
+      title: "Youth Today X Join AIESEC 2025",
+      file: "Rafael Angelo Christianto - Youth Today x JOIN AIESEC - AIESEC in BINUS E-Certificate_page-0001.jpg",
+    },
     { title: "Python Basic Certificate", file: "python_basic certificate.jpg" },
     { title: "CSS Certificate", file: "css certificate.jpg" },
     { title: "Java Basic Certificate", file: "java_basic certificate.jpg" },
