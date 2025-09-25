@@ -200,6 +200,15 @@ export const HomeScreen: React.FC = () => {
                 September 2022 – May 2023
               </span>
             </div>
+            <div>
+              <h3 className="font-Roboto font-semibold">BINUS Modeling Club Activist</h3>
+              <p className="font-Open-Sans text-gray-600">
+                BIUS International University
+              </p>
+              <span className="text-gray-400 text-sm">
+                September 2023 - May 2024
+              </span>
+            </div>
 
             <div>
               <h3 className="font-Roboto font-semibold">
