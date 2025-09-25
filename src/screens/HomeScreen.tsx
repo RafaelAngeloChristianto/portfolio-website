@@ -92,7 +92,31 @@ export const HomeScreen: React.FC = () => {
         </p>
       </motion.section>
 
-      {/* Education & Experience Section */}
+      <section className="max-w-[800px] flex justify-center items-center mb-[50px] ml-auto mr-auto">
+        {/* Skills & Interests */}
+        <div className="bg-white shadow-lg rounded-2xl p-8 flex-1 ">
+          <h2 className="text-2xl font-bold text-[#1F2A44] font-Halant mb-6 text-center">
+            Skills & Interests
+          </h2>
+          <div className="flex flex-wrap gap-3">
+            {[
+              "Penetration Testing",
+              "Network Forensics",
+              "Cyber Security",
+              "Full Stack Development",
+            ].map((skill, i) => (
+              <span
+                key={i}
+                className="px-4 py-2 bg-[#1F2A44] text-white rounded-lg text-sm font-Inter shadow-md hover:scale-105 transition-transform"
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Education, Skills, Achievements & Experience Section */}
       <motion.section
         className="flex flex-col lg:flex-row justify-center items-start gap-10 max-w-6xl mx-auto mb-16 px-6"
         initial={{ opacity: 0, y: 40 }}
@@ -116,26 +140,53 @@ export const HomeScreen: React.FC = () => {
               </span>
             </div>
             <div>
+              <h3 className="font-Roboto font-semibold">Timedoor Academy</h3>
+              <p className="font-Open-Sans text-gray-600">Computer Science</p>
+              <span className="text-gray-400 text-sm">
+                April 2021 - May 2023
+              </span>
+            </div>
+            <div>
               <h3 className="font-Roboto font-semibold">
                 BINUS International University
               </h3>
               <p className="font-Open-Sans text-gray-600">Computer Science</p>
-              <span className="text-gray-400 text-sm">
-                September 2023 - June 2026
-              </span>
+              <span className="text-gray-400 text-sm">Sep 2023 - Jun 2026</span>
             </div>
             <div>
-              <h3 className="font-Roboto font-semibold">RMIT University</h3>
+              <h3 className="font-Roboto font-semibold">
+                Royal Melbourne Institute of Technology
+              </h3>
               <p className="font-Open-Sans text-gray-600">Computer Science</p>
-              <span className="text-gray-400 text-sm">
-                September 2026 - June 2027
-              </span>
+              <span className="text-gray-400 text-sm">Sep 2026 - Jun 2027</span>
             </div>
           </div>
         </div>
 
-        {/* Experience */}
+        {/* Achievements */}
         <div className="bg-white shadow-lg rounded-2xl p-8 flex-1">
+          <h2 className="text-2xl font-bold text-[#1F2A44] font-Halant mb-6">
+            Achievements
+          </h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-Roboto font-semibold">
+                Entrepreneurship Finalist
+              </h3>
+              <p className="font-Open-Sans text-gray-600">
+                BINUS International University
+              </p>
+              <span className="text-gray-400 text-sm">
+                September 2024 – January 2025
+              </span>
+            </div>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Experiences */}
+      <section className="flex justify-center items-center">
+        <div className="max-w-[500px] bg-white shadow-lg rounded-2xl p-8 flex-1">
           <h2 className="text-2xl font-bold text-[#1F2A44] font-Halant mb-6">
             Experiences
           </h2>
@@ -146,19 +197,25 @@ export const HomeScreen: React.FC = () => {
                 Lilin Bangsa Intercultural School
               </p>
               <span className="text-gray-400 text-sm">
-                September 2022 - May 2023
+                September 2022 – May 2023
+              </span>
+            </div>
+
+            <div>
+              <h3 className="font-Roboto font-semibold">
+                Frontend Web Developer
+              </h3>
+              <p className="font-Open-Sans text-gray-600">Xlerator</p>
+              <span className="text-gray-400 text-sm">
+                July 2025 – August 2025
               </span>
             </div>
             <div>
               <h3 className="font-Roboto font-semibold">
-                Entrepreneurship Finalist
+                Frontend Web Developer
               </h3>
-              <p className="font-Open-Sans text-gray-600">
-                BINUS International University
-              </p>
-              <span className="text-gray-400 text-sm">
-                September 2024 - January 2025
-              </span>
+              <p className="font-Open-Sans text-gray-600">Oh My Cake</p>
+              <span className="text-gray-400 text-sm">August 2025</span>
             </div>
             <div>
               <h3 className="font-Roboto font-semibold">Freshmen Partner</h3>
@@ -166,27 +223,21 @@ export const HomeScreen: React.FC = () => {
                 BINUS International University
               </p>
               <span className="text-gray-400 text-sm">
-                September 2025 - May 2026
+                September 2025 – May 2026
               </span>
             </div>
             <div>
-              <h3 className="font-Roboto font-semibold">Frontend Web Developer</h3>
-              <p className="font-Open-Sans text-gray-600">Xlerator</p>
-              <span className="text-gray-400 text-sm">July 2025 - August 2025</span>
-            </div>
-            <div>
-              <h3 className="font-Roboto font-semibold">Frontend Web Developer</h3>
-              <p className="font-Open-Sans text-gray-600">Oh My Cake</p>
-              <span className="text-gray-400 text-sm">August 2025 - August 2025</span>
-            </div>
-            <div>
-              <h3 className="font-Roboto font-semibold">BINUS English Club Speech Talent</h3>
+              <h3 className="font-Roboto font-semibold">
+                BINUS English Club Speech Talent
+              </h3>
               <p className="font-Open-Sans text-gray-600">BINUS University</p>
-              <span className="text-gray-400 text-sm">September 2025 - Present</span>
+              <span className="text-gray-400 text-sm">
+                September 2025 – Present
+              </span>
             </div>
           </div>
         </div>
-      </motion.section>
+      </section>
 
       {/* Projects Section */}
       <motion.section
