@@ -201,7 +201,9 @@ export const HomeScreen: React.FC = () => {
               </span>
             </div>
             <div>
-              <h3 className="font-Roboto font-semibold">BINUS Modeling Club Activist</h3>
+              <h3 className="font-Roboto font-semibold">
+                BINUS Modeling Club Activist
+              </h3>
               <p className="font-Open-Sans text-gray-600">
                 BIUS International University
               </p>
@@ -232,7 +234,7 @@ export const HomeScreen: React.FC = () => {
                 BINUS International University
               </p>
               <span className="text-gray-400 text-sm">
-                September 2025 – May 2026
+                September 2025 - May 2026
               </span>
             </div>
             <div>
@@ -241,7 +243,16 @@ export const HomeScreen: React.FC = () => {
               </h3>
               <p className="font-Open-Sans text-gray-600">BINUS University</p>
               <span className="text-gray-400 text-sm">
-                September 2025 – Present
+                September 2025 - Present
+              </span>
+            </div>
+            <div>
+              <h3 className="font-Roboto font-semibold">
+                BINUS Youth Festival Committee
+              </h3>
+              <p className="font-Open-Sans text-gray-600">BINUS University</p>
+              <span className="text-gray-400 text-sm">
+                October 2025 - December 2025
               </span>
             </div>
           </div>
