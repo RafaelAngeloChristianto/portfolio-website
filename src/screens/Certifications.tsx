@@ -8,6 +8,10 @@ export const Certifications: React.FC = () => {
 
   const certificates = [
     {
+      title: "AWS Academy Graduate - Generative AI Foundations",
+      file: "AWSAcademy12NEW20251117-31-yftdmw_page-0001.jpg",
+    },
+    {
       title: "Youth Today X Join AIESEC 2025",
       file: "Rafael Angelo Christianto - Youth Today x JOIN AIESEC - AIESEC in BINUS E-Certificate_page-0001.jpg",
     },
