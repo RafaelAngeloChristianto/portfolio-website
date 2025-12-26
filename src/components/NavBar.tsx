@@ -21,10 +21,10 @@ export const NavBar: React.FC = () => {
   const sections = ["about", "projects", "contact"];
 
   return (
-    <nav className="w-full fixed top-0 z-50 backdrop-blur-sm bg-white/70 shadow-md transition-all">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 h-16 flex items-center justify-between">
+    <nav className="w-full fixed top-0 z-50 backdrop-blur-md bg-white/90 border-b border-slate-100 shadow-sm transition-all">
+      <div className="max-w-7xl mx-auto px-8 md:px-12 h-20 flex items-center justify-between">
         {/* Logo */}
-        <h2 className="font-Inter font-bold text-xl md:text-2xl text-[#152238] tracking-wide">
+        <h2 className="font-Inter font-light text-xl md:text-2xl text-slate-800 tracking-wide hover:text-slate-600 transition-colors duration-300">
           Rafael Angelo Christianto
         </h2>
 
@@ -32,8 +32,8 @@ export const NavBar: React.FC = () => {
         <div className="hidden md:flex items-center gap-12">
           <Link
             to="/"
-            className="font-Roboto text-base md:text-lg relative text-[#152238] hover:text-[#0f1a2b] transition-all duration-300
-        after:absolute after:bottom-0 after:left-0 after:h-[3px] after:w-0 after:bg-[#0f1a2b] after:rounded-full after:transition-all after:duration-300
+            className="font-Inter text-base md:text-lg relative text-slate-700 hover:text-slate-900 transition-all duration-300 font-light
+        after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-slate-800 after:rounded-full after:transition-all after:duration-300
         hover:after:w-full"
           >
             Home
@@ -47,8 +47,8 @@ export const NavBar: React.FC = () => {
                 const target = document.querySelector(`#${section}`);
                 if (target) target.scrollIntoView({ behavior: "smooth" });
               }}
-              className="font-Roboto text-base md:text-lg relative text-[#152238] hover:text-[#0f1a2b] transition-all duration-300
-          after:absolute after:bottom-0 after:left-0 after:h-[3px] after:w-0 after:bg-[#0f1a2b] after:rounded-full after:transition-all after:duration-300
+              className="font-Inter text-base md:text-lg relative text-slate-700 hover:text-slate-900 transition-all duration-300 font-light
+          after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-slate-800 after:rounded-full after:transition-all after:duration-300
           hover:after:w-full"
             >
               {section.charAt(0).toUpperCase() + section.slice(1)}
@@ -58,7 +58,7 @@ export const NavBar: React.FC = () => {
 
         {/* Mobile Hamburger */}
         <div className="md:hidden">
-          <button onClick={toggleMenu} className="text-[#152238]">
+          <button onClick={toggleMenu} className="text-slate-700 hover:text-slate-900 transition-colors duration-200">
             {isOpen ? (
               <FiX className="text-3xl" />
             ) : (
@@ -70,11 +70,11 @@ export const NavBar: React.FC = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-white/95 backdrop-blur-sm border-t border-gray-200 shadow-lg px-6 py-6 flex flex-col gap-5 animate-slideDown">
+        <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-slate-100 shadow-lg px-8 py-8 flex flex-col gap-6 animate-slideDown">
           <Link
             to="/"
             onClick={() => setIsOpen(false)}
-            className="font-Roboto text-base text-[#152238] hover:text-[#0f1a2b] transition-all duration-200"
+            className="font-Inter text-lg text-slate-700 hover:text-slate-900 transition-all duration-200 font-light"
           >
             Home
           </Link>
@@ -88,7 +88,7 @@ export const NavBar: React.FC = () => {
                 if (target) target.scrollIntoView({ behavior: "smooth" });
                 setIsOpen(false);
               }}
-              className="font-Roboto text-base text-[#152238] hover:text-[#0f1a2b] transition-all duration-200"
+              className="font-Inter text-lg text-slate-700 hover:text-slate-900 transition-all duration-200 font-light"
             >
               {section.charAt(0).toUpperCase() + section.slice(1)}
             </a>

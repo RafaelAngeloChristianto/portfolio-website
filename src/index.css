@@ -8,8 +8,8 @@
   --font-Hanuman: "Hanuman", sans-serif;
   --font-Inter: "Inter", sans-serif;
   --font-Roboto: "Roboto", sans-serif;
-  --font-Open-Sans: "Open Sans", sans-serif
-  --font-Nunito: "Nunito", sans-serif
+  --font-Open-Sans: "Open Sans", sans-serif;
+  --font-Nunito: "Nunito", sans-serif;
 }
 
 @tailwind base;
@@ -28,4 +28,34 @@ body,
   }
 }
 
+/* Custom shadow utilities */
+@layer utilities {
+  .shadow-3xl {
+    box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
+  }
+  
+  .shadow-soft {
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+}
 
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom animations */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideDown {
+  animation: slideDown 0.3s ease-out;
+}

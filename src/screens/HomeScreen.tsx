@@ -21,7 +21,7 @@ export const HomeScreen: React.FC = () => {
   const [imgLoaded, setImgLoaded] = React.useState(false);
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50 scroll-smooth">
+    <div className="flex flex-col min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-stone-50 scroll-smooth">
       <NavBar />
 
       {/* Hero Section */}
@@ -29,44 +29,68 @@ export const HomeScreen: React.FC = () => {
         id="home"
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="flex flex-col md:flex-row justify-center items-center gap-12 px-6 py-24 md:py-32 max-w-6xl mx-auto"
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="flex flex-col md:flex-row justify-center items-center gap-16 px-8 py-28 md:py-36 max-w-7xl mx-auto"
       >
-        <div className="text-center md:text-left md:w-1/2">
-          <h1 className="text-4xl md:text-5xl font-bold text-[#1F2A44] font-Hammersmith-One mb-3">
-            Rafael Angelo Christianto
-          </h1>
-          <h3 className="text-xl md:text-2xl text-gray-700 font-Open-Sans mb-1">
-            Penetration Tester & Full Stack Developer
-          </h3>
-          <h4 className="text-md md:text-lg text-gray-500 font-Open-Sans mb-6">
-            Student at BINUS International University
-          </h4>
+        <div className="text-center md:text-left md:w-1/2 space-y-6">
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-5xl md:text-6xl lg:text-7xl font-light text-slate-800 font-Inter mb-4 tracking-tight leading-tight"
+          >
+            Rafael Angelo
+            <span className="block font-extralight text-slate-600">Christianto</span>
+          </motion.h1>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="space-y-3"
+          >
+            <h3 className="text-xl md:text-2xl text-slate-700 font-Inter font-medium tracking-wide">
+              Penetration Tester & Full Stack Developer
+            </h3>
+            <h4 className="text-lg md:text-xl text-slate-500 font-Inter font-light">
+              Student at BINUS International University
+            </h4>
+          </motion.div>
 
-          <div className="flex flex-col sm:flex-row sm:gap-4 gap-3 justify-center md:justify-start">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="flex flex-col sm:flex-row sm:gap-4 gap-4 justify-center md:justify-start pt-8"
+          >
             <a target="_blank" href={cv} download="cv">
-              <button className="px-6 py-3 bg-[#1F2A44] text-white rounded-lg font-Inter shadow-md hover:shadow-lg hover:scale-105 transition-transform hover:cursor-pointer">
-                Download CV
+              <button className="group px-8 py-4 bg-slate-800 text-white rounded-xl font-Inter font-medium shadow-lg hover:shadow-2xl hover:bg-slate-900 transition-all duration-300 transform hover:-translate-y-1">
+                <span className="group-hover:tracking-wide transition-all duration-300">Download CV</span>
               </button>
             </a>
             <Link to="/certifications">
-              <button className="px-6 py-3 bg-white text-[#1F2A44] border border-gray-300 rounded-lg font-Inter shadow-md hover:shadow-lg hover:scale-105 transition-transform hover:cursor-pointer ">
-                Certifications
+              <button className="group px-8 py-4 bg-white text-slate-800 border-2 border-slate-200 rounded-xl font-Inter font-medium shadow-lg hover:shadow-2xl hover:border-slate-300 hover:bg-slate-50 transition-all duration-300 transform hover:-translate-y-1">
+                <span className="group-hover:tracking-wide transition-all duration-300">Certifications</span>
               </button>
             </Link>
-          </div>
+          </motion.div>
         </div>
 
-        <motion.img
-          src={portrait}
-          alt="Portrait"
-          decoding="async"
-          initial={{ opacity: 0 }}
-          animate={imgLoaded ? { opacity: 1 } : {}}
-          transition={{ duration: 0.6 }}
-          onLoad={() => setImgLoaded(true)}
-          className="w-64 md:w-80 lg:w-96 rounded-full border-4 border-gray-200 shadow-xl hover:scale-105 transition-transform"
-        />
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={imgLoaded ? { opacity: 1, scale: 1 } : {}}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="relative"
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-200 to-stone-300 rounded-full blur-2xl opacity-30 scale-110"></div>
+          <img
+            src={portrait}
+            alt="Portrait"
+            decoding="async"
+            onLoad={() => setImgLoaded(true)}
+            className="relative w-72 md:w-80 lg:w-96 rounded-full border-4 border-white shadow-2xl hover:scale-105 transition-all duration-500 hover:shadow-3xl"
+          />
+        </motion.div>
       </motion.section>
 
       {/* About Section */}
@@ -75,189 +99,249 @@ export const HomeScreen: React.FC = () => {
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="max-w-4xl mx-auto px-6 py-16 bg-white rounded-2xl shadow-lg mb-16"
+        transition={{ duration: 0.8 }}
+        className="max-w-5xl mx-auto px-8 py-20 mb-20"
       >
-        <h2 className="text-3xl font-bold font-Halant text-[#1F2A44] mb-6 text-center md:text-left">
-          About Me
-        </h2>
-        <p className="text-gray-700 leading-relaxed text-base md:text-lg font-Nunito text-justify">
-          My name is Rafael Angelo Christianto, currently pursuing a double
-          degree in Computer Science at BINUS International University situated
-          in Jakarta, Indonesia. I am currently studying in semester 5. I am
-          passionate about diving deeper into Computer Networks, Penetration
-          Testing, and Full Stack Development. Moreover, I am a hardworking and
-          disciplined person, achieving optimal results both individually and in
-          groups.
-        </p>
+        <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl border border-slate-100 p-12">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-4xl md:text-5xl font-light text-slate-800 font-Inter mb-8 text-center tracking-tight"
+          >
+            About Me
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-slate-600 leading-relaxed text-lg md:text-xl font-Inter font-light text-center max-w-4xl mx-auto"
+          >
+            My name is Rafael Angelo Christianto, currently pursuing a double
+            degree in Computer Science at BINUS International University situated
+            in Jakarta, Indonesia. I am currently studying in semester 5. I am
+            passionate about diving deeper into Computer Networks, Penetration
+            Testing, and Full Stack Development. Moreover, I am a hardworking and
+            disciplined person, achieving optimal results both individually and in
+            groups.
+          </motion.p>
+        </div>
       </motion.section>
 
-      <section className="max-w-[800px] flex justify-center items-center mb-[50px] ml-auto mr-auto">
-        {/* Skills & Interests */}
-        <div className="bg-white shadow-lg rounded-2xl p-8 flex-1 ">
-          <h2 className="text-2xl font-bold text-[#1F2A44] font-Halant mb-6 text-center">
+      <motion.section 
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="max-w-4xl mx-auto px-8 mb-20"
+      >
+        <div className="bg-white/80 backdrop-blur-sm shadow-xl rounded-3xl border border-slate-100 p-12">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-3xl md:text-4xl font-light text-slate-800 font-Inter mb-8 text-center tracking-tight"
+          >
             Skills & Interests
-          </h2>
-          <div className="flex flex-wrap gap-3">
+          </motion.h2>
+          <div className="flex flex-wrap justify-center gap-4">
             {[
               "Penetration Testing",
               "Network Forensics",
               "Cyber Security",
               "Full Stack Development",
             ].map((skill, i) => (
-              <span
+              <motion.span
                 key={i}
-                className="px-4 py-2 bg-[#1F2A44] text-white rounded-lg text-sm font-Inter shadow-md hover:scale-105 transition-transform"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 * i }}
+                className="px-6 py-3 bg-slate-800 text-white rounded-2xl text-sm md:text-base font-Inter font-medium shadow-lg hover:shadow-xl hover:scale-105 hover:bg-slate-900 transition-all duration-300 cursor-default"
               >
                 {skill}
-              </span>
+              </motion.span>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Education, Skills, Achievements & Experience Section */}
-      <motion.section
-        className="flex flex-col lg:flex-row justify-center items-start gap-10 max-w-6xl mx-auto mb-16 px-6"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-      >
-        {/* Education */}
-        <div className="bg-white shadow-lg rounded-2xl p-8 flex-1">
-          <h2 className="text-2xl font-bold text-[#1F2A44] font-Halant mb-6">
-            Educations
-          </h2>
-          <div className="space-y-6">
-            <div>
-              <h3 className="font-Roboto font-semibold">
-                Lilin Bangsa Intercultural School
-              </h3>
-              <p className="font-Open-Sans text-gray-600">Science</p>
-              <span className="text-gray-400 text-sm">
-                July 2020 - May 2023
-              </span>
-            </div>
-            <div>
-              <h3 className="font-Roboto font-semibold">Timedoor Academy</h3>
-              <p className="font-Open-Sans text-gray-600">Computer Science</p>
-              <span className="text-gray-400 text-sm">
-                April 2021 - May 2023
-              </span>
-            </div>
-            <div>
-              <h3 className="font-Roboto font-semibold">
-                BINUS International University
-              </h3>
-              <p className="font-Open-Sans text-gray-600">Computer Science</p>
-              <span className="text-gray-400 text-sm">Sep 2023 - Jun 2026</span>
-            </div>
-            <div>
-              <h3 className="font-Roboto font-semibold">
-                Royal Melbourne Institute of Technology
-              </h3>
-              <p className="font-Open-Sans text-gray-600">Computer Science</p>
-              <span className="text-gray-400 text-sm">Sep 2026 - Jun 2027</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Achievements */}
-        <div className="bg-white shadow-lg rounded-2xl p-8 flex-1">
-          <h2 className="text-2xl font-bold text-[#1F2A44] font-Halant mb-6">
-            Achievements
-          </h2>
-          <div className="space-y-6">
-            <div>
-              <h3 className="font-Roboto font-semibold">
-                Entrepreneurship Finalist
-              </h3>
-              <p className="font-Open-Sans text-gray-600">
-                BINUS International University
-              </p>
-              <span className="text-gray-400 text-sm">
-                September 2024 – January 2025
-              </span>
-            </div>
           </div>
         </div>
       </motion.section>
 
-      {/* Experiences */}
-      <section className="flex justify-center items-center">
-        <div className="max-w-[500px] bg-white shadow-lg rounded-2xl p-8 flex-1">
-          <h2 className="text-2xl font-bold text-[#1F2A44] font-Halant mb-6">
-            Experiences
+      {/* Education & Achievements Section */}
+      <motion.section
+        className="flex flex-col lg:flex-row justify-center items-start gap-8 max-w-7xl mx-auto mb-20 px-8"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
+        {/* Education */}
+        <motion.div 
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="bg-white/80 backdrop-blur-sm shadow-xl rounded-3xl border border-slate-100 p-10 flex-1"
+        >
+          <h2 className="text-3xl font-light text-slate-800 font-Inter mb-8 tracking-tight">
+            Education
           </h2>
-          <div className="space-y-6">
-            <div>
-              <h3 className="font-Roboto font-semibold">Student Committee</h3>
-              <p className="font-Open-Sans text-gray-600">
-                Lilin Bangsa Intercultural School
-              </p>
-              <span className="text-gray-400 text-sm">
-                September 2022 – May 2023
-              </span>
-            </div>
-            <div>
-              <h3 className="font-Roboto font-semibold">
-                BINUS Modeling Club Activist
-              </h3>
-              <p className="font-Open-Sans text-gray-600">
-                BIUS International University
-              </p>
-              <span className="text-gray-400 text-sm">
-                September 2023 - May 2024
-              </span>
-            </div>
+          <div className="space-y-8">
+            {[
+              {
+                school: "Lilin Bangsa Intercultural School",
+                field: "Science",
+                period: "July 2020 - May 2023"
+              },
+              {
+                school: "Timedoor Academy",
+                field: "Computer Science",
+                period: "April 2021 - May 2023"
+              },
+              {
+                school: "BINUS International University",
+                field: "Computer Science",
+                period: "Sep 2023 - Jun 2026"
+              },
+              {
+                school: "Royal Melbourne Institute of Technology",
+                field: "Computer Science",
+                period: "Sep 2026 - Jun 2027"
+              }
+            ].map((edu, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 * i }}
+                className="border-l-4 border-slate-200 pl-6 hover:border-slate-400 transition-colors duration-300"
+              >
+                <h3 className="font-Inter font-medium text-slate-800 text-lg">
+                  {edu.school}
+                </h3>
+                <p className="font-Inter text-slate-600 font-light">{edu.field}</p>
+                <span className="text-slate-400 text-sm font-Inter">
+                  {edu.period}
+                </span>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
 
-            <div>
-              <h3 className="font-Roboto font-semibold">
-                Frontend Web Developer
+        {/* Achievements */}
+        <motion.div 
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="bg-white/80 backdrop-blur-sm shadow-xl rounded-3xl border border-slate-100 p-10 flex-1"
+        >
+          <h2 className="text-3xl font-light text-slate-800 font-Inter mb-8 tracking-tight">
+            Achievements
+          </h2>
+          <div className="space-y-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="border-l-4 border-slate-200 pl-6 hover:border-slate-400 transition-colors duration-300"
+            >
+              <h3 className="font-Inter font-medium text-slate-800 text-lg">
+                Entrepreneurship Finalist
               </h3>
-              <p className="font-Open-Sans text-gray-600">Xlerator</p>
-              <span className="text-gray-400 text-sm">
-                July 2025 – August 2025
-              </span>
-            </div>
-            <div>
-              <h3 className="font-Roboto font-semibold">
-                Frontend Web Developer
-              </h3>
-              <p className="font-Open-Sans text-gray-600">Oh My Cake</p>
-              <span className="text-gray-400 text-sm">August 2025</span>
-            </div>
-            <div>
-              <h3 className="font-Roboto font-semibold">Freshmen Partner</h3>
-              <p className="font-Open-Sans text-gray-600">
+              <p className="font-Inter text-slate-600 font-light">
                 BINUS International University
               </p>
-              <span className="text-gray-400 text-sm">
-                September 2025 - May 2026
+              <span className="text-slate-400 text-sm font-Inter">
+                September 2024 – January 2025
               </span>
-            </div>
-            <div>
-              <h3 className="font-Roboto font-semibold">
-                BINUS English Club Speech Talent
-              </h3>
-              <p className="font-Open-Sans text-gray-600">BINUS University</p>
-              <span className="text-gray-400 text-sm">
-                September 2025 - Present
-              </span>
-            </div>
-            <div>
-              <h3 className="font-Roboto font-semibold">
-                BINUS Youth Festival Committee
-              </h3>
-              <p className="font-Open-Sans text-gray-600">BINUS University</p>
-              <span className="text-gray-400 text-sm">
-                October 2025 - December 2025
-              </span>
-            </div>
+            </motion.div>
+          </div>
+        </motion.div>
+      </motion.section>
+
+      {/* Experiences */}
+      <motion.section 
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="flex justify-center items-center mb-20 px-8"
+      >
+        <div className="max-w-4xl bg-white/80 backdrop-blur-sm shadow-xl rounded-3xl border border-slate-100 p-10 w-full">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-3xl font-light text-slate-800 font-Inter mb-8 text-center tracking-tight"
+          >
+            Experience
+          </motion.h2>
+          <div className="space-y-8">
+            {[
+              {
+                role: "Student Committee",
+                company: "Lilin Bangsa Intercultural School",
+                period: "September 2022 – May 2023"
+              },
+              {
+                role: "BINUS Modeling Club Activist",
+                company: "BINUS International University",
+                period: "September 2023 - May 2024"
+              },
+              {
+                role: "Frontend Web Developer",
+                company: "Xlerator",
+                period: "July 2025 – August 2025"
+              },
+              {
+                role: "Frontend Web Developer",
+                company: "Oh My Cake",
+                period: "August 2025"
+              },
+              {
+                role: "Freshmen Partner",
+                company: "BINUS International University",
+                period: "September 2025 - May 2026"
+              },
+              {
+                role: "BINUS English Club Speech Talent",
+                company: "BINUS University",
+                period: "September 2025 - Present"
+              },
+              {
+                role: "BINUS Youth Festival Committee",
+                company: "BINUS University",
+                period: "October 2025 - December 2025"
+              }
+            ].map((exp, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 * i }}
+                className="border-l-4 border-slate-200 pl-6 hover:border-slate-400 transition-colors duration-300"
+              >
+                <h3 className="font-Inter font-medium text-slate-800 text-lg">
+                  {exp.role}
+                </h3>
+                <p className="font-Inter text-slate-600 font-light">
+                  {exp.company}
+                </p>
+                <span className="text-slate-400 text-sm font-Inter">
+                  {exp.period}
+                </span>
+              </motion.div>
+            ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Projects Section */}
       <motion.section
@@ -265,12 +349,18 @@ export const HomeScreen: React.FC = () => {
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="max-w-6xl mx-auto px-6 py-16 mb-16"
+        transition={{ duration: 0.8 }}
+        className="max-w-7xl mx-auto px-8 py-20 mb-20"
       >
-        <h2 className="text-3xl font-bold text-center text-[#1F2A44] font-Halant mb-12">
+        <motion.h2 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-4xl md:text-5xl font-light text-slate-800 font-Inter mb-12 text-center tracking-tight"
+        >
           Projects
-        </h2>
+        </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
             {
@@ -303,26 +393,30 @@ export const HomeScreen: React.FC = () => {
           ].map((proj, i) => (
             <motion.div
               key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 * i }}
               whileHover={{ scale: 1.03 }}
-              className="bg-white shadow-lg rounded-2xl p-6 border border-gray-200 flex flex-col justify-between"
+              className="bg-white/80 backdrop-blur-sm shadow-xl rounded-3xl border border-slate-100 p-8 flex flex-col justify-between hover:shadow-2xl transition-all duration-300"
             >
               <div>
-                <h3 className="font-Hammersmith-One text-2xl font-bold text-[#1F2A44] mb-2">
+                <h3 className="font-Inter font-medium text-slate-800 text-xl mb-3">
                   {proj.title}
                 </h3>
-                <p className="font-Open-Sans text-gray-600 mb-4">
+                <p className="font-Inter text-slate-600 font-light mb-6">
                   Built with {proj.tech}
                 </p>
               </div>
-              <div className="flex flex-row gap-2">
+              <div className="flex flex-row gap-3">
                 <a target="_blank" href={proj.url}>
-                  <button className="px-5 py-2 bg-[#1F2A44] text-white rounded-xl hover:bg-[#2B3C5A] transition hover:cursor-pointer">
+                  <button className="px-6 py-3 bg-slate-800 text-white rounded-xl hover:bg-slate-900 transition-all duration-300 font-Inter font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                     Visit Project
                   </button>
                 </a>
                 {proj.web && (
                   <a target="_blank" href={proj.web}>
-                    <button className="px-5 py-2 bg-[#1F2A44] text-white rounded-xl hover:bg-[#2B3C5A] transition hover:cursor-pointer">
+                    <button className="px-6 py-3 bg-white text-slate-800 border-2 border-slate-200 rounded-xl hover:border-slate-300 hover:bg-slate-50 transition-all duration-300 font-Inter font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                       Visit Website
                     </button>
                   </a>
@@ -339,68 +433,80 @@ export const HomeScreen: React.FC = () => {
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="max-w-4xl mx-auto px-6 py-16 mb-16 bg-white rounded-2xl shadow-lg"
+        transition={{ duration: 0.8 }}
+        className="max-w-5xl mx-auto px-8 py-20 mb-20"
       >
-        <h2 className="text-3xl font-bold text-[#1F2A44] font-Halant mb-6 text-center md:text-left">
-          Contact Me
-        </h2>
+        <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl border border-slate-100 p-12">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-4xl md:text-5xl font-light text-slate-800 font-Inter mb-8 text-center tracking-tight"
+          >
+            Contact Me
+          </motion.h2>
 
-        <div className="flex flex-col md:flex-row md:items-center gap-6">
-          <div className="flex flex-col gap-2">
-            <div className="flex items-center gap-2 text-gray-700">
-              <SiGmail className="text-lg" />
-              <span>rafaaelangelo@gmail.com</span>
-            </div>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=rafaaelangelo@gmail.com"
-            >
-              <button className="w-[180px] h-10 bg-[#1F2A44] text-white rounded-lg hover:bg-[#2B3C5A] transition hover:cursor-pointer">
-                Contact Me Here!
-              </button>
-            </a>
-          </div>
-
-          <div className="flex flex-col gap-3 mt-4 md:mt-0">
-            {[
-              {
-                icon: <SiGithub />,
-                label: "RafaelAngeloChristianto",
-                url: "https://github.com/RafaelAngeloChristianto",
-              },
-              {
-                icon: <SiLinkedin />,
-                label: "rafaaelangelo",
-                url: "https://www.linkedin.com/in/rafaaelangelo/",
-              },
-              {
-                icon: <SiInstagram />,
-                label: "rafaaelangelo",
-                url: "https://www.instagram.com/rafaaelangelo",
-              },
-              {
-                icon: <SiTiktok />,
-                label: "rafaaelangelo",
-                url: "https://www.tiktok.com/@rafaaelangelo",
-              },
-              {
-                icon: <SiWhatsapp />,
-                label: "+62 813 1972 7350",
-                url: "https://wa.me/6281514383863?text=Hello%20Rafael%2C%20I%20want%20your%20service",
-              },
-            ].map((social, i) => (
+          <div className="flex flex-col md:flex-row md:items-center gap-8 justify-center">
+            <div className="flex flex-col gap-4 items-center md:items-start">
+              <div className="flex items-center gap-3 text-slate-700">
+                <SiGmail className="text-xl" />
+                <span className="font-Inter font-medium">rafaaelangelo@gmail.com</span>
+              </div>
               <a
-                key={i}
                 target="_blank"
-                href={social.url}
-                className="flex items-center gap-2 text-gray-700 hover:text-[#1F2A44] transition"
+                rel="noopener noreferrer"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=rafaaelangelo@gmail.com"
               >
-                {social.icon}
-                <span>{social.label}</span>
+                <button className="px-8 py-4 bg-slate-800 text-white rounded-xl hover:bg-slate-900 transition-all duration-300 font-Inter font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                  Contact Me Here!
+                </button>
               </a>
-            ))}
+            </div>
+
+            <div className="flex flex-col gap-4 items-center md:items-start">
+              {[
+                {
+                  icon: <SiGithub />,
+                  label: "RafaelAngeloChristianto",
+                  url: "https://github.com/RafaelAngeloChristianto",
+                },
+                {
+                  icon: <SiLinkedin />,
+                  label: "rafaaelangelo",
+                  url: "https://www.linkedin.com/in/rafaaelangelo/",
+                },
+                {
+                  icon: <SiInstagram />,
+                  label: "rafaaelangelo",
+                  url: "https://www.instagram.com/rafaaelangelo",
+                },
+                {
+                  icon: <SiTiktok />,
+                  label: "rafaaelangelo",
+                  url: "https://www.tiktok.com/@rafaaelangelo",
+                },
+                {
+                  icon: <SiWhatsapp />,
+                  label: "+62 813 1972 7350",
+                  url: "https://wa.me/6281319727350?text=Hello%20Rafael%2C%20I%20want%20your%20service",
+                },
+              ].map((social, i) => (
+                <motion.a
+                  key={i}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.1 * i }}
+                  target="_blank"
+                  href={social.url}
+                  className="flex items-center gap-3 text-slate-700 hover:text-slate-900 transition-colors duration-300 font-Inter"
+                >
+                  <span className="text-xl">{social.icon}</span>
+                  <span>{social.label}</span>
+                </motion.a>
+              ))}
+            </div>
           </div>
         </div>
       </motion.section>
