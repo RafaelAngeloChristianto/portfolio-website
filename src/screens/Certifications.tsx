@@ -8,6 +8,10 @@ export const Certifications: React.FC = () => {
 
   const certificates = [
     {
+      title: "BINUS Youth Festival 2025 - Committee",
+      file: "E-Certificate - Panitia - Rafael Angelo Christianto_page-0001.jpg",
+    },
+    {
       title: "AWS Academy Graduate - Generative AI Foundations",
       file: "AWSAcademy12NEW20251117-31-yftdmw_page-0001.jpg",
     },
