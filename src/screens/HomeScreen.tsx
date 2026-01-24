@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { FaBriefcase, FaUserFriends } from "react-icons/fa";
 
 import { NavBar } from "../components/NavBar";
 import { Footer } from "../components/Footer";
@@ -33,16 +34,18 @@ export const HomeScreen: React.FC = () => {
         className="flex flex-col md:flex-row justify-center items-center gap-16 px-8 py-28 md:py-36 max-w-7xl mx-auto"
       >
         <div className="text-center md:text-left md:w-1/2 space-y-6">
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-5xl md:text-6xl lg:text-7xl font-light text-slate-800 font-Inter mb-4 tracking-tight leading-tight"
           >
             Rafael Angelo
-            <span className="block font-extralight text-slate-600">Christianto</span>
+            <span className="block font-extralight text-slate-600">
+              Christianto
+            </span>
           </motion.h1>
-          
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -57,7 +60,7 @@ export const HomeScreen: React.FC = () => {
             </h4>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -65,12 +68,16 @@ export const HomeScreen: React.FC = () => {
           >
             <a target="_blank" href={cv} download="cv">
               <button className="group px-8 py-4 bg-slate-800 text-white rounded-xl font-Inter font-medium shadow-lg hover:shadow-2xl hover:bg-slate-900 transition-all duration-300 transform hover:-translate-y-1">
-                <span className="group-hover:tracking-wide transition-all duration-300">Download CV</span>
+                <span className="group-hover:tracking-wide transition-all duration-300">
+                  Download CV
+                </span>
               </button>
             </a>
             <Link to="/certifications">
               <button className="group px-8 py-4 bg-white text-slate-800 border-2 border-slate-200 rounded-xl font-Inter font-medium shadow-lg hover:shadow-2xl hover:border-slate-300 hover:bg-slate-50 transition-all duration-300 transform hover:-translate-y-1">
-                <span className="group-hover:tracking-wide transition-all duration-300">Certifications</span>
+                <span className="group-hover:tracking-wide transition-all duration-300">
+                  Certifications
+                </span>
               </button>
             </Link>
           </motion.div>
@@ -103,7 +110,7 @@ export const HomeScreen: React.FC = () => {
         className="max-w-5xl mx-auto px-8 py-20 mb-20"
       >
         <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl border border-slate-100 p-12">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -112,7 +119,7 @@ export const HomeScreen: React.FC = () => {
           >
             About Me
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -120,17 +127,17 @@ export const HomeScreen: React.FC = () => {
             className="text-slate-600 leading-relaxed text-lg md:text-xl font-Inter font-light text-center max-w-4xl mx-auto"
           >
             My name is Rafael Angelo Christianto, currently pursuing a double
-            degree in Computer Science at BINUS International University situated
-            in Jakarta, Indonesia. I am currently studying in semester 5. I am
-            passionate about diving deeper into Computer Networks, Penetration
-            Testing, and Full Stack Development. Moreover, I am a hardworking and
-            disciplined person, achieving optimal results both individually and in
-            groups.
+            degree in Computer Science at BINUS International University
+            situated in Jakarta, Indonesia. I am currently studying in semester
+            5. I am passionate about diving deeper into Computer Networks,
+            Penetration Testing, and Full Stack Development. Moreover, I am a
+            hardworking and disciplined person, achieving optimal results both
+            individually and in groups.
           </motion.p>
         </div>
       </motion.section>
 
-      <motion.section 
+      <motion.section
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -138,7 +145,7 @@ export const HomeScreen: React.FC = () => {
         className="max-w-4xl mx-auto px-8 mb-20"
       >
         <div className="bg-white/80 backdrop-blur-sm shadow-xl rounded-3xl border border-slate-100 p-12">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -151,8 +158,8 @@ export const HomeScreen: React.FC = () => {
             {[
               "Penetration Testing",
               "Network Forensics",
+              "Incident Response",
               "Cyber Security",
-              "Full Stack Development",
             ].map((skill, i) => (
               <motion.span
                 key={i}
@@ -178,7 +185,7 @@ export const HomeScreen: React.FC = () => {
         transition={{ duration: 0.8 }}
       >
         {/* Education */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -193,23 +200,23 @@ export const HomeScreen: React.FC = () => {
               {
                 school: "Lilin Bangsa Intercultural School",
                 field: "Science",
-                period: "July 2020 - May 2023"
+                period: "July 2020 - May 2023",
               },
               {
                 school: "Timedoor Academy",
                 field: "Computer Science",
-                period: "April 2021 - May 2023"
+                period: "April 2021 - May 2023",
               },
               {
                 school: "BINUS International University",
                 field: "Computer Science",
-                period: "Sep 2023 - Jun 2026"
+                period: "Sep 2023 - Jun 2026",
               },
               {
                 school: "Royal Melbourne Institute of Technology",
                 field: "Computer Science",
-                period: "Sep 2026 - Jun 2027"
-              }
+                period: "Sep 2026 - Jun 2027",
+              },
             ].map((edu, i) => (
               <motion.div
                 key={i}
@@ -222,7 +229,9 @@ export const HomeScreen: React.FC = () => {
                 <h3 className="font-Inter font-medium text-slate-800 text-lg">
                   {edu.school}
                 </h3>
-                <p className="font-Inter text-slate-600 font-light">{edu.field}</p>
+                <p className="font-Inter text-slate-600 font-light">
+                  {edu.field}
+                </p>
                 <span className="text-slate-400 text-sm font-Inter">
                   {edu.period}
                 </span>
@@ -232,7 +241,7 @@ export const HomeScreen: React.FC = () => {
         </motion.div>
 
         {/* Achievements */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -264,166 +273,144 @@ export const HomeScreen: React.FC = () => {
         </motion.div>
       </motion.section>
 
-      {/* Experiences */}
-      <motion.section 
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="flex justify-center items-center mb-20 px-8"
-      >
-        <div className="max-w-4xl bg-white/80 backdrop-blur-sm shadow-xl rounded-3xl border border-slate-100 p-10 w-full">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-3xl font-light text-slate-800 font-Inter mb-8 text-center tracking-tight"
-          >
-            Experience
-          </motion.h2>
-          <div className="space-y-8">
-            {[
-              {
-                role: "Student Committee",
-                company: "Lilin Bangsa Intercultural School",
-                period: "September 2022 – May 2023"
-              },
-              {
-                role: "BINUS Modeling Club Activist",
-                company: "BINUS International University",
-                period: "September 2023 - May 2024"
-              },
-              {
-                role: "Frontend Web Developer",
-                company: "Xlerator",
-                period: "July 2025 – August 2025"
-              },
-              {
-                role: "Frontend Web Developer",
-                company: "Oh My Cake",
-                period: "August 2025"
-              },
-              {
-                role: "Freshmen Partner",
-                company: "BINUS International University",
-                period: "September 2025 - May 2026"
-              },
-              {
-                role: "BINUS English Club Speech Talent",
-                company: "BINUS University",
-                period: "September 2025 - Present"
-              },
-              {
-                role: "BINUS Youth Festival Committee",
-                company: "BINUS University",
-                period: "October 2025 - December 2025"
-              }
-            ].map((exp, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 * i }}
-                className="border-l-4 border-slate-200 pl-6 hover:border-slate-400 transition-colors duration-300"
-              >
-                <h3 className="font-Inter font-medium text-slate-800 text-lg">
-                  {exp.role}
-                </h3>
-                <p className="font-Inter text-slate-600 font-light">
-                  {exp.company}
-                </p>
-                <span className="text-slate-400 text-sm font-Inter">
-                  {exp.period}
-                </span>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </motion.section>
-
-      {/* Projects Section */}
+      {/* Work & Organizational Experience Section */}
       <motion.section
-        id="projects"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="max-w-7xl mx-auto px-8 py-20 mb-20"
+        className="max-w-7xl mx-auto px-8 mb-20"
       >
-        <motion.h2 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-4xl md:text-5xl font-light text-slate-800 font-Inter mb-12 text-center tracking-tight"
-        >
-          Projects
-        </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {[
-            {
-              title: "E-Commerce Website",
-              tech: "React + Tailwind",
-              url: "https://github.com/RafaelAngeloChristianto/e-commerce_website",
-            },
-            {
-              title: "Portfolio Website",
-              tech: "React + Tailwind",
-              url: "https://github.com/RafaelAngeloChristianto/portfolio-website",
-            },
-            {
-              title: "Xlerator Website",
-              tech: "React + Tailwind",
-              url: "https://github.com/RafaelAngeloChristianto/xlerator_website",
-              web: "https://xlerator-indonesia.com",
-            },
-            {
-              title: "Oh My Cake Website",
-              tech: "React + Tailwind",
-              url: "https://github.com/RafaelAngeloChristianto/ohmycake_website",
-              web: "https://yenniohmycake.vercel.app",
-            },
-            {
-              title: "Dentalign Ticketing System",
-              tech: "React + Tailwind + Express",
-              url: "https://github.com/RafaelAngeloChristianto/dentalign-ticketing-system",
-            },
-          ].map((proj, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 * i }}
-              whileHover={{ scale: 1.03 }}
-              className="bg-white/80 backdrop-blur-sm shadow-xl rounded-3xl border border-slate-100 p-8 flex flex-col justify-between hover:shadow-2xl transition-all duration-300"
-            >
-              <div>
-                <h3 className="font-Inter font-medium text-slate-800 text-xl mb-3">
-                  {proj.title}
-                </h3>
-                <p className="font-Inter text-slate-600 font-light mb-6">
-                  Built with {proj.tech}
-                </p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Work Experience */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="bg-white/80 backdrop-blur-sm shadow-xl rounded-3xl border border-slate-100 p-10"
+          >
+            <div className="flex items-center gap-4 mb-10">
+              <div className="p-3 bg-slate-800 rounded-xl">
+                <FaBriefcase className="text-2xl text-white" />
               </div>
-              <div className="flex flex-row gap-3">
-                <a target="_blank" href={proj.url}>
-                  <button className="px-6 py-3 bg-slate-800 text-white rounded-xl hover:bg-slate-900 transition-all duration-300 font-Inter font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                    Visit Project
-                  </button>
-                </a>
-                {proj.web && (
-                  <a target="_blank" href={proj.web}>
-                    <button className="px-6 py-3 bg-white text-slate-800 border-2 border-slate-200 rounded-xl hover:border-slate-300 hover:bg-slate-50 transition-all duration-300 font-Inter font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                      Visit Website
-                    </button>
-                  </a>
-                )}
+              <h2 className="text-3xl md:text-4xl font-light text-slate-800 font-Inter tracking-tight">
+                Work Experience
+              </h2>
+            </div>
+
+            <div className="space-y-6">
+              {[
+                {
+                  role: "Frontend Web Developer",
+                  company: "Xlerator",
+                  period: "July 2025 – August 2025",
+                },
+                {
+                  role: "Frontend Web Developer",
+                  company: "Oh My Cake",
+                  period: "August 2025",
+                },
+                {
+                  role: "Team Promotion",
+                  company: "BINUS Business School",
+                  period: "January 2026 - February 2026",
+                },
+              ].map((exp, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.1 * i }}
+                  className="flex items-start gap-6 p-6 bg-gradient-to-r from-white to-slate-50 rounded-2xl border border-slate-100 hover:border-slate-200 hover:shadow-lg transition-all duration-300 group"
+                >
+                  <div className="flex-shrink-0 w-3 h-full bg-gradient-to-b from-slate-800 to-slate-600 rounded-full group-hover:from-blue-600 group-hover:to-blue-400 transition-all duration-300"></div>
+                  <div className="flex-1">
+                    <h3 className="font-Inter font-semibold text-slate-800 text-lg md:text-xl mb-1">
+                      {exp.role}
+                    </h3>
+                    <p className="font-Inter text-slate-600 mb-2">
+                      {exp.company}
+                    </p>
+                    <span className="inline-block px-4 py-1.5 bg-slate-100 text-slate-700 rounded-full text-sm font-Inter font-medium">
+                      {exp.period}
+                    </span>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Organizational Experience */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="bg-white/80 backdrop-blur-sm shadow-xl rounded-3xl border border-slate-100 p-10"
+          >
+            <div className="flex items-center gap-4 mb-10">
+              <div className="p-3 bg-slate-800 rounded-xl">
+                <FaUserFriends className="text-2xl text-white" />
               </div>
-            </motion.div>
-          ))}
+              <h2 className="text-3xl md:text-4xl font-light text-slate-800 font-Inter tracking-tight">
+                Organizational Experience
+              </h2>
+            </div>
+
+            <div className="space-y-6">
+              {[
+                {
+                  role: "Student Committee",
+                  company: "Lilin Bangsa Intercultural School",
+                  period: "September 2022 – May 2023",
+                },
+                {
+                  role: "BINUS Modeling Club Activist",
+                  company: "BINUS International University",
+                  period: "September 2023 - May 2024",
+                },
+                {
+                  role: "Freshmen Partner",
+                  company: "BINUS International University",
+                  period: "September 2025 - May 2026",
+                },
+                {
+                  role: "BINUS English Club Speech Talent",
+                  company: "BINUS University",
+                  period: "September 2025 - Present",
+                },
+                {
+                  role: "BINUS Youth Festival Committee",
+                  company: "BINUS University",
+                  period: "October 2025 - December 2025",
+                },
+              ].map((exp, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.1 * i }}
+                  className="flex items-start gap-6 p-6 bg-gradient-to-r from-white to-slate-50 rounded-2xl border border-slate-100 hover:border-slate-200 hover:shadow-lg transition-all duration-300 group"
+                >
+                  <div className="flex-shrink-0 w-3 h-full bg-gradient-to-b from-slate-800 to-slate-600 rounded-full group-hover:from-green-600 group-hover:to-green-400 transition-all duration-300"></div>
+                  <div className="flex-1">
+                    <h3 className="font-Inter font-semibold text-slate-800 text-lg md:text-xl mb-1">
+                      {exp.role}
+                    </h3>
+                    <p className="font-Inter text-slate-600 mb-2">
+                      {exp.company}
+                    </p>
+                    <span className="inline-block px-4 py-1.5 bg-slate-100 text-slate-700 rounded-full text-sm font-Inter font-medium">
+                      {exp.period}
+                    </span>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </motion.section>
 
@@ -437,7 +424,7 @@ export const HomeScreen: React.FC = () => {
         className="max-w-5xl mx-auto px-8 py-20 mb-20"
       >
         <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl border border-slate-100 p-12">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -451,7 +438,9 @@ export const HomeScreen: React.FC = () => {
             <div className="flex flex-col gap-4 items-center md:items-start">
               <div className="flex items-center gap-3 text-slate-700">
                 <SiGmail className="text-xl" />
-                <span className="font-Inter font-medium">rafaaelangelo@gmail.com</span>
+                <span className="font-Inter font-medium">
+                  rafaaelangelo@gmail.com
+                </span>
               </div>
               <a
                 target="_blank"

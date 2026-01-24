@@ -5,7 +5,7 @@ import { Certifications } from "./screens/Certifications";
 
 export const App: React.FC = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white scale-wrapper">
       <Routes>
         <Route path="/" element={<HomeScreen />} />
         <Route path="/certifications" element={<Certifications />} />
