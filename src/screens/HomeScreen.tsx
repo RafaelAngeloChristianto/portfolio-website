@@ -414,6 +414,118 @@ export const HomeScreen: React.FC = () => {
         </div>
       </motion.section>
 
+      {/* Projects Section */}
+      <motion.section
+        id="projects"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="max-w-7xl mx-auto px-8 py-20 mb-20"
+      >
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-4xl md:text-5xl font-light text-slate-800 font-Inter mb-12 text-center tracking-tight"
+        >
+          Projects
+        </motion.h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {[
+            {
+              title: "Portfolio Website",
+              tech: "React + Tailwind",
+              url: "https://github.com/RafaelAngeloChristianto/portfolio-website",
+            },
+            {
+              title: "Xlerator Website",
+              tech: "React + Tailwind",
+              url: "https://github.com/RafaelAngeloChristianto/xlerator_website",
+              web: "https://xlerator-indonesia.com",
+            },
+            {
+              title: "Oh My Cake Website",
+              tech: "React + Tailwind",
+              url: "https://github.com/RafaelAngeloChristianto/ohmycake_website",
+              web: "https://yenniohmycake.vercel.app",
+            },
+            {
+              title: "Dentalign Ticketing System",
+              tech: "React + Tailwind + Express + MongoDB (MERN)",
+              url: "https://github.com/RafaelAngeloChristianto/dentalign-ticketing-system",
+            },
+            {
+              title: "Dynamic Malware Analysis - njRAT 0.6.4",
+              tech: "FLARE VM",
+              url: "/projects/DynamicMalwareAnalysis_RafaelAngeloChristianto.pdf",
+            },
+            {
+              title: "File Type Scanner with Magic Numbers",
+              tech: "Python",
+              url: "/projects/FileTypeScanner_RafaelAngeloChristianto.pdf",
+            },
+            {
+              title: "Vulnerable Machine",
+              tech: "Ubuntu Desktop",
+              url: "projects/TaskRunner_RafaelAngeloChristianto.pdf",
+            },
+            {
+              title: "DEFCON CTF Packet Capture Analysis",
+              tech: "Wireshark, Zeek, tshark, NetworkMiner",
+              url: "/projects/DEFCONCTF_PacketCaptureAnalysis_RafaelAngeloChristianto.pdf",
+            },
+            {
+              title: "Windows Host Intrusion Detection System (HIDS)",
+              tech: "Python",
+              url: "/projects/HIDS_RafaelAngeloChristianto.pdf",
+            },
+            {
+              title: "Implementing Firewall for Portfolio Website",
+              tech: "Cloudflare",
+              url: "projects/PortfolioFirewall_RafaelAngeloChristianto.pdf",
+            }
+          ].map((proj, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 * i }}
+              whileHover={{ scale: 1.03 }}
+              className="bg-white/80 backdrop-blur-sm shadow-xl rounded-3xl border border-slate-100 p-8 flex flex-col justify-between hover:shadow-2xl transition-all duration-300"
+            >
+              <div>
+                <h3 className="font-Inter font-medium text-slate-800 text-xl mb-3">
+                  {proj.title}
+                </h3>
+                <p className="font-Inter text-slate-600 font-light mb-6">
+                  Built with {proj.tech}
+                </p>
+              </div>
+
+              <div className="flex flex-row gap-3">
+                <a target="_blank" rel="noopener noreferrer" href={proj.url}>
+                  <button className="px-6 py-3 bg-slate-800 text-white rounded-xl hover:bg-slate-900 transition-all duration-300 font-Inter font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                    Visit Project
+                  </button>
+                </a>
+
+                {proj.web && (
+                  <a target="_blank" rel="noopener noreferrer" href={proj.web}>
+                    <button className="px-6 py-3 bg-white text-slate-800 border-2 border-slate-200 rounded-xl hover:border-slate-300 hover:bg-slate-50 transition-all duration-300 font-Inter font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                      Visit Website
+                    </button>
+                  </a>
+                )}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </motion.section>
+
       {/* Contact Section */}
       <motion.section
         id="contact"
