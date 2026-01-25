@@ -486,6 +486,11 @@ export const HomeScreen: React.FC = () => {
               title: "Implementing Firewall for Portfolio Website",
               tech: "Cloudflare",
               url: "projects/PortfolioFirewall_RafaelAngeloChristianto.pdf",
+            },
+            {
+              title: "Behavior Based Malware Behavior",
+              tech:"Python",
+              url: "/projects/BehaviorBasedMalwareDetector_RafaelAngeloChristianto.pdf",
             }
           ].map((proj, i) => (
             <motion.div
