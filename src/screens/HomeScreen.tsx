@@ -312,6 +312,11 @@ export const HomeScreen: React.FC = () => {
                   period: "August 2025",
                 },
                 {
+                  role: "Frontend Web Developer",
+                  company: "Bloome Flowers",
+                  period:"November 2025 - January 2026",
+                },
+                {
                   role: "Team Promotion",
                   company: "BINUS Business School",
                   period: "January 2026 - February 2026",
