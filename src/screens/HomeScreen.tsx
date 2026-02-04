@@ -156,10 +156,11 @@ export const HomeScreen: React.FC = () => {
           </motion.h2>
           <div className="flex flex-wrap justify-center gap-4">
             {[
+              "Cyber Security",
               "Penetration Testing",
               "Network Forensics",
               "Incident Response",
-              "Cyber Security",
+              "Cloud Security"
             ].map((skill, i) => (
               <motion.span
                 key={i}
@@ -319,8 +320,13 @@ export const HomeScreen: React.FC = () => {
                 {
                   role: "Team Promotion",
                   company: "BINUS Business School",
-                  period: "January 2026 - February 2026",
+                  period: "January 2026 - January 2026",
                 },
+                {
+                  role: "Quality Assurance Intern",
+                  company: "WOM Finance",
+                  period: "Febuary 2026 - June 2026"
+                }
               ].map((exp, i) => (
                 <motion.div
                   key={i}
@@ -474,7 +480,7 @@ export const HomeScreen: React.FC = () => {
             },
             {
               title: "Vulnerable Machine",
-              tech: "Ubuntu Desktop",
+              tech: "Ubuntu Server",
               url: "projects/TaskRunner_RafaelAngeloChristianto.pdf",
             },
             {
