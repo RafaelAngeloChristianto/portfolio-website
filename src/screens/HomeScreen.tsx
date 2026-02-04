@@ -493,7 +493,7 @@ export const HomeScreen: React.FC = () => {
               url: "projects/PortfolioFirewall_RafaelAngeloChristianto.pdf",
             },
             {
-              title: "Behavior Based Malware Behavior",
+              title: "Behavior Based Malware Detector",
               tech:"Python",
               url: "/projects/BehaviorBasedMalwareDetector_RafaelAngeloChristianto.pdf",
             }
