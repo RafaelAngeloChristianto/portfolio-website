@@ -53,7 +53,7 @@ export const HomeScreen: React.FC = () => {
             className="space-y-3"
           >
             <h3 className="text-xl md:text-2xl text-slate-700 font-Inter font-medium tracking-wide">
-              Penetration Tester & Full Stack Developer
+              Security Analyst
             </h3>
             <h4 className="text-lg md:text-xl text-slate-500 font-Inter font-light">
               Student at BINUS International University
