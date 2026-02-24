@@ -160,7 +160,7 @@ export const HomeScreen: React.FC = () => {
               "Penetration Testing",
               "Network Forensics",
               "Incident Response",
-              "Cloud Security"
+              "Cloud Security",
             ].map((skill, i) => (
               <motion.span
                 key={i}
@@ -315,7 +315,7 @@ export const HomeScreen: React.FC = () => {
                 {
                   role: "Frontend Web Developer",
                   company: "Bloome Flowers",
-                  period:"November 2025 - January 2026",
+                  period: "November 2025 - January 2026",
                 },
                 {
                   role: "Team Promotion",
@@ -325,8 +325,8 @@ export const HomeScreen: React.FC = () => {
                 {
                   role: "Quality Assurance Intern",
                   company: "WOM Finance",
-                  period: "Febuary 2026 - June 2026"
-                }
+                  period: "Febuary 2026 - June 2026",
+                },
               ].map((exp, i) => (
                 <motion.div
                   key={i}
@@ -500,9 +500,14 @@ export const HomeScreen: React.FC = () => {
             },
             {
               title: "Behavior Based Malware Detector",
-              tech:"Python",
+              tech: "Python",
               url: "/projects/BehaviorBasedMalwareDetector_RafaelAngeloChristianto.pdf",
-            }
+            },
+            {
+              title: "Nmap Packet Capture Lab",
+              tech: "Kali Linux and Ubuntu Desktop",
+              url: "/projects/NmapPacketCaptureLab_RafaelAngeloChristianto.pdf",
+            },
           ].map((proj, i) => (
             <motion.div
               key={i}
