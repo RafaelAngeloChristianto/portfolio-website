@@ -508,6 +508,11 @@ export const HomeScreen: React.FC = () => {
               tech: "Kali Linux and Ubuntu Desktop",
               url: "/projects/NmapPacketCaptureLab_RafaelAngeloChristianto.pdf",
             },
+            {
+              title: "Security Monitoring & Threat Detection using Wazuh SIEM",
+              tech:"Wazuh SIEM",
+              url:"projects/WazuhLab_RafaelAngeloChristianto.pdf"
+            },
           ].map((proj, i) => (
             <motion.div
               key={i}
