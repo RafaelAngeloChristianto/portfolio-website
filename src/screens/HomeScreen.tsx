@@ -513,6 +513,11 @@ export const HomeScreen: React.FC = () => {
               tech:"Wazuh SIEM",
               url:"projects/WazuhLab_RafaelAngeloChristianto.pdf"
             },
+            {
+              title:"Vantage Hack The Box Sherlock Writeup",
+              tech:"Wireshark",
+              url:"projects/Vantage HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf"
+            },
           ].map((proj, i) => (
             <motion.div
               key={i}
