@@ -24,7 +24,6 @@ export const HomeScreen: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-stone-50 scroll-smooth">
       <NavBar />
-
       {/* Hero Section */}
       <motion.section
         id="home"
@@ -99,7 +98,6 @@ export const HomeScreen: React.FC = () => {
           />
         </motion.div>
       </motion.section>
-
       {/* About Section */}
       <motion.section
         id="about"
@@ -128,15 +126,12 @@ export const HomeScreen: React.FC = () => {
           >
             My name is Rafael Angelo Christianto, currently pursuing a double
             degree in Computer Science at BINUS International University
-            situated in Jakarta, Indonesia. I am currently studying in semester
-            5. I am passionate about diving deeper into Computer Networks,
-            Penetration Testing, and Full Stack Development. Moreover, I am a
+            situated in Jakarta, Indonesia. I am currently doing an Internship Program at WOM Finance for my 6th semester. I am passionate about diving deeper into Security Analysis and Engineering. Moreover, I am a
             hardworking and disciplined person, achieving optimal results both
             individually and in groups.
           </motion.p>
         </div>
       </motion.section>
-
       <motion.section
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -176,7 +171,6 @@ export const HomeScreen: React.FC = () => {
           </div>
         </div>
       </motion.section>
-
       {/* Education & Achievements Section */}
       <motion.section
         className="flex flex-col lg:flex-row justify-center items-start gap-8 max-w-7xl mx-auto mb-20 px-8"
@@ -273,7 +267,6 @@ export const HomeScreen: React.FC = () => {
           </div>
         </motion.div>
       </motion.section>
-
       {/* Work & Organizational Experience Section */}
       <motion.section
         initial={{ opacity: 0, y: 40 }}
@@ -424,7 +417,6 @@ export const HomeScreen: React.FC = () => {
           </motion.div>
         </div>
       </motion.section>
-
       {/* Projects Section */}
       <motion.section
         id="projects"
@@ -446,28 +438,6 @@ export const HomeScreen: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
-            {
-              title: "Portfolio Website",
-              tech: "React + Tailwind",
-              url: "https://github.com/RafaelAngeloChristianto/portfolio-website",
-            },
-            {
-              title: "Xlerator Website",
-              tech: "React + Tailwind",
-              url: "https://github.com/RafaelAngeloChristianto/xlerator_website",
-              web: "https://xlerator-indonesia.com",
-            },
-            {
-              title: "Oh My Cake Website",
-              tech: "React + Tailwind",
-              url: "https://github.com/RafaelAngeloChristianto/ohmycake_website",
-              web: "https://yenniohmycake.vercel.app",
-            },
-            {
-              title: "Dentalign Ticketing System",
-              tech: "React + Tailwind + Express + MongoDB (MERN)",
-              url: "https://github.com/RafaelAngeloChristianto/dentalign-ticketing-system",
-            },
             {
               title: "Dynamic Malware Analysis - njRAT 0.6.4",
               tech: "FLARE VM",
@@ -510,13 +480,8 @@ export const HomeScreen: React.FC = () => {
             },
             {
               title: "Security Monitoring & Threat Detection using Wazuh SIEM",
-              tech:"Wazuh SIEM",
-              url:"projects/WazuhLab_RafaelAngeloChristianto.pdf"
-            },
-            {
-              title:"Vantage Hack The Box Sherlock Writeup",
-              tech:"Wireshark",
-              url:"projects/Vantage HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf"
+              tech: "Wazuh SIEM",
+              url: "projects/WazuhLab_RafaelAngeloChristianto.pdf",
             },
           ].map((proj, i) => (
             <motion.div
@@ -556,6 +521,92 @@ export const HomeScreen: React.FC = () => {
           ))}
         </div>
       </motion.section>
+  
+      {/* Hack The Box Sherlock Writeups Section */}
+      <motion.section
+        id="sherlocks"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="max-w-7xl mx-auto px-8 py-20 mb-20"
+      >
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-4xl md:text-5xl font-light text-slate-800 font-Inter mb-12 text-center tracking-tight"
+        >
+          Hack The Box Sherlock Writeups
+        </motion.h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {[
+            {
+              title: "Vantage",
+              difficulty: "Very Easy",
+              tools: ["Wireshark"],
+              url: "/projects/Vantage HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
+            },
+            // Add more writeups here
+          ].map((sherlock, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 * i }}
+              whileHover={{ scale: 1.03 }}
+              className="bg-white/80 backdrop-blur-sm shadow-xl rounded-3xl border border-slate-100 p-8 flex flex-col justify-between hover:shadow-2xl transition-all duration-300"
+            >
+              <div>
+                <h3 className="font-Inter font-medium text-slate-800 text-xl mb-3">
+                  {sherlock.title}
+                </h3>
+
+                <div className="mb-4">
+                  <span
+                    className={`px-3 py-1 rounded-full text-sm font-medium ${
+                      sherlock.difficulty === "Easy"
+                        ? "bg-green-100 text-green-700"
+                        : sherlock.difficulty === "Medium"
+                          ? "bg-yellow-100 text-yellow-700"
+                          : "bg-red-100 text-red-700"
+                    }`}
+                  >
+                    {sherlock.difficulty}
+                  </span>
+                </div>
+
+                <p className="text-slate-600 font-Inter font-light mb-2">
+                  <span className="font-medium text-slate-700">Tools:</span>{" "}
+                  {sherlock.category}
+                </p>
+
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {sherlock.tools.map((tool, idx) => (
+                    <span
+                      key={idx}
+                      className="px-3 py-1 text-xs bg-slate-100 rounded-full text-slate-700"
+                    >
+                      {tool}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <a target="_blank" rel="noopener noreferrer" href={sherlock.url}>
+                <button className="w-full px-6 py-3 bg-slate-800 text-white rounded-xl hover:bg-slate-900 transition-all duration-300 font-Inter font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                  Read Writeup
+                </button>
+              </a>
+            </motion.div>
+          ))}
+        </div>
+
+      </motion.section>
+
 
       {/* Contact Section */}
       <motion.section
@@ -642,7 +693,6 @@ export const HomeScreen: React.FC = () => {
           </div>
         </div>
       </motion.section>
-
       <Footer />
     </div>
   );
