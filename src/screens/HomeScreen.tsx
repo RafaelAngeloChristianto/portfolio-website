@@ -126,8 +126,10 @@ export const HomeScreen: React.FC = () => {
           >
             My name is Rafael Angelo Christianto, currently pursuing a double
             degree in Computer Science at BINUS International University
-            situated in Jakarta, Indonesia. I am currently doing an Internship Program at WOM Finance for my 6th semester. I am passionate about diving deeper into Security Analysis and Engineering. Moreover, I am a
-            hardworking and disciplined person, achieving optimal results both
+            situated in Jakarta, Indonesia. I am currently doing an Internship
+            Program at WOM Finance for my 6th semester. I am passionate about
+            diving deeper into Security Analysis and Engineering. Moreover, I am
+            a hardworking and disciplined person, achieving optimal results both
             individually and in groups.
           </motion.p>
         </div>
@@ -530,7 +532,7 @@ export const HomeScreen: React.FC = () => {
           ))}
         </div>
       </motion.section>
-  
+
       {/* Hack The Box Sherlock Writeups Section */}
       <motion.section
         id="sherlocks"
@@ -557,6 +559,12 @@ export const HomeScreen: React.FC = () => {
               difficulty: "Very Easy",
               tools: ["Wireshark"],
               url: "/projects/Vantage HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
+            },
+            {
+              title: "Telly",
+              difficulty: "Very Easy",
+              tools: ["Wireshark"],
+              url: "/projects/Telly HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
             },
             // Add more writeups here
           ].map((sherlock, i) => (
@@ -588,8 +596,6 @@ export const HomeScreen: React.FC = () => {
                   </span>
                 </div>
 
-
-
                 <div className="flex flex-wrap gap-2 mb-6">
                   {sherlock.tools.map((tool, idx) => (
                     <span
@@ -610,9 +616,7 @@ export const HomeScreen: React.FC = () => {
             </motion.div>
           ))}
         </div>
-
       </motion.section>
-
 
       {/* Contact Section */}
       <motion.section
