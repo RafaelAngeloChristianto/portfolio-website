@@ -442,46 +442,55 @@ export const HomeScreen: React.FC = () => {
               title: "Dynamic Malware Analysis - njRAT 0.6.4",
               tech: "FLARE VM",
               url: "/projects/DynamicMalwareAnalysis_RafaelAngeloChristianto.pdf",
+              web: "",
             },
             {
               title: "File Type Scanner with Magic Numbers",
               tech: "Python",
               url: "/projects/FileTypeScanner_RafaelAngeloChristianto.pdf",
+              web: "",
             },
             {
               title: "Vulnerable Machine",
               tech: "Ubuntu Server",
               url: "projects/TaskRunner_RafaelAngeloChristianto.pdf",
+              web: "",
             },
             {
               title: "DEFCON CTF Packet Capture Analysis",
               tech: "Wireshark, Zeek, tshark, NetworkMiner",
               url: "/projects/DEFCONCTF_PacketCaptureAnalysis_RafaelAngeloChristianto.pdf",
+              web: "",
             },
             {
               title: "Windows Host Intrusion Detection System (HIDS)",
               tech: "Python",
               url: "/projects/HIDS_RafaelAngeloChristianto.pdf",
+              web: "",
             },
             {
               title: "Implementing Firewall for Portfolio Website",
               tech: "Cloudflare",
               url: "projects/PortfolioFirewall_RafaelAngeloChristianto.pdf",
+              web: "",
             },
             {
               title: "Behavior Based Malware Detector",
               tech: "Python",
               url: "/projects/BehaviorBasedMalwareDetector_RafaelAngeloChristianto.pdf",
+              web: "",
             },
             {
               title: "Nmap Packet Capture Lab",
               tech: "Kali Linux and Ubuntu Desktop",
               url: "/projects/NmapPacketCaptureLab_RafaelAngeloChristianto.pdf",
+              web: "",
             },
             {
               title: "Security Monitoring & Threat Detection using Wazuh SIEM",
               tech: "Wazuh SIEM",
               url: "projects/WazuhLab_RafaelAngeloChristianto.pdf",
+              web: "",
             },
           ].map((proj, i) => (
             <motion.div
@@ -579,10 +588,7 @@ export const HomeScreen: React.FC = () => {
                   </span>
                 </div>
 
-                <p className="text-slate-600 font-Inter font-light mb-2">
-                  <span className="font-medium text-slate-700">Tools:</span>{" "}
-                  {sherlock.category}
-                </p>
+
 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {sherlock.tools.map((tool, idx) => (
