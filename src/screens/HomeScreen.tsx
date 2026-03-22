@@ -566,6 +566,13 @@ export const HomeScreen: React.FC = () => {
               tools: ["Wireshark"],
               url: "/projects/Telly HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
             },
+            {
+              title:"MongoBleed",
+              difficulty:"Very Easy",
+              tools:["Directory Enumerating"],
+              url: "/projects/MongoBleed HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
+
+            },
             // Add more writeups here
           ].map((sherlock, i) => (
             <motion.div
