@@ -586,31 +586,9 @@ export const HomeScreen: React.FC = () => {
                   {sherlock.title}
                 </h3>
 
-                <div className="mb-4">
-                  <span
-                    className={`px-3 py-1 rounded-full text-sm font-medium ${
-                      sherlock.difficulty === "Easy"
-                        ? "bg-green-100 text-green-700"
-                        : sherlock.difficulty === "Medium"
-                          ? "bg-yellow-100 text-yellow-700"
-                          : "bg-red-100 text-red-700"
-                    }`}
-                  >
-                    {sherlock.difficulty}
-                  </span>
-                </div>
+               
 
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {sherlock.tools.map((tool, idx) => (
-                    <span
-                      key={idx}
-                      className="px-3 py-1 text-xs bg-slate-100 rounded-full text-slate-700"
-                    >
-                      {tool}
-                    </span>
-                  ))}
-                </div>
-              </div>
+          
 
               <a target="_blank" rel="noopener noreferrer" href={sherlock.url}>
                 <button className="w-full px-6 py-3 bg-slate-800 text-white rounded-xl hover:bg-slate-900 transition-all duration-300 font-Inter font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-1">
