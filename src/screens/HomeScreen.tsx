@@ -585,10 +585,7 @@ export const HomeScreen: React.FC = () => {
                 <h3 className="font-Inter font-medium text-slate-800 text-xl mb-3">
                   {sherlock.title}
                 </h3>
-
-               
-
-          
+              </div>
 
               <a target="_blank" rel="noopener noreferrer" href={sherlock.url}>
                 <button className="w-full px-6 py-3 bg-slate-800 text-white rounded-xl hover:bg-slate-900 transition-all duration-300 font-Inter font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-1">
