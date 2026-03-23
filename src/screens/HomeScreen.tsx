@@ -556,22 +556,19 @@ export const HomeScreen: React.FC = () => {
           {[
             {
               title: "Vantage",
-              difficulty: "Very Easy",
-              tools: ["Wireshark"],
               url: "/projects/Vantage HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
             },
             {
               title: "Telly",
-              difficulty: "Very Easy",
-              tools: ["Wireshark"],
               url: "/projects/Telly HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
             },
             {
-              title:"MongoBleed",
-              difficulty:"Very Easy",
-              tools:["Directory Enumerating"],
+              title: "MongoBleed",
               url: "/projects/MongoBleed HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
-
+            },
+            {
+              title: "DreamJob-2",
+              url: "/projects/RomCom HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
             },
             // Add more writeups here
           ].map((sherlock, i) => (
