@@ -2,6 +2,8 @@
 @import "tailwindcss";
 
 @theme {
+  --color-brand: #020257;
+  --color-brand-light: #0a0a8a;
   --font-Jomolhari: "Jomolhari", sans-serif;
   --font-Hammersmith-One: "Hammersmith One", sans-serif;
   --font-Halant: "Halant", sans-serif;

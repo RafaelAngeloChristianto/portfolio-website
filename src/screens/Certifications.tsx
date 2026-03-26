@@ -60,12 +60,12 @@ export const Certifications: React.FC = () => {
       <NavBar />
 
       {/* Hero header */}
-      <div className="w-full bg-slate-900 pt-28 pb-14 px-8 text-center relative overflow-hidden">
+      <div className="w-full bg-brand pt-28 pb-14 px-8 text-center relative overflow-hidden">
         {/* Decorative circles */}
-        <div className="absolute -top-10 -left-10 w-48 h-48 rounded-full bg-slate-700/30 blur-3xl" />
-        <div className="absolute -bottom-10 -right-10 w-64 h-64 rounded-full bg-slate-600/20 blur-3xl" />
+        <div className="absolute -top-10 -left-10 w-48 h-48 rounded-full bg-brand-light/30 blur-3xl" />
+        <div className="absolute -bottom-10 -right-10 w-64 h-64 rounded-full bg-brand-light/20 blur-3xl" />
         <div className="relative z-10">
-          <span className="inline-flex items-center gap-2 bg-slate-800 border border-slate-700 text-slate-300 text-xs font-Inter font-medium px-4 py-1.5 rounded-full mb-4 tracking-widest uppercase">
+          <span className="inline-flex items-center gap-2 bg-brand-light/40 border border-brand-light/60 text-slate-300 text-xs font-Inter font-medium px-4 py-1.5 rounded-full mb-4 tracking-widest uppercase">
             <HiOutlineBadgeCheck className="text-base" />
             {certificates.length} Certificates Earned
           </span>
@@ -85,7 +85,7 @@ export const Certifications: React.FC = () => {
               whileHover={{ y: -4 }}
               onClick={() => setSelectedImage(cert.file)}
             >
-              <div className="h-1 w-full bg-gradient-to-r from-slate-400 via-slate-600 to-slate-400" />
+              <div className="h-1 w-full bg-gradient-to-r from-brand via-brand-light to-brand" />
               <div className="relative overflow-hidden">
                 <img
                   src={`/certificates/${cert.file}`}

@@ -29,21 +29,21 @@ export const NavBar: React.FC = () => {
   const linkClass = (path: string) =>
     `font-Inter text-base md:text-lg relative transition-all duration-300 font-light after:absolute after:bottom-[-2px] after:left-0 after:h-[2px] after:rounded-full after:transition-all after:duration-300 ${
       activePath === path
-        ? "text-slate-900 font-medium after:w-full after:bg-slate-800"
-        : "text-slate-500 hover:text-slate-900 after:w-0 after:bg-slate-800 hover:after:w-full"
+        ? "text-slate-900 font-medium after:w-full after:bg-brand"
+        : "text-slate-500 hover:text-slate-900 after:w-0 after:bg-brand hover:after:w-full"
     }`;
 
   return (
     <nav className="w-full fixed top-0 z-50 backdrop-blur-md bg-white/95 border-b border-slate-100 shadow-sm transition-all">
       {/* Accent gradient line */}
-      <div className="h-[3px] w-full bg-gradient-to-r from-slate-400 via-slate-600 to-slate-400" />
+      <div className="h-[3px] w-full bg-gradient-to-r from-brand via-brand-light to-brand" />
       <div className="max-w-7xl mx-auto px-8 md:px-12 h-18 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 group">
-          <span className="w-7 h-7 rounded-lg bg-slate-800 flex items-center justify-center group-hover:bg-slate-600 transition-colors duration-300">
+          <span className="w-7 h-7 rounded-lg bg-brand flex items-center justify-center group-hover:bg-brand-light transition-colors duration-300">
             <FaCode className="text-white text-xs" />
           </span>
-          <span className="font-Inter font-light text-xl md:text-2xl text-slate-800 tracking-wide group-hover:text-slate-600 transition-colors duration-300">
+          <span className="font-Inter font-light text-xl md:text-2xl text-brand tracking-wide group-hover:text-brand-light transition-colors duration-300">
             Rafael Angelo Christianto
           </span>
         </Link>

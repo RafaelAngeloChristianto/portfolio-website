@@ -5,9 +5,9 @@ import cali from "../assets/caligraphy_white.png";
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="w-full bg-slate-900 flex flex-col items-center">
+    <footer className="w-full bg-brand flex flex-col items-center">
       {/* Gradient top border */}
-      <div className="h-[3px] w-full bg-gradient-to-r from-slate-700 via-slate-400 to-slate-700" />
+      <div className="h-[3px] w-full bg-gradient-to-r from-brand-light via-brand to-brand-light" />
 
       <div className="w-full max-w-6xl px-8 pt-14 pb-8">
         {/* Top section */}
@@ -24,7 +24,7 @@ export const Footer: React.FC = () => {
                 href="https://github.com/RafaelAngeloChristianto"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-slate-800 hover:bg-slate-600 flex items-center justify-center transition-colors duration-300"
+                className="w-9 h-9 rounded-lg bg-brand/60 hover:bg-brand-light flex items-center justify-center transition-colors duration-300"
               >
                 <SiGithub className="text-slate-300 text-base" />
               </a>
@@ -32,13 +32,13 @@ export const Footer: React.FC = () => {
                 href="https://www.linkedin.com/in/rafaaelangelo/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-slate-800 hover:bg-blue-700 flex items-center justify-center transition-colors duration-300"
+                className="w-9 h-9 rounded-lg bg-brand/60 hover:bg-blue-700 flex items-center justify-center transition-colors duration-300"
               >
                 <SiLinkedin className="text-slate-300 text-base" />
               </a>
               <a
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=rafaaelangelo@gmail.com"
-                className="w-9 h-9 rounded-lg bg-slate-800 hover:bg-red-700 flex items-center justify-center transition-colors duration-300"
+                className="w-9 h-9 rounded-lg bg-brand/60 hover:bg-red-700 flex items-center justify-center transition-colors duration-300"
               >
                 <SiGmail className="text-slate-300 text-base" />
               </a>
@@ -46,7 +46,7 @@ export const Footer: React.FC = () => {
                 href="https://wa.me/6281319727350"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-slate-800 hover:bg-green-700 flex items-center justify-center transition-colors duration-300"
+                className="w-9 h-9 rounded-lg bg-brand/60 hover:bg-green-700 flex items-center justify-center transition-colors duration-300"
               >
                 <SiWhatsapp className="text-slate-300 text-base" />
               </a>
@@ -83,7 +83,7 @@ export const Footer: React.FC = () => {
             <div className="flex flex-col space-y-3">
               <a
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=rafaaelangelo@gmail.com"
-                className="group flex items-center space-x-3 bg-slate-800 hover:bg-white text-slate-300 hover:text-slate-900 px-5 py-2.5 rounded-xl transition-all duration-300 border border-slate-700 hover:border-transparent hover:shadow-lg"
+                className="group flex items-center space-x-3 bg-brand/60 hover:bg-white text-slate-300 hover:text-slate-900 px-5 py-2.5 rounded-xl transition-all duration-300 border border-brand-light hover:border-transparent hover:shadow-lg"
               >
                 <SiGmail className="text-base group-hover:scale-110 transition-transform duration-300" />
                 <span className="font-Inter font-medium text-sm">Email Me</span>
@@ -102,7 +102,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Divider */}
-        <hr className="border-slate-800 mb-6" />
+        <hr className="border-brand-light mb-6" />
 
         {/* Footer Bottom */}
         <p className="text-center text-slate-500 text-xs font-Inter font-light tracking-widest uppercase">

@@ -37,7 +37,7 @@ export const HomeScreen: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-5xl md:text-6xl lg:text-7xl font-light text-slate-800 font-Inter mb-4 tracking-tight leading-tight"
+            className="text-5xl md:text-6xl lg:text-7xl font-light text-brand font-Inter mb-4 tracking-tight leading-tight"
           >
             Rafael Angelo
             <span className="block font-extralight text-slate-600">
@@ -66,7 +66,7 @@ export const HomeScreen: React.FC = () => {
             className="flex flex-col sm:flex-row sm:gap-4 gap-4 justify-center md:justify-start pt-8"
           >
             <a target="_blank" href={cv} download="cv">
-              <button className="group px-8 py-4 bg-slate-800 text-white rounded-xl font-Inter font-medium shadow-lg hover:shadow-2xl hover:bg-slate-900 transition-all duration-300 transform hover:-translate-y-1 cursor-pointer">
+              <button className="group px-8 py-4 bg-brand text-white rounded-xl font-Inter font-medium shadow-lg hover:shadow-2xl hover:bg-brand-light transition-all duration-300 transform hover:-translate-y-1 cursor-pointer">
                 <span className="group-hover:tracking-wide transition-all duration-300">
                   Download CV
                 </span>
@@ -113,7 +113,7 @@ export const HomeScreen: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-4xl md:text-5xl font-light text-slate-800 font-Inter mb-8 text-center tracking-tight"
+            className="text-4xl md:text-5xl font-light text-brand font-Inter mb-8 text-center tracking-tight"
           >
             About Me
           </motion.h2>
@@ -147,7 +147,7 @@ export const HomeScreen: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-3xl md:text-4xl font-light text-slate-800 font-Inter mb-8 text-center tracking-tight"
+            className="text-3xl md:text-4xl font-light text-brand font-Inter mb-8 text-center tracking-tight"
           >
             Skills & Interests
           </motion.h2>
@@ -165,7 +165,7 @@ export const HomeScreen: React.FC = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 * i }}
-                className="px-6 py-3 bg-slate-800 text-white rounded-2xl text-sm md:text-base font-Inter font-medium shadow-lg hover:shadow-xl hover:scale-105 hover:bg-slate-900 transition-all duration-300 cursor-default"
+                className="px-6 py-3 bg-brand text-white rounded-2xl text-sm md:text-base font-Inter font-medium shadow-lg hover:shadow-xl hover:scale-105 hover:bg-brand-light transition-all duration-300 cursor-default"
               >
                 {skill}
               </motion.span>
@@ -189,7 +189,7 @@ export const HomeScreen: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="bg-white/80 backdrop-blur-sm shadow-xl rounded-3xl border border-slate-100 p-10 flex-1"
         >
-          <h2 className="text-3xl font-light text-slate-800 font-Inter mb-8 tracking-tight">
+          <h2 className="text-3xl font-light text-brand font-Inter mb-8 tracking-tight">
             Education
           </h2>
           <div className="space-y-8">
@@ -221,7 +221,7 @@ export const HomeScreen: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 * i }}
-                className="border-l-4 border-slate-200 pl-6 hover:border-slate-400 transition-colors duration-300"
+                className="border-l-4 border-slate-200 pl-6 hover:border-brand transition-colors duration-300"
               >
                 <h3 className="font-Inter font-medium text-slate-800 text-lg">
                   {edu.school}
@@ -245,7 +245,7 @@ export const HomeScreen: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="bg-white/80 backdrop-blur-sm shadow-xl rounded-3xl border border-slate-100 p-10 flex-1"
         >
-          <h2 className="text-3xl font-light text-slate-800 font-Inter mb-8 tracking-tight">
+          <h2 className="text-3xl font-light text-brand font-Inter mb-8 tracking-tight">
             Achievements
           </h2>
           <div className="space-y-8">
@@ -254,7 +254,7 @@ export const HomeScreen: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="border-l-4 border-slate-200 pl-6 hover:border-slate-400 transition-colors duration-300"
+              className="border-l-4 border-slate-200 pl-6 hover:border-brand transition-colors duration-300"
             >
               <h3 className="font-Inter font-medium text-slate-800 text-lg">
                 Entrepreneurship Finalist
@@ -287,10 +287,10 @@ export const HomeScreen: React.FC = () => {
             className="bg-white/80 backdrop-blur-sm shadow-xl rounded-3xl border border-slate-100 p-10"
           >
             <div className="flex items-center gap-4 mb-10">
-              <div className="p-3 bg-slate-800 rounded-xl">
+              <div className="p-3 bg-brand rounded-xl">
                 <FaBriefcase className="text-2xl text-white" />
               </div>
-              <h2 className="text-3xl md:text-4xl font-light text-slate-800 font-Inter tracking-tight">
+              <h2 className="text-3xl md:text-4xl font-light text-brand font-Inter tracking-tight">
                 Work Experience
               </h2>
             </div>
@@ -331,7 +331,7 @@ export const HomeScreen: React.FC = () => {
                   transition={{ duration: 0.6, delay: 0.1 * i }}
                   className="flex items-start gap-6 p-6 bg-gradient-to-r from-white to-slate-50 rounded-2xl border border-slate-100 hover:border-slate-200 hover:shadow-lg transition-all duration-300 group"
                 >
-                  <div className="flex-shrink-0 w-3 h-full bg-gradient-to-b from-slate-800 to-slate-600 rounded-full group-hover:from-blue-600 group-hover:to-blue-400 transition-all duration-300"></div>
+                  <div className="flex-shrink-0 w-3 h-full bg-gradient-to-b from-brand to-brand-light rounded-full group-hover:from-blue-600 group-hover:to-blue-400 transition-all duration-300"></div>
                   <div className="flex-1">
                     <h3 className="font-Inter font-semibold text-slate-800 text-lg md:text-xl mb-1">
                       {exp.role}
@@ -357,10 +357,10 @@ export const HomeScreen: React.FC = () => {
             className="bg-white/80 backdrop-blur-sm shadow-xl rounded-3xl border border-slate-100 p-10"
           >
             <div className="flex items-center gap-4 mb-10">
-              <div className="p-3 bg-slate-800 rounded-xl">
+              <div className="p-3 bg-brand rounded-xl">
                 <FaUserFriends className="text-2xl text-white" />
               </div>
-              <h2 className="text-3xl md:text-4xl font-light text-slate-800 font-Inter tracking-tight">
+              <h2 className="text-3xl md:text-4xl font-light text-brand font-Inter tracking-tight">
                 Organizational Experience
               </h2>
             </div>
@@ -401,7 +401,7 @@ export const HomeScreen: React.FC = () => {
                   transition={{ duration: 0.6, delay: 0.1 * i }}
                   className="flex items-start gap-6 p-6 bg-gradient-to-r from-white to-slate-50 rounded-2xl border border-slate-100 hover:border-slate-200 hover:shadow-lg transition-all duration-300 group"
                 >
-                  <div className="flex-shrink-0 w-3 h-full bg-gradient-to-b from-slate-800 to-slate-600 rounded-full group-hover:from-green-600 group-hover:to-green-400 transition-all duration-300"></div>
+                  <div className="flex-shrink-0 w-3 h-full bg-gradient-to-b from-brand to-brand-light rounded-full group-hover:from-green-600 group-hover:to-green-400 transition-all duration-300"></div>
                   <div className="flex-1">
                     <h3 className="font-Inter font-semibold text-slate-800 text-lg md:text-xl mb-1">
                       {exp.role}
@@ -433,7 +433,7 @@ export const HomeScreen: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-4xl md:text-5xl font-light text-slate-800 font-Inter mb-12 text-center tracking-tight"
+          className="text-4xl md:text-5xl font-light text-brand font-Inter mb-12 text-center tracking-tight"
         >
           Projects
         </motion.h2>
@@ -505,7 +505,7 @@ export const HomeScreen: React.FC = () => {
               className="bg-white/80 backdrop-blur-sm shadow-xl rounded-3xl border border-slate-100 p-8 flex flex-col justify-between hover:shadow-2xl transition-all duration-300"
             >
               <div>
-                <h3 className="font-Inter font-medium text-slate-800 text-xl mb-3">
+                <h3 className="font-Inter font-medium text-brand text-xl mb-3">
                   {proj.title}
                 </h3>
                 <p className="font-Inter text-slate-600 font-light mb-6">
@@ -515,7 +515,7 @@ export const HomeScreen: React.FC = () => {
 
               <div className="flex flex-row gap-3">
                 <a target="_blank" rel="noopener noreferrer" href={proj.url}>
-                  <button className="px-6 py-3 bg-slate-800 text-white rounded-xl hover:bg-slate-900 transition-all duration-300 font-Inter font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-1 cursor-pointer">
+                  <button className="px-6 py-3 bg-brand text-white rounded-xl hover:bg-brand-light transition-all duration-300 font-Inter font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-1 cursor-pointer">
                     Visit Project
                   </button>
                 </a>
@@ -547,7 +547,7 @@ export const HomeScreen: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-4xl md:text-5xl font-light text-slate-800 font-Inter mb-12 text-center tracking-tight"
+          className="text-4xl md:text-5xl font-light text-brand font-Inter mb-12 text-center tracking-tight"
         >
           Hack The Box Sherlock Writeups
         </motion.h2>
@@ -585,9 +585,9 @@ export const HomeScreen: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 * i }}
               whileHover={{ y: -4 }}
-              className="group bg-white/80 backdrop-blur-sm shadow-xl rounded-3xl border border-slate-100 p-8 flex flex-col gap-4 hover:shadow-2xl hover:border-slate-200 transition-all duration-300 cursor-pointer"
+              className="group bg-white/80 backdrop-blur-sm shadow-xl rounded-3xl border border-slate-100 p-8 flex flex-col gap-4 hover:shadow-2xl hover:border-brand/30 transition-all duration-300 cursor-pointer"
             >
-              <h3 className="font-Inter font-medium text-slate-800 text-xl group-hover:text-slate-900 transition-colors duration-300">
+              <h3 className="font-Inter font-medium text-brand text-xl group-hover:text-brand-light transition-colors duration-300">
                 {sherlock.title}
               </h3>
               <span className="text-xs font-Inter font-medium px-2.5 py-1 rounded-full border text-slate-500 border-slate-200 bg-slate-50 w-fit">
@@ -616,7 +616,7 @@ export const HomeScreen: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-4xl md:text-5xl font-light text-slate-800 font-Inter mb-8 text-center tracking-tight"
+            className="text-4xl md:text-5xl font-light text-brand font-Inter mb-8 text-center tracking-tight"
           >
             Contact Me
           </motion.h2>
@@ -634,7 +634,7 @@ export const HomeScreen: React.FC = () => {
                 rel="noopener noreferrer"
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=rafaaelangelo@gmail.com"
               >
-                <button className="px-8 py-4 bg-slate-800 text-white rounded-xl hover:bg-slate-900 transition-all duration-300 font-Inter font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-1 cursor-pointer">
+                <button className="px-8 py-4 bg-brand text-white rounded-xl hover:bg-brand-light transition-all duration-300 font-Inter font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-1 cursor-pointer">
                   Contact Me Here!
                 </button>
               </a>
