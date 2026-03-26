@@ -66,14 +66,14 @@ export const HomeScreen: React.FC = () => {
             className="flex flex-col sm:flex-row sm:gap-4 gap-4 justify-center md:justify-start pt-8"
           >
             <a target="_blank" href={cv} download="cv">
-              <button className="group px-8 py-4 bg-slate-800 text-white rounded-xl font-Inter font-medium shadow-lg hover:shadow-2xl hover:bg-slate-900 transition-all duration-300 transform hover:-translate-y-1">
+              <button className="group px-8 py-4 bg-slate-800 text-white rounded-xl font-Inter font-medium shadow-lg hover:shadow-2xl hover:bg-slate-900 transition-all duration-300 transform hover:-translate-y-1 cursor-pointer">
                 <span className="group-hover:tracking-wide transition-all duration-300">
                   Download CV
                 </span>
               </button>
             </a>
             <Link to="/certifications">
-              <button className="group px-8 py-4 bg-white text-slate-800 border-2 border-slate-200 rounded-xl font-Inter font-medium shadow-lg hover:shadow-2xl hover:border-slate-300 hover:bg-slate-50 transition-all duration-300 transform hover:-translate-y-1">
+              <button className="group px-8 py-4 bg-white text-slate-800 border-2 border-slate-200 rounded-xl font-Inter font-medium shadow-lg hover:shadow-2xl hover:border-slate-300 hover:bg-slate-50 transition-all duration-300 transform hover:-translate-y-1 cursor-pointer">
                 <span className="group-hover:tracking-wide transition-all duration-300">
                   Certifications
                 </span>
@@ -515,14 +515,14 @@ export const HomeScreen: React.FC = () => {
 
               <div className="flex flex-row gap-3">
                 <a target="_blank" rel="noopener noreferrer" href={proj.url}>
-                  <button className="px-6 py-3 bg-slate-800 text-white rounded-xl hover:bg-slate-900 transition-all duration-300 font-Inter font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                  <button className="px-6 py-3 bg-slate-800 text-white rounded-xl hover:bg-slate-900 transition-all duration-300 font-Inter font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-1 cursor-pointer">
                     Visit Project
                   </button>
                 </a>
 
                 {proj.web && (
                   <a target="_blank" rel="noopener noreferrer" href={proj.web}>
-                    <button className="px-6 py-3 bg-white text-slate-800 border-2 border-slate-200 rounded-xl hover:border-slate-300 hover:bg-slate-50 transition-all duration-300 font-Inter font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                    <button className="px-6 py-3 bg-white text-slate-800 border-2 border-slate-200 rounded-xl hover:border-slate-300 hover:bg-slate-50 transition-all duration-300 font-Inter font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-1 cursor-pointer">
                       Visit Website
                     </button>
                   </a>
@@ -552,47 +552,51 @@ export const HomeScreen: React.FC = () => {
           Hack The Box Sherlock Writeups
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
             {
               title: "Vantage",
+              difficulty: "Very Easy",
               url: "/projects/Vantage HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
             },
             {
               title: "Telly",
+              difficulty: "Very Easy",
               url: "/projects/Telly HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
             },
             {
               title: "MongoBleed",
+              difficulty: "Very Easy",
               url: "/projects/MongoBleed HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
             },
             {
               title: "DreamJob-2",
+              difficulty: "Very Easy",
               url: "/projects/RomCom HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
             },
-            // Add more writeups here
           ].map((sherlock, i) => (
-            <motion.div
+            <motion.a
               key={i}
+              href={sherlock.url}
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 * i }}
-              whileHover={{ scale: 1.03 }}
-              className="bg-white/80 backdrop-blur-sm shadow-xl rounded-3xl border border-slate-100 p-8 flex flex-col justify-between hover:shadow-2xl transition-all duration-300"
+              whileHover={{ y: -4 }}
+              className="group bg-white/80 backdrop-blur-sm shadow-xl rounded-3xl border border-slate-100 p-8 flex flex-col gap-4 hover:shadow-2xl hover:border-slate-200 transition-all duration-300 cursor-pointer"
             >
-              <div>
-                <h3 className="font-Inter font-medium text-slate-800 text-xl mb-3">
-                  {sherlock.title}
-                </h3>
-              </div>
-
-              <a target="_blank" rel="noopener noreferrer" href={sherlock.url}>
-                <button className="w-full px-6 py-3 bg-slate-800 text-white rounded-xl hover:bg-slate-900 transition-all duration-300 font-Inter font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                  Read Writeup
-                </button>
-              </a>
-            </motion.div>
+              <h3 className="font-Inter font-medium text-slate-800 text-xl group-hover:text-slate-900 transition-colors duration-300">
+                {sherlock.title}
+              </h3>
+              <span className="text-xs font-Inter font-medium px-2.5 py-1 rounded-full border text-slate-500 border-slate-200 bg-slate-50 w-fit">
+                {sherlock.difficulty}
+              </span>
+              <span className="mt-auto text-sm font-Inter text-slate-400 group-hover:text-slate-600 transition-colors duration-300">
+                Read Writeup →
+              </span>
+            </motion.a>
           ))}
         </div>
       </motion.section>
@@ -630,7 +634,7 @@ export const HomeScreen: React.FC = () => {
                 rel="noopener noreferrer"
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=rafaaelangelo@gmail.com"
               >
-                <button className="px-8 py-4 bg-slate-800 text-white rounded-xl hover:bg-slate-900 transition-all duration-300 font-Inter font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                <button className="px-8 py-4 bg-slate-800 text-white rounded-xl hover:bg-slate-900 transition-all duration-300 font-Inter font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-1 cursor-pointer">
                   Contact Me Here!
                 </button>
               </a>
