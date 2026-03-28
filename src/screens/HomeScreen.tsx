@@ -494,6 +494,11 @@ export const HomeScreen: React.FC = () => {
               url: "projects/WazuhLab_RafaelAngeloChristianto.pdf",
               web: "",
             },
+            {
+              title:"Static Malware Analysis - XWorm From Email Attachment",
+              tech:"Wireshark",
+              url:"projects/XWormFromEmailAttachment_RafaelAngeloChristianto.pdf",
+            }
           ].map((proj, i) => (
             <motion.div
               key={i}
