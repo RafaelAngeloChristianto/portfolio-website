@@ -579,6 +579,11 @@ export const HomeScreen: React.FC = () => {
               difficulty: "Very Easy",
               url: "/projects/RomCom HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
             },
+            {
+              title:"Unit42",
+              difficulty:"Very Easy",
+              url:"/projects/Unit42 HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
+            },
           ].map((sherlock, i) => (
             <motion.a
               key={i}
