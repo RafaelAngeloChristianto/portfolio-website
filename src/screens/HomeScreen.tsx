@@ -20,6 +20,7 @@ import {
 
 export const HomeScreen: React.FC = () => {
   const [imgLoaded, setImgLoaded] = React.useState(false);
+  const [sherlockFilter, setSherlockFilter] = React.useState("All");
 
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-stone-50 scroll-smooth">
@@ -557,34 +558,74 @@ export const HomeScreen: React.FC = () => {
           Hack The Box Sherlock Writeups
         </motion.h2>
 
+        {/* Category Filter */}
+        <div className="flex flex-wrap justify-center gap-3 mb-10">
+          {["All", "DFIR", "SOC", "Threat Intelligence"].map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setSherlockFilter(cat)}
+              className={`px-5 py-2 rounded-full text-sm font-Inter font-medium border transition-all duration-300 cursor-pointer ${
+                sherlockFilter === cat
+                  ? cat === "SOC"
+                    ? "bg-blue-600 text-white border-blue-600"
+                    : cat === "Threat Intelligence"
+                    ? "bg-purple-600 text-white border-purple-600"
+                    : cat === "DFIR"
+                    ? "bg-emerald-600 text-white border-emerald-600"
+                    : "bg-brand text-white border-brand"
+                  : "bg-white text-slate-600 border-slate-200 hover:border-slate-300 hover:bg-slate-50"
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
             {
               title: "Vantage",
               difficulty: "Very Easy",
+              category: "DFIR",
               url: "/projects/Vantage HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
             },
             {
               title: "Telly",
               difficulty: "Very Easy",
+              category: "SOC",
               url: "/projects/Telly HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
             },
             {
               title: "MongoBleed",
               difficulty: "Very Easy",
+              category: "DFIR",
               url: "/projects/MongoBleed HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
             },
             {
               title: "DreamJob-2",
               difficulty: "Very Easy",
+              category: "Threat Intelligence",
               url: "/projects/RomCom HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
             },
             {
-              title:"Unit42",
-              difficulty:"Very Easy",
-              url:"/projects/Unit42 HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
+              title: "RomCom",
+              difficulty: "Very Easy",
+              category:"DFIR",
+              url:"/projects/RomCom HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
             },
-          ].map((sherlock, i) => (
+            {
+              title: "Unit42",
+              difficulty: "Very Easy",
+              category: "DFIR",
+              url: "/projects/Unit42 HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
+            },
+            {
+              title: "Noxious",
+              difficulty: "Very Easy",
+              category: "SOC",
+              url: "/projects/Noxious HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
+            }
+          ].filter((s) => sherlockFilter === "All" || s.category === sherlockFilter).map((sherlock, i) => (
             <motion.a
               key={i}
               href={sherlock.url}
@@ -600,9 +641,20 @@ export const HomeScreen: React.FC = () => {
               <h3 className="font-Inter font-medium text-brand text-xl group-hover:text-brand-light transition-colors duration-300">
                 {sherlock.title}
               </h3>
-              <span className="text-xs font-Inter font-medium px-2.5 py-1 rounded-full border text-slate-500 border-slate-200 bg-slate-50 w-fit">
-                {sherlock.difficulty}
-              </span>
+              <div className="flex flex-wrap gap-2">
+                <span className="text-xs font-Inter font-medium px-2.5 py-1 rounded-full border text-slate-500 border-slate-200 bg-slate-50">
+                  {sherlock.difficulty}
+                </span>
+                <span className={`text-xs font-Inter font-medium px-2.5 py-1 rounded-full border w-fit ${
+                  sherlock.category === "SOC"
+                    ? "text-blue-600 border-blue-200 bg-blue-50"
+                    : sherlock.category === "Threat Intelligence"
+                    ? "text-purple-600 border-purple-200 bg-purple-50"
+                    : "text-emerald-600 border-emerald-200 bg-emerald-50"
+                }`}>
+                  {sherlock.category}
+                </span>
+              </div>
               <span className="mt-auto text-sm font-Inter text-slate-400 group-hover:text-slate-600 transition-colors duration-300">
                 Read Writeup →
               </span>
