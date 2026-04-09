@@ -624,7 +624,13 @@ export const HomeScreen: React.FC = () => {
               difficulty: "Very Easy",
               category: "SOC",
               url: "/projects/Noxious HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
-            }
+            },
+            {
+              title:"Reaper",
+              difficulty:"Very Easy",
+              category:"DFIR",
+              url:"/projects/Reaper HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
+            },
           ].filter((s) => sherlockFilter === "All" || s.category === sherlockFilter).map((sherlock, i) => (
             <motion.a
               key={i}
