@@ -643,6 +643,12 @@ export const HomeScreen: React.FC = () => {
               category:"DFIR",
               url:"/projects/SmartyPants HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
             },
+            {
+              title:"UFO-1",
+              difficulty:"Very Easy",
+              category:"Threat Intelligence",
+              url:"/projects/UFO1 HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
+            }
           ].filter((s) => sherlockFilter === "All" || s.category === sherlockFilter).map((sherlock, i) => (
             <motion.a
               key={i}
