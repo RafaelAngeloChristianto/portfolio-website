@@ -17,6 +17,7 @@ import {
   SiWhatsapp,
   SiGmail,
 } from "react-icons/si";
+import { DiFirefox } from "react-icons/di";
 
 export const HomeScreen: React.FC = () => {
   const [imgLoaded, setImgLoaded] = React.useState(false);
@@ -631,6 +632,12 @@ export const HomeScreen: React.FC = () => {
               category:"DFIR",
               url:"/projects/Reaper HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
             },
+            {
+              title:"DreamJob-1",
+              difficulty:"Very Easy",
+              category:"Threat Intelligence",
+              url:"/projects/DreamJob1 HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
+            }
           ].filter((s) => sherlockFilter === "All" || s.category === sherlockFilter).map((sherlock, i) => (
             <motion.a
               key={i}
