@@ -17,7 +17,6 @@ import {
   SiWhatsapp,
   SiGmail,
 } from "react-icons/si";
-import { DiFirefox } from "react-icons/di";
 
 export const HomeScreen: React.FC = () => {
   const [imgLoaded, setImgLoaded] = React.useState(false);
