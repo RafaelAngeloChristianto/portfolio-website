@@ -654,7 +654,13 @@ export const HomeScreen: React.FC = () => {
               difficulty:"Very Easy",
               category:"DFIR",
               url:"/projects/Smoke&Mirrors HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
-            }
+            },
+            {
+              title:"Operation Blackout 2025: Phantom Check",
+              difficulty:"Very Easy",
+              category:"DFIR",
+              url:"/projects/PhantomCheck HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
+            },
           ].filter((s) => sherlockFilter === "All" || s.category === sherlockFilter).map((sherlock, i) => (
             <motion.a
               key={i}
