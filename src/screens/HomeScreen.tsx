@@ -679,6 +679,12 @@ export const HomeScreen: React.FC = () => {
               category:"DFIR",
               url:"/projects/Campfire2 HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
             },
+            {
+              title:"FortySeven-1",
+              difficulty:"Very Easy",
+              category:"Threat Intelligence",
+              url:"/projects/FortySeven1 HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
+            },
           ].filter((s) => sherlockFilter === "All" || s.category === sherlockFilter).map((sherlock, i) => (
             <motion.a
               key={i}
