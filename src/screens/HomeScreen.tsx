@@ -702,7 +702,13 @@ export const HomeScreen: React.FC = () => {
               difficulty:"Easy",
               category:"DFIR",
               url:"projects/LogJammer HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf"
-            }
+            },
+            {
+              title:"Meerkat",
+              difficulty:"Easy",
+              category:"SOC",
+              url:"projects/Meerkat HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf"
+            },
           ].filter((s) => sherlockFilter === "All" || s.category === sherlockFilter).map((sherlock, i) => (
             <motion.a
               key={i}
