@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FaBriefcase, FaUserFriends } from "react-icons/fa";
+import { sherlocks } from "../data/sherlocks";
 
 import { NavBar } from "../components/NavBar";
 import { Footer } from "../components/Footer";
@@ -21,6 +22,7 @@ import {
 export const HomeScreen: React.FC = () => {
   const [imgLoaded, setImgLoaded] = React.useState(false);
   const [sherlockFilter, setSherlockFilter] = React.useState("All");
+  const [difficultyFilter, setDifficultyFilter] = React.useState("All");
 
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-stone-50 scroll-smooth">
@@ -558,158 +560,51 @@ export const HomeScreen: React.FC = () => {
           Hack The Box Sherlock Writeups
         </motion.h2>
 
-        {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-3 mb-10">
-          {["All", "DFIR", "SOC", "Threat Intelligence"].map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setSherlockFilter(cat)}
-              className={`px-5 py-2 rounded-full text-sm font-Inter font-medium border transition-all duration-300 cursor-pointer ${
-                sherlockFilter === cat
-                  ? cat === "SOC"
-                    ? "bg-blue-600 text-white border-blue-600"
-                    : cat === "Threat Intelligence"
-                    ? "bg-purple-600 text-white border-purple-600"
-                    : cat === "DFIR"
-                    ? "bg-emerald-600 text-white border-emerald-600"
-                    : "bg-brand text-white border-brand"
-                  : "bg-white text-slate-600 border-slate-200 hover:border-slate-300 hover:bg-slate-50"
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
+        {/* Filters */}
+        <div className="flex flex-col items-center gap-4 mb-10">
+          <div className="flex flex-wrap justify-center gap-3">
+            {["All", "DFIR", "SOC", "Threat Intelligence"].map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setSherlockFilter(cat)}
+                className={`px-5 py-2 rounded-full text-sm font-Inter font-medium border transition-all duration-300 cursor-pointer ${
+                  sherlockFilter === cat
+                    ? cat === "SOC"
+                      ? "bg-blue-600 text-white border-blue-600"
+                      : cat === "Threat Intelligence"
+                      ? "bg-purple-600 text-white border-purple-600"
+                      : cat === "DFIR"
+                      ? "bg-emerald-600 text-white border-emerald-600"
+                      : "bg-brand text-white border-brand"
+                    : "bg-white text-slate-600 border-slate-200 hover:border-slate-300 hover:bg-slate-50"
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+          <div className="flex flex-wrap justify-center gap-3">
+            {["All", "Very Easy", "Easy"].map((diff) => (
+              <button
+                key={diff}
+                onClick={() => setDifficultyFilter(diff)}
+                className={`px-5 py-2 rounded-full text-sm font-Inter font-medium border transition-all duration-300 cursor-pointer ${
+                  difficultyFilter === diff
+                    ? "bg-slate-700 text-white border-slate-700"
+                    : "bg-white text-slate-600 border-slate-200 hover:border-slate-300 hover:bg-slate-50"
+                }`}
+              >
+                {diff}
+              </button>
+            ))}
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {[
-            {
-              title: "Vantage",
-              difficulty: "Very Easy",
-              category: "DFIR",
-              url: "/projects/Vantage HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
-            },
-            {
-              title: "Telly",
-              difficulty: "Very Easy",
-              category: "SOC",
-              url: "/projects/Telly HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
-            },
-            {
-              title: "MongoBleed",
-              difficulty: "Very Easy",
-              category: "DFIR",
-              url: "/projects/MongoBleed HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
-            },
-            {
-              title: "DreamJob-2",
-              difficulty: "Very Easy",
-              category: "Threat Intelligence",
-              url: "/projects/RomCom HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
-            },
-            {
-              title: "RomCom",
-              difficulty: "Very Easy",
-              category:"DFIR",
-              url:"/projects/RomCom HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
-            },
-            {
-              title: "Unit42",
-              difficulty: "Very Easy",
-              category: "DFIR",
-              url: "/projects/Unit42 HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
-            },
-            {
-              title: "Noxious",
-              difficulty: "Very Easy",
-              category: "SOC",
-              url: "/projects/Noxious HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
-            },
-            {
-              title:"Reaper",
-              difficulty:"Very Easy",
-              category:"DFIR",
-              url:"/projects/Reaper HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
-            },
-            {
-              title:"DreamJob-1",
-              difficulty:"Very Easy",
-              category:"Threat Intelligence",
-              url:"/projects/DreamJob1 HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
-            },
-            {
-              title:"SmartyPants",
-              difficulty:"Very Easy",
-              category:"DFIR",
-              url:"/projects/SmartyPants HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
-            },
-            {
-              title:"UFO-1",
-              difficulty:"Very Easy",
-              category:"Threat Intelligence",
-              url:"/projects/UFO1 HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
-            },
-            {
-              title:"Operation Blackout 2025: Smoke & Mirrors",
-              difficulty:"Very Easy",
-              category:"DFIR",
-              url:"/projects/Smoke&Mirrors HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
-            },
-            {
-              title:"Operation Blackout 2025: Phantom Check",
-              difficulty:"Very Easy",
-              category:"DFIR",
-              url:"/projects/PhantomCheck HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
-            },
-            {
-              title:"BFT",
-              difficulty:"Very Easy",
-              category:"SOC",
-              url:"/projects/BFT HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
-            },
-            {
-              title:"Campfire-1",
-              difficulty:"Very Easy",
-              category:"DFIR",
-              url:"/projects/Campfire1 HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
-            },
-            {
-              title:"Campfire-2",
-              difficulty:"Very Easy",
-              category:"DFIR",
-              url:"/projects/Campfire2 HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
-            },
-            {
-              title:"FortySeven-1",
-              difficulty:"Very Easy",
-              category:"Threat Intelligence",
-              url:"/projects/FortySeven1 HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
-            },
-            {
-              title:"CrownJewel-1",
-              difficulty:"Very Easy",
-              category:"DFIR",
-              url:"/projects/CrownJewel1 HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
-            },
-            {
-              title:"CrownJewel-2",
-              difficulty:"Very Easy",
-              category:"DFIR",
-              url:"/projects/CrownJewel2 HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf"
-            },
-            {
-              title:"LogJammer",
-              difficulty:"Easy",
-              category:"DFIR",
-              url:"projects/LogJammer HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf"
-            },
-            {
-              title:"Meerkat",
-              difficulty:"Easy",
-              category:"SOC",
-              url:"projects/Meerkat HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf"
-            },
-          ].filter((s) => sherlockFilter === "All" || s.category === sherlockFilter).map((sherlock, i) => (
+          {sherlocks
+            .filter((s) => (sherlockFilter === "All" || s.category === sherlockFilter) && (difficultyFilter === "All" || s.difficulty === difficultyFilter))
+            .slice(0, 8)
+            .map((sherlock, i) => (
             <motion.a
               key={i}
               href={sherlock.url}
@@ -744,6 +639,14 @@ export const HomeScreen: React.FC = () => {
               </span>
             </motion.a>
           ))}
+        </div>
+
+        <div className="flex justify-center mt-10">
+          <Link to="/sherlocks">
+            <button className="px-8 py-4 bg-brand text-white rounded-xl hover:bg-brand-light transition-all duration-300 font-Inter font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-1 cursor-pointer">
+              View All Sherlocks →
+            </button>
+          </Link>
         </div>
       </motion.section>
 

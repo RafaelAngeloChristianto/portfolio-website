@@ -52,6 +52,7 @@ export const NavBar: React.FC = () => {
         <div className="hidden md:flex items-center gap-10">
           <Link to="/" className={linkClass("/")}>Home</Link>
           <Link to="/certifications" className={linkClass("/certifications")}>Certifications</Link>
+          <Link to="/sherlocks" className={linkClass("/sherlocks")}>Sherlocks</Link>
           {sections.map((section) => (
             isHome ? (
               <a
@@ -86,6 +87,12 @@ export const NavBar: React.FC = () => {
         <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-slate-100 shadow-lg px-8 py-8 flex flex-col gap-6 animate-slideDown">
           <Link to="/" onClick={() => setIsOpen(false)} className="font-Inter text-lg text-slate-700 hover:text-slate-900 transition-all duration-200 font-light">
             Home
+          </Link>
+          <Link to="/certifications" onClick={() => setIsOpen(false)} className="font-Inter text-lg text-slate-700 hover:text-slate-900 transition-all duration-200 font-light">
+            Certifications
+          </Link>
+          <Link to="/sherlocks" onClick={() => setIsOpen(false)} className="font-Inter text-lg text-slate-700 hover:text-slate-900 transition-all duration-200 font-light">
+            Sherlocks
           </Link>
           {sections.map((section) => (
             isHome ? (
