@@ -138,4 +138,10 @@ export const sherlocks: Sherlock[] = [
     category: "DFIR",
     url: "/projects/Bumblebee HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
   },
+  {
+    title: "Pikaptcha",
+    difficulty: "Easy",
+    category: "DFIR",
+    url: "/projects/Pikaptcha HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
+  },
 ];
