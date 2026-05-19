@@ -144,4 +144,10 @@ export const sherlocks: Sherlock[] = [
     category: "DFIR",
     url: "/projects/Pikaptcha HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
   },
+  {
+    title:"NeuroSync-D",
+    difficulty:"Easy",
+    category:"DFIR",
+    url:"/projects/NeuroSyncD HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf"
+  },
 ];
