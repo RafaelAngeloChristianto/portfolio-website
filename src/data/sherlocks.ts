@@ -145,9 +145,15 @@ export const sherlocks: Sherlock[] = [
     url: "/projects/Pikaptcha HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
   },
   {
-    title:"NeuroSync-D",
-    difficulty:"Easy",
-    category:"DFIR",
-    url:"/projects/NeuroSyncD HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf"
+    title: "NeuroSync-D",
+    difficulty: "Easy",
+    category: "DFIR",
+    url: "/projects/NeuroSyncD HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
+  },
+  {
+    title: "Operation Blackout 2025: Ghost Thread",
+    difficulty: "Easy",
+    category: "DFIR",
+    url: "/projects/GhostThread HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
   },
 ];
