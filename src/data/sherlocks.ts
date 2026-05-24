@@ -156,4 +156,10 @@ export const sherlocks: Sherlock[] = [
     category: "DFIR",
     url: "/projects/GhostThread HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
   },
+  {
+    title:"Holmes 2025 3: The Enduring Echo",
+    difficulty:"Easy",
+    category:"DFIR",
+    url:"/projects/TheEnduringEcho HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf"
+  },
 ];
