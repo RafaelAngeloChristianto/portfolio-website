@@ -168,4 +168,10 @@ export const sherlocks: Sherlock[] = [
     category: "Threat Intelligence",
     url: "/projects/OperationWinterBlackout HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
   },
+  {
+    title: "AoTR4: A Drone In The Snow",
+    difficulty: "Easy",
+    category: "DFIR",
+    url: "/projects/ADroneInTheSnow HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
+  },
 ];
