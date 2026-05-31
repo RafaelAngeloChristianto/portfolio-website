@@ -50,17 +50,25 @@ export const NavBar: React.FC = () => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-10">
-          <Link to="/" className={linkClass("/")}>Home</Link>
-          <Link to="/certifications" className={linkClass("/certifications")}>Certifications</Link>
-          <Link to="/sherlocks" className={linkClass("/sherlocks")}>Sherlocks</Link>
-          {sections.map((section) => (
+          <Link to="/" className={linkClass("/")}>
+            Home
+          </Link>
+          <Link to="/certifications" className={linkClass("/certifications")}>
+            Certifications
+          </Link>
+          <Link to="/sherlocks" className={linkClass("/sherlocks")}>
+            Sherlocks
+          </Link>
+          {sections.map((section) =>
             isHome ? (
               <a
                 key={section}
                 href={`#${section}`}
                 onClick={(e) => {
                   e.preventDefault();
-                  document.querySelector(`#${section}`)?.scrollIntoView({ behavior: "smooth" });
+                  document
+                    .querySelector(`#${section}`)
+                    ?.scrollIntoView({ behavior: "smooth" });
                 }}
                 className={linkClass("")}
               >
@@ -70,14 +78,21 @@ export const NavBar: React.FC = () => {
               <Link key={section} to={`/#${section}`} className={linkClass("")}>
                 {section.charAt(0).toUpperCase() + section.slice(1)}
               </Link>
-            )
-          ))}
+            ),
+          )}
         </div>
 
         {/* Mobile Hamburger */}
         <div className="md:hidden">
-          <button onClick={toggleMenu} className="text-slate-700 hover:text-slate-900 transition-colors duration-200 cursor-pointer">
-            {isOpen ? <FiX className="text-3xl" /> : <FiMenu className="text-3xl" />}
+          <button
+            onClick={toggleMenu}
+            className="text-slate-700 hover:text-slate-900 transition-colors duration-200 cursor-pointer"
+          >
+            {isOpen ? (
+              <FiX className="text-3xl" />
+            ) : (
+              <FiMenu className="text-3xl" />
+            )}
           </button>
         </div>
       </div>
@@ -85,23 +100,37 @@ export const NavBar: React.FC = () => {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-slate-100 shadow-lg px-8 py-8 flex flex-col gap-6 animate-slideDown">
-          <Link to="/" onClick={() => setIsOpen(false)} className="font-Inter text-lg text-slate-700 hover:text-slate-900 transition-all duration-200 font-light">
+          <Link
+            to="/"
+            onClick={() => setIsOpen(false)}
+            className="font-Inter text-lg text-slate-700 hover:text-slate-900 transition-all duration-200 font-light"
+          >
             Home
           </Link>
-          <Link to="/certifications" onClick={() => setIsOpen(false)} className="font-Inter text-lg text-slate-700 hover:text-slate-900 transition-all duration-200 font-light">
+          <Link
+            to="/certifications"
+            onClick={() => setIsOpen(false)}
+            className="font-Inter text-lg text-slate-700 hover:text-slate-900 transition-all duration-200 font-light"
+          >
             Certifications
           </Link>
-          <Link to="/sherlocks" onClick={() => setIsOpen(false)} className="font-Inter text-lg text-slate-700 hover:text-slate-900 transition-all duration-200 font-light">
+          <Link
+            to="/sherlocks"
+            onClick={() => setIsOpen(false)}
+            className="font-Inter text-lg text-slate-700 hover:text-slate-900 transition-all duration-200 font-light"
+          >
             Sherlocks
           </Link>
-          {sections.map((section) => (
+          {sections.map((section) =>
             isHome ? (
               <a
                 key={section}
                 href={`#${section}`}
                 onClick={(e) => {
                   e.preventDefault();
-                  document.querySelector(`#${section}`)?.scrollIntoView({ behavior: "smooth" });
+                  document
+                    .querySelector(`#${section}`)
+                    ?.scrollIntoView({ behavior: "smooth" });
                   setIsOpen(false);
                 }}
                 className="font-Inter text-lg text-slate-700 hover:text-slate-900 transition-all duration-200 font-light"
@@ -109,11 +138,16 @@ export const NavBar: React.FC = () => {
                 {section.charAt(0).toUpperCase() + section.slice(1)}
               </a>
             ) : (
-              <Link key={section} to={`/#${section}`} onClick={() => setIsOpen(false)} className="font-Inter text-lg text-slate-700 hover:text-slate-900 transition-all duration-200 font-light">
+              <Link
+                key={section}
+                to={`/#${section}`}
+                onClick={() => setIsOpen(false)}
+                className="font-Inter text-lg text-slate-700 hover:text-slate-900 transition-all duration-200 font-light"
+              >
                 {section.charAt(0).toUpperCase() + section.slice(1)}
               </Link>
-            )
-          ))}
+            ),
+          )}
         </div>
       )}
     </nav>
