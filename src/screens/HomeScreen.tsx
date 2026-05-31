@@ -58,7 +58,7 @@ export const HomeScreen: React.FC = () => {
               Cyber Security Enthusiast
             </h3>
             <h4 className="text-lg md:text-xl text-slate-500 font-Inter font-light">
-              Student at BINUS International University
+              Intern at WOM Finance
             </h4>
           </motion.div>
 
