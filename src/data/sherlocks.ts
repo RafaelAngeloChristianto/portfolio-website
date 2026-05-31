@@ -174,4 +174,10 @@ export const sherlocks: Sherlock[] = [
     category: "DFIR",
     url: "/projects/ADroneInTheSnow HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
   },
+  {
+    title:"LuckyShot",
+    difficulty: "Easy",
+    category: "DFIR",
+    url: "/projects/LuckyShot HTB Sherlock Writeup _ Rafael Angelo Christianto.pdf",
+  }
 ];
