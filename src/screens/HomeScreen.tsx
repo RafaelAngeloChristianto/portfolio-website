@@ -474,6 +474,11 @@ export const HomeScreen: React.FC = () => {
               web: "",
             },
             {
+              title:"Static Malware Analysis - TRAFFIC ANALYSIS EXERCISE: IT'S A TRAP!",
+              tech:"Wireshark",
+              url:"/projects/StaticMalwareAnalysis_RafaelAngeloChristianto.pdf"
+            },
+            {
               title: "Implementing Firewall for Portfolio Website",
               tech: "Cloudflare",
               url: "projects/PortfolioFirewall_RafaelAngeloChristianto.pdf",
@@ -501,7 +506,12 @@ export const HomeScreen: React.FC = () => {
               title:"Static Malware Analysis - XWorm From Email Attachment",
               tech:"Wireshark",
               url:"projects/XWormFromEmailAttachment_RafaelAngeloChristianto.pdf",
-            }
+            },
+            {
+              title:"Static Malware Analysis - SmartApeSG ClickFix",
+              tech:"Wireshark",
+              url:"projects/StaticMalwareAnalysis - SmartApeSGClickFix - RafaelAngeloChristianto.pdf",
+            },
           ].map((proj, i) => (
             <motion.div
               key={i}
