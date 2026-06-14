@@ -512,6 +512,11 @@ export const HomeScreen: React.FC = () => {
               tech:"Wireshark",
               url:"projects/StaticMalwareAnalysis - SmartApeSGClickFix - RafaelAngeloChristianto.pdf",
             },
+            {
+              title:"Secure Authentication Lab",
+              tech:"React, Express, and MySQL",
+              url:"projects/SecureAuthLab_RafaelAngeloChristianto.pdf"
+            },
           ].map((proj, i) => (
             <motion.div
               key={i}
