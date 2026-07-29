@@ -1,17 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Halant:wght@300;400;500;600;700&family=Hammersmith+One&family=Hanuman:wght@100;300;400;700;900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jomolhari&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import "tailwindcss";
 
 @theme {
-  --color-brand: #020257;
-  --color-brand-light: #0a0a8a;
-  --font-Jomolhari: "Jomolhari", sans-serif;
-  --font-Hammersmith-One: "Hammersmith One", sans-serif;
-  --font-Halant: "Halant", sans-serif;
-  --font-Hanuman: "Hanuman", sans-serif;
-  --font-Inter: "Inter", sans-serif;
-  --font-Roboto: "Roboto", sans-serif;
-  --font-Open-Sans: "Open Sans", sans-serif;
-  --font-Nunito: "Nunito", sans-serif;
+  --color-brand: #0a1f44;
+  --color-brand-muted: #1a3a6b;
+  --color-brand-light: #2a5298;
+  --color-accent: #4a90d9;
+  --font-Inter: "Inter", system-ui, sans-serif;
 }
 
 @tailwind base;
@@ -24,33 +19,90 @@ body,
   height: 100%;
 }
 
-@media screen and (min-width: 1024px) {
-  body {
-    zoom: 1.2;
-  }
-}
-
-/* Custom shadow utilities */
-@layer utilities {
-  .shadow-3xl {
-    box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
-  }
-  
-  .shadow-soft {
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  }
-}
-
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Custom animations */
+body {
+  font-family: var(--font-Inter);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: rgb(10 31 68 / 0.1);
+  color: var(--color-brand);
+}
+
+@layer utilities {
+  .shadow-soft {
+    box-shadow:
+      0 1px 2px rgb(15 23 42 / 0.04),
+      0 8px 24px rgb(15 23 42 / 0.06);
+  }
+
+  .surface-card {
+    background-color: white;
+    border: 1px solid rgb(10 31 68 / 0.1);
+    border-radius: 1rem;
+    box-shadow:
+      0 1px 2px rgb(10 31 68 / 0.04),
+      0 8px 24px rgb(10 31 68 / 0.07);
+  }
+
+  .section-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgb(100 116 139);
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--color-brand);
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-brand-muted);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    background-color: white;
+    color: rgb(30 41 59);
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    border: 1px solid rgb(226 232 240);
+    transition:
+      border-color 0.2s,
+      background-color 0.2s;
+    cursor: pointer;
+  }
+
+  .btn-secondary:hover {
+    border-color: rgb(203 213 225);
+    background-color: rgb(248 250 252);
+  }
+}
+
 @keyframes slideDown {
   from {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(-8px);
   }
   to {
     opacity: 1;
@@ -59,11 +111,14 @@ html {
 }
 
 .animate-slideDown {
-  animation: slideDown 0.3s ease-out;
+  animation: slideDown 0.25s ease-out;
 }
-.scale-wrapper {
-  transform: scale(0.8);
-  transform-origin: top left;
-  width: 125%;      /* 1 / 0.8 = 1.25 */
-  height: 125%;
+
+.page-bg {
+  background-color: #ffffff;
+  background-image: radial-gradient(
+    rgb(10 31 68 / 0.06) 1px,
+    transparent 1px
+  );
+  background-size: 24px 24px;
 }

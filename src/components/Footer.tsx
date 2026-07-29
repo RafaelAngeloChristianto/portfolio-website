@@ -1,113 +1,79 @@
 import React from "react";
 import { SiWhatsapp, SiGmail, SiGithub, SiLinkedin } from "react-icons/si";
 import { Link } from "react-router-dom";
-import cali from "../assets/caligraphy_white.png";
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="w-full bg-brand flex flex-col items-center">
-      {/* Gradient top border */}
-      <div className="h-[3px] w-full bg-gradient-to-r from-brand-light via-brand to-brand-light" />
-
-      <div className="w-full max-w-6xl px-8 pt-14 pb-8">
-        {/* Top section */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-10">
-          {/* Brand */}
-          <div className="flex flex-col gap-4">
-            <img src={cali} className="w-44 opacity-70" alt="Signature" />
-            <p className="text-slate-400 font-Inter font-light text-sm max-w-xs leading-relaxed">
-              Building clean, modern web experiences with passion and precision.
+    <footer className="w-full border-t border-slate-200 bg-white">
+      <div className="max-w-6xl mx-auto px-6 md:px-8 py-12">
+        <div className="flex flex-col md:flex-row justify-between items-start gap-10">
+          <div className="max-w-sm">
+            <p className="text-brand font-medium tracking-tight text-lg mb-2">
+              Rafael Angelo Christianto
             </p>
-            {/* Social icons */}
-            <div className="flex gap-3 mt-1">
+            <p className="text-slate-500 text-sm leading-relaxed">
+              Computer science student focused on cybersecurity, clean engineering, and
+              thoughtful problem solving.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap gap-x-10 gap-y-6 text-sm">
+            <nav className="flex flex-col gap-2">
+              <span className="section-eyebrow mb-1">Pages</span>
+              <Link to="/" className="text-slate-600 hover:text-brand transition-colors">
+                Home
+              </Link>
+              <Link
+                to="/certifications"
+                className="text-slate-600 hover:text-brand transition-colors"
+              >
+                Certifications
+              </Link>
+              <Link
+                to="/sherlocks"
+                className="text-slate-600 hover:text-brand transition-colors"
+              >
+                Sherlocks
+              </Link>
+            </nav>
+            <div className="flex flex-col gap-2">
+              <span className="section-eyebrow mb-1">Connect</span>
               <a
                 href="https://github.com/RafaelAngeloChristianto"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-brand/60 hover:bg-brand-light flex items-center justify-center transition-colors duration-300"
+                className="text-slate-600 hover:text-brand transition-colors inline-flex items-center gap-2"
               >
-                <SiGithub className="text-slate-300 text-base" />
+                <SiGithub /> GitHub
               </a>
               <a
                 href="https://www.linkedin.com/in/rafaaelangelo/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-brand/60 hover:bg-blue-700 flex items-center justify-center transition-colors duration-300"
+                className="text-slate-600 hover:text-brand transition-colors inline-flex items-center gap-2"
               >
-                <SiLinkedin className="text-slate-300 text-base" />
+                <SiLinkedin /> LinkedIn
               </a>
               <a
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=rafaaelangelo@gmail.com"
-                className="w-9 h-9 rounded-lg bg-brand/60 hover:bg-red-700 flex items-center justify-center transition-colors duration-300"
+                className="text-slate-600 hover:text-brand transition-colors inline-flex items-center gap-2"
               >
-                <SiGmail className="text-slate-300 text-base" />
+                <SiGmail /> Email
               </a>
               <a
                 href="https://wa.me/6281319727350"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-brand/60 hover:bg-green-700 flex items-center justify-center transition-colors duration-300"
+                className="text-slate-600 hover:text-brand transition-colors inline-flex items-center gap-2"
               >
-                <SiWhatsapp className="text-slate-300 text-base" />
-              </a>
-            </div>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-white text-sm font-Inter font-semibold mb-4 tracking-widest uppercase text-slate-400">
-              Navigation
-            </h3>
-            <nav className="flex flex-col space-y-3">
-              {[
-                { label: "Home", to: "/" },
-                { label: "Certifications", to: "/certifications" },
-              ].map(({ label, to }) => (
-                <Link
-                  key={to}
-                  to={to}
-                  className="text-slate-400 hover:text-white hover:translate-x-1 transition-all duration-300 font-Inter font-light text-sm flex items-center gap-2 group"
-                >
-                  <span className="w-1 h-1 rounded-full bg-slate-600 group-hover:bg-slate-300 transition-colors duration-300" />
-                  {label}
-                </Link>
-              ))}
-            </nav>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h3 className="text-sm font-Inter font-semibold mb-4 tracking-widest uppercase text-slate-400">
-              Get In Touch
-            </h3>
-            <div className="flex flex-col space-y-3">
-              <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=rafaaelangelo@gmail.com"
-                className="group flex items-center space-x-3 bg-brand/60 hover:bg-white text-slate-300 hover:text-slate-900 px-5 py-2.5 rounded-xl transition-all duration-300 border border-brand-light hover:border-transparent hover:shadow-lg"
-              >
-                <SiGmail className="text-base group-hover:scale-110 transition-transform duration-300" />
-                <span className="font-Inter font-medium text-sm">Email Me</span>
-              </a>
-              <a
-                href="https://wa.me/6281319727350?text=Hello%20Rafael%2C%20I%20want%20your%20service%20to%20create%20a%20website%20like%20..."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center space-x-3 bg-green-700 hover:bg-green-500 text-white px-5 py-2.5 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-green-900/30"
-              >
-                <SiWhatsapp className="text-base group-hover:scale-110 transition-transform duration-300" />
-                <span className="font-Inter font-medium text-sm">WhatsApp</span>
+                <SiWhatsapp /> WhatsApp
               </a>
             </div>
           </div>
         </div>
 
-        {/* Divider */}
-        <hr className="border-brand-light mb-6" />
-
-        {/* Footer Bottom */}
-        <p className="text-center text-slate-500 text-xs font-Inter font-light tracking-widest uppercase">
-          &copy; {new Date().getFullYear()} Rafael Angelo Christianto &mdash;
-          All rights reserved.
+        <p className="mt-10 pt-6 border-t border-slate-100 text-center text-slate-400 text-xs">
+          © {new Date().getFullYear()} Rafael Angelo Christianto
         </p>
       </div>
     </footer>

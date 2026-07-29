@@ -56,36 +56,31 @@ export const Certifications: React.FC = () => {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-stone-50">
+    <div className="flex flex-col min-h-screen page-bg">
       <NavBar />
 
-      {/* Hero header */}
-      <div className="w-full bg-brand pt-28 pb-14 px-8 text-center relative overflow-hidden">
-        {/* Decorative circles */}
-        <div className="absolute -top-10 -left-10 w-48 h-48 rounded-full bg-brand-light/30 blur-3xl" />
-        <div className="absolute -bottom-10 -right-10 w-64 h-64 rounded-full bg-brand-light/20 blur-3xl" />
-        <div className="relative z-10">
-          <span className="inline-flex items-center gap-2 bg-brand-light/40 border border-brand-light/60 text-slate-300 text-xs font-Inter font-medium px-4 py-1.5 rounded-full mb-4 tracking-widest uppercase">
-            <HiOutlineBadgeCheck className="text-base" />
-            {certificates.length} Certificates Earned
-          </span>
-          <h1 className="text-4xl md:text-5xl font-light text-white font-Inter mb-3 tracking-tight">Certifications</h1>
-          <p className="text-slate-400 font-Inter font-light text-base max-w-md mx-auto">
-            A showcase of my achievements and learning milestones over the years.
-          </p>
-        </div>
+      <div className="max-w-6xl mx-auto px-6 md:px-8 pt-28 pb-10 text-center">
+        <p className="section-eyebrow mb-2">Credentials</p>
+        <h1 className="text-2xl md:text-3xl font-semibold text-brand tracking-tight mb-2">
+          Certifications
+        </h1>
+        <p className="text-slate-500 text-sm max-w-md mx-auto">
+          Achievements and learning milestones across cybersecurity, development, and leadership.
+        </p>
+        <span className="inline-block mt-4 text-xs font-medium tracking-wide text-slate-500 border border-slate-200 rounded-full px-3 py-1 bg-white">
+          {certificates.length} certificates
+        </span>
       </div>
 
-      <div className="max-w-6xl mx-auto px-8 py-14 w-full">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div className="max-w-6xl mx-auto px-6 md:px-8 py-8 pb-16 w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
           {certificates.map((cert, index) => (
             <motion.div
               key={index}
-              className="cursor-pointer rounded-xl overflow-hidden bg-white shadow-md hover:shadow-xl transition-all duration-300 border border-slate-100 group"
-              whileHover={{ y: -4 }}
+              className="cursor-pointer surface-card overflow-hidden group"
+              whileHover={{ y: -2 }}
               onClick={() => setSelectedImage(cert.file)}
             >
-              <div className="h-1 w-full bg-gradient-to-r from-brand via-brand-light to-brand" />
               <div className="relative overflow-hidden">
                 <img
                   src={`/certificates/${cert.file}`}
@@ -98,9 +93,9 @@ export const Certifications: React.FC = () => {
                   </span>
                 </div>
               </div>
-              <div className="p-4 flex items-start gap-2">
-                <HiOutlineBadgeCheck className="text-slate-500 text-lg mt-0.5 shrink-0" />
-                <h2 className="text-sm font-Inter font-medium text-slate-700 leading-snug">
+              <div className="p-4 flex items-start gap-2 border-t border-slate-100">
+                <HiOutlineBadgeCheck className="text-slate-400 text-base mt-0.5 shrink-0" />
+                <h2 className="text-sm font-medium text-slate-700 leading-snug">
                   {cert.title}
                 </h2>
               </div>

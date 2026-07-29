@@ -1,55 +1,60 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
-import { FaCode } from "react-icons/fa";
 
 export const NavBar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
-  const toggleMenu = () => setIsOpen(!isOpen);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
-  // Scroll to section on hash change (after navigation)
   useEffect(() => {
     if (location.hash) {
       const scroll = () => {
         const element = document.querySelector(location.hash);
         if (element) element.scrollIntoView({ behavior: "smooth" });
       };
-      // Delay to allow page content to render before scrolling
       setTimeout(scroll, 100);
     }
   }, [location]);
 
   const isHome = location.pathname === "/";
   const sections = ["about", "projects", "contact"];
-
   const activePath = location.pathname;
 
   const linkClass = (path: string) =>
-    `font-Inter text-base md:text-lg relative transition-all duration-300 font-light after:absolute after:bottom-[-2px] after:left-0 after:h-[2px] after:rounded-full after:transition-all after:duration-300 ${
+    `text-sm tracking-wide transition-colors duration-200 ${
       activePath === path
-        ? "text-slate-900 font-medium after:w-full after:bg-brand"
-        : "text-slate-500 hover:text-slate-900 after:w-0 after:bg-brand hover:after:w-full"
+        ? "text-brand font-medium"
+        : "text-slate-500 hover:text-brand"
     }`;
 
+  const sectionLinkClass =
+    "text-sm text-slate-500 hover:text-brand tracking-wide transition-colors duration-200";
+
   return (
-    <nav className="w-full fixed top-0 z-50 backdrop-blur-md bg-white/95 border-b border-slate-100 shadow-sm transition-all">
-      {/* Accent gradient line */}
-      <div className="h-[3px] w-full bg-gradient-to-r from-brand via-brand-light to-brand" />
-      <div className="max-w-7xl mx-auto px-8 md:px-12 h-18 flex items-center justify-between">
-        {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 group">
-          <span className="w-7 h-7 rounded-lg bg-brand flex items-center justify-center group-hover:bg-brand-light transition-colors duration-300">
-            <FaCode className="text-white text-xs" />
-          </span>
-          <span className="font-Inter font-light text-xl md:text-2xl text-brand tracking-wide group-hover:text-brand-light transition-colors duration-300">
-            Rafael Angelo Christianto
-          </span>
+    <nav
+      className={`w-full fixed top-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-white/90 backdrop-blur-lg border-b border-slate-200/80 shadow-sm"
+          : "bg-transparent border-b border-transparent"
+      }`}
+    >
+      <div className="max-w-6xl mx-auto px-6 md:px-8 h-16 flex items-center justify-between">
+        <Link
+          to="/"
+          className="font-medium text-brand text-base md:text-lg tracking-tight hover:opacity-80 transition-opacity"
+        >
+          Rafael Angelo
         </Link>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-10">
+        <div className="hidden md:flex items-center gap-8">
           <Link to="/" className={linkClass("/")}>
             Home
           </Link>
@@ -70,54 +75,46 @@ export const NavBar: React.FC = () => {
                     .querySelector(`#${section}`)
                     ?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className={linkClass("")}
+                className={sectionLinkClass}
               >
                 {section.charAt(0).toUpperCase() + section.slice(1)}
               </a>
             ) : (
-              <Link key={section} to={`/#${section}`} className={linkClass("")}>
+              <Link key={section} to={`/#${section}`} className={sectionLinkClass}>
                 {section.charAt(0).toUpperCase() + section.slice(1)}
               </Link>
             ),
           )}
         </div>
 
-        {/* Mobile Hamburger */}
         <div className="md:hidden">
           <button
-            onClick={toggleMenu}
-            className="text-slate-700 hover:text-slate-900 transition-colors duration-200 cursor-pointer"
+            type="button"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            className="text-slate-600 hover:text-brand transition-colors cursor-pointer p-1"
           >
-            {isOpen ? (
-              <FiX className="text-3xl" />
-            ) : (
-              <FiMenu className="text-3xl" />
-            )}
+            {isOpen ? <FiX className="text-2xl" /> : <FiMenu className="text-2xl" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-slate-100 shadow-lg px-8 py-8 flex flex-col gap-6 animate-slideDown">
-          <Link
-            to="/"
-            onClick={() => setIsOpen(false)}
-            className="font-Inter text-lg text-slate-700 hover:text-slate-900 transition-all duration-200 font-light"
-          >
+        <div className="md:hidden bg-white border-t border-slate-100 px-6 py-6 flex flex-col gap-5 animate-slideDown">
+          <Link to="/" onClick={() => setIsOpen(false)} className={linkClass("/")}>
             Home
           </Link>
           <Link
             to="/certifications"
             onClick={() => setIsOpen(false)}
-            className="font-Inter text-lg text-slate-700 hover:text-slate-900 transition-all duration-200 font-light"
+            className={linkClass("/certifications")}
           >
             Certifications
           </Link>
           <Link
             to="/sherlocks"
             onClick={() => setIsOpen(false)}
-            className="font-Inter text-lg text-slate-700 hover:text-slate-900 transition-all duration-200 font-light"
+            className={linkClass("/sherlocks")}
           >
             Sherlocks
           </Link>
@@ -133,7 +130,7 @@ export const NavBar: React.FC = () => {
                     ?.scrollIntoView({ behavior: "smooth" });
                   setIsOpen(false);
                 }}
-                className="font-Inter text-lg text-slate-700 hover:text-slate-900 transition-all duration-200 font-light"
+                className={sectionLinkClass}
               >
                 {section.charAt(0).toUpperCase() + section.slice(1)}
               </a>
@@ -142,7 +139,7 @@ export const NavBar: React.FC = () => {
                 key={section}
                 to={`/#${section}`}
                 onClick={() => setIsOpen(false)}
-                className="font-Inter text-lg text-slate-700 hover:text-slate-900 transition-all duration-200 font-light"
+                className={sectionLinkClass}
               >
                 {section.charAt(0).toUpperCase() + section.slice(1)}
               </Link>
