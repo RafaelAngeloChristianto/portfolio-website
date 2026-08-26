@@ -6,7 +6,7 @@ import { SherlockScreen } from "./screens/SherlockScreen";
 
 export const App: React.FC = () => {
   return (
-    <div className="min-h-screen bg-[#fafafa]">
+    <div className="min-h-screen">
       <Routes>
         <Route path="/" element={<HomeScreen />} />
         <Route path="/certifications" element={<Certifications />} />

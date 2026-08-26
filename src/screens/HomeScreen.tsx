@@ -6,7 +6,6 @@ import { sherlocks } from "../data/sherlocks";
 import { NavBar } from "../components/NavBar";
 import { Footer } from "../components/Footer";
 import portrait from "../assets/me.jpeg"
-import bgImage from "../assets/bg_image.jpg";
 import cv from "../assets/Rafael Angelo - CV.pdf";
 import {
   SiInstagram, SiTiktok, SiLinkedin, SiGithub, SiWhatsapp, SiGmail,
@@ -26,16 +25,16 @@ const inView = (delay = 0) => ({
 });
 
 const skills = [
-  { label: "Cyber Security", group: "Security", icon: "🛡️" },
-  { label: "Penetration Testing", group: "Security", icon: "🔍" },
-  { label: "Network Forensics", group: "Security", icon: "🌐" },
-  { label: "Incident Response", group: "Security", icon: "🚨" },
-  { label: "Cloud Security", group: "Security", icon: "☁️" },
-  { label: "Digital Forensics", group: "Security", icon: "🔬" },
-  { label: "React / TypeScript", group: "Dev", icon: "⚛️" },
-  { label: "Python", group: "Dev", icon: "🐍" },
-  { label: "Java", group: "Dev", icon: "☕" },
-  { label: "MySQL", group: "Dev", icon: "🗄️" },
+  { label: "Cyber Security", group: "Security" },
+  { label: "Penetration Testing", group: "Security" },
+  { label: "Network Forensics", group: "Security" },
+  { label: "Incident Response", group: "Security" },
+  { label: "Cloud Security", group: "Security" },
+  { label: "Digital Forensics", group: "Security" },
+  { label: "React / TypeScript", group: "Dev" },
+  { label: "Python", group: "Dev" },
+  { label: "Java", group: "Dev" },
+  { label: "MySQL", group: "Dev" },
 ];
 
 const projects = [
@@ -74,34 +73,22 @@ export const HomeScreen: React.FC = () => {
 
       {/* ── Hero ── */}
       <section id="home" className="relative w-full overflow-hidden">
-        {/* bg image — right-aligned, fades left and bottom */}
-        <div className="absolute -top-16 bottom-0 right-0 w-[55%] pointer-events-none select-none hidden md:block">
-          <img
-            src={bgImage}
-            alt=""
-            aria-hidden="true"
-            className="w-full h-full object-cover object-[center_top] opacity-30"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#f8f9fb] via-[#f8f9fb]/30 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#f8f9fb]" />
-        </div>
-
-        <div className="relative flex flex-col md:flex-row justify-center items-center gap-4 md:gap-16 px-6 md:px-8 pt-28 pb-20 md:pt-36 md:pb-28 max-w-6xl mx-auto">
-          <div className="text-center md:text-left md:w-1/2 space-y-5 order-2 md:order-1">
+        <div className="relative flex flex-col md:flex-row justify-between items-center gap-8 md:gap-12 px-6 md:px-8 pt-24 pb-14 md:pt-28 md:pb-16 max-w-6xl mx-auto">
+          <div className="text-center md:text-left md:max-w-xl space-y-4 order-2 md:order-1">
             <motion.p {...fadeUp(0.1)} className="section-eyebrow">
               Melbourne, Australia · RMIT University
             </motion.p>
 
             <motion.h1
               {...fadeUp(0.2)}
-              className="text-4xl md:text-5xl lg:text-[3.5rem] font-semibold text-brand tracking-tight leading-[1.1]"
+              className="text-4xl md:text-5xl lg:text-[3.25rem] font-semibold text-brand tracking-tight leading-[1.12]"
             >
               Rafael Angelo
-              <span className="block font-normal text-slate-400 mt-1">Christianto</span>
+              <span className="block text-brand/50">Christianto</span>
             </motion.h1>
 
-            <motion.div {...fadeUp(0.32)} className="space-y-2 max-w-lg mx-auto md:mx-0">
-              <p className="text-lg text-slate-700 font-medium">
+            <motion.div {...fadeUp(0.32)} className="space-y-2.5 max-w-md mx-auto md:mx-0">
+              <p className="text-base md:text-lg text-slate-700 font-medium">
                 Cybersecurity &amp; Computer Science
               </p>
               <p className="text-sm text-slate-500 leading-relaxed">
@@ -112,9 +99,9 @@ export const HomeScreen: React.FC = () => {
 
             <motion.div
               {...fadeUp(0.44)}
-              className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start pt-2"
+              className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start pt-1"
             >
-              <a target="_blank" href={cv} download="cv" rel="noopener noreferrer">
+              <a target="_blank" href={cv} download="Rafael Angelo - CV.pdf" rel="noopener noreferrer">
                 <button type="button" className="btn-primary w-full sm:w-auto">
                   Download CV
                 </button>
@@ -138,7 +125,7 @@ export const HomeScreen: React.FC = () => {
               alt="Rafael Angelo Christianto"
               decoding="async"
               onLoad={() => setImgLoaded(true)}
-              className="portrait-blend w-56 md:w-72 lg:w-80 object-cover object-top"
+              className="portrait-blend w-52 md:w-72 lg:w-[22rem] object-cover object-[center_20%]"
             />
           </motion.div>
         </div>
@@ -174,14 +161,12 @@ export const HomeScreen: React.FC = () => {
             <motion.span
               key={i}
               {...inView(0.04 * i)}
-              whileHover={{ scale: 1.05 }}
-              className={`px-4 py-1.5 text-xs font-medium rounded-full border transition-all cursor-default flex items-center gap-1.5 ${
+              className={`px-4 py-1.5 text-xs font-medium rounded-full border ${
                 skill.group === "Security"
-                  ? "text-brand border-brand/20 bg-brand/5 hover:bg-brand/10"
-                  : "text-slate-600 border-slate-200 bg-white hover:border-slate-300"
+                  ? "text-brand border-brand/20 bg-brand/5"
+                  : "text-slate-600 border-slate-200 bg-white"
               }`}
             >
-              <span>{skill.icon}</span>
               {skill.label}
             </motion.span>
           ))}

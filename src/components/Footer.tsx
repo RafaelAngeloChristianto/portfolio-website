@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="w-full border-t border-slate-200 bg-white">
-      <div className="max-w-6xl mx-auto px-6 md:px-8 py-12">
+    <footer className="w-full mt-auto border-t border-slate-200 bg-white">
+      <div className="wrap py-10 md:py-12">
         <div className="flex flex-col md:flex-row justify-between items-start gap-10">
           <div className="max-w-sm">
             <p className="text-brand font-medium tracking-tight text-lg mb-2">

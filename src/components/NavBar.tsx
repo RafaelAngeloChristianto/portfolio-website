@@ -46,7 +46,7 @@ export const NavBar: React.FC = () => {
           : "bg-transparent border-b border-transparent"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 md:px-8 h-16 flex items-center justify-between">
+      <div className="wrap h-16 flex items-center justify-between">
         <Link
           to="/"
           className="font-semibold text-brand text-base md:text-lg tracking-tight hover:opacity-75 transition-opacity"
@@ -54,7 +54,7 @@ export const NavBar: React.FC = () => {
           Rafael Angelo
         </Link>
 
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6">
           <Link to="/" className={linkClass("/")}>
             Home
           </Link>
