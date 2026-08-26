@@ -5,7 +5,7 @@ import { FaBriefcase, FaUserFriends } from "react-icons/fa";
 import { sherlocks } from "../data/sherlocks";
 import { NavBar } from "../components/NavBar";
 import { Footer } from "../components/Footer";
-import portrait from "../assets/portrait.jpg";
+import portrait from "../assets/me.jpeg"
 import bgImage from "../assets/bg_image.jpg";
 import cv from "../assets/Rafael Angelo - CV.pdf";
 import {
