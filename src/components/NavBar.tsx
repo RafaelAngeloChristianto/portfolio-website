@@ -29,9 +29,9 @@ export const NavBar: React.FC = () => {
   const activePath = location.pathname;
 
   const linkClass = (path: string) =>
-    `text-sm tracking-wide transition-colors duration-200 ${
+    `text-sm tracking-wide transition-colors duration-200 relative ${
       activePath === path
-        ? "text-brand font-medium"
+        ? "text-brand font-medium after:absolute after:-bottom-0.5 after:left-0 after:w-full after:h-px after:bg-brand"
         : "text-slate-500 hover:text-brand"
     }`;
 
@@ -49,7 +49,7 @@ export const NavBar: React.FC = () => {
       <div className="max-w-6xl mx-auto px-6 md:px-8 h-16 flex items-center justify-between">
         <Link
           to="/"
-          className="font-medium text-brand text-base md:text-lg tracking-tight hover:opacity-80 transition-opacity"
+          className="font-semibold text-brand text-base md:text-lg tracking-tight hover:opacity-75 transition-opacity"
         >
           Rafael Angelo
         </Link>

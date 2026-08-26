@@ -75,7 +75,8 @@ export const SherlockScreen: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.35, delay: 0.03 * i }}
-              className="group surface-card p-5 flex flex-col gap-3 hover:border-slate-300 transition-colors duration-200"
+              whileHover={{ y: -2 }}
+              className="group surface-card p-5 flex flex-col gap-3 hover:border-brand/20 transition-all duration-200"
             >
               <h3 className="font-medium text-brand text-sm leading-snug group-hover:text-brand-muted">
                 {sherlock.title}

@@ -77,8 +77,8 @@ export const Certifications: React.FC = () => {
           {certificates.map((cert, index) => (
             <motion.div
               key={index}
-              className="cursor-pointer surface-card overflow-hidden group"
-              whileHover={{ y: -2 }}
+              className="cursor-pointer surface-card overflow-hidden group hover:border-brand/20 transition-all duration-200"
+              whileHover={{ y: -3 }}
               onClick={() => setSelectedImage(cert.file)}
             >
               <div className="relative overflow-hidden">
