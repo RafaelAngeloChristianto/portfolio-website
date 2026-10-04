@@ -5,10 +5,15 @@ import { FaBriefcase, FaUserFriends } from "react-icons/fa";
 import { sherlocks } from "../data/sherlocks";
 import { NavBar } from "../components/NavBar";
 import { Footer } from "../components/Footer";
-import portrait from "../assets/me.jpeg"
+import portrait from "../assets/me.jpeg";
 import cv from "../assets/Rafael Angelo - CV.pdf";
 import {
-  SiInstagram, SiTiktok, SiLinkedin, SiGithub, SiWhatsapp, SiGmail,
+  SiInstagram,
+  SiTiktok,
+  SiLinkedin,
+  SiGithub,
+  SiWhatsapp,
+  SiGmail,
 } from "react-icons/si";
 
 const fadeUp = (delay = 0) => ({
@@ -38,28 +43,104 @@ const skills = [
 ];
 
 const projects = [
-  { title: "Dynamic Malware Analysis — njRAT 0.6.4", tech: "FLARE VM", url: "/projects/DynamicMalwareAnalysis_RafaelAngeloChristianto.pdf" },
-  { title: "File Type Scanner with Magic Numbers", tech: "Python", url: "/projects/FileTypeScanner_RafaelAngeloChristianto.pdf" },
-  { title: "Vulnerable Machine", tech: "Ubuntu Server", url: "/projects/TaskRunner_RafaelAngeloChristianto.pdf" },
-  { title: "DEFCON CTF Packet Capture Analysis", tech: "Wireshark · Zeek · tshark", url: "/projects/DEFCONCTF_PacketCaptureAnalysis_RafaelAngeloChristianto.pdf" },
-  { title: "Windows Host Intrusion Detection System", tech: "Python", url: "/projects/HIDS_RafaelAngeloChristianto.pdf" },
-  { title: "Static Malware Analysis — IT'S A TRAP!", tech: "Wireshark", url: "/projects/StaticMalwareAnalysis_RafaelAngeloChristianto.pdf" },
-  { title: "Implementing Firewall for Portfolio Website", tech: "Cloudflare", url: "/projects/PortfolioFirewall_RafaelAngeloChristianto.pdf" },
-  { title: "Behavior Based Malware Detector", tech: "Python", url: "/projects/BehaviorBasedMalwareDetector_RafaelAngeloChristianto.pdf" },
-  { title: "Nmap Packet Capture Lab", tech: "Kali Linux · Ubuntu", url: "/projects/NmapPacketCaptureLab_RafaelAngeloChristianto.pdf" },
-  { title: "Security Monitoring & Threat Detection", tech: "Wazuh SIEM", url: "/projects/WazuhLab_RafaelAngeloChristianto.pdf" },
-  { title: "Static Malware Analysis — XWorm Email Attachment", tech: "Wireshark", url: "/projects/XWormFromEmailAttachment_RafaelAngeloChristianto.pdf" },
-  { title: "Static Malware Analysis — SmartApeSG ClickFix", tech: "Wireshark", url: "/projects/StaticMalwareAnalysis - SmartApeSGClickFix - RafaelAngeloChristianto.pdf" },
-  { title: "Secure Authentication Lab", tech: "React · Express · MySQL", url: "/projects/SecureAuthLab_RafaelAngeloChristianto.pdf" },
-  { title: "Static Malware Analysis — Xloader (Formbook)", tech: "Wireshark", url: "/projects/XloaderFormbook_RafaelAngeloChristianto.pdf" },
+  {
+    title: "Dynamic Malware Analysis — njRAT 0.6.4",
+    tech: "FLARE VM",
+    url: "/projects/DynamicMalwareAnalysis_RafaelAngeloChristianto.pdf",
+  },
+  {
+    title: "File Type Scanner with Magic Numbers",
+    tech: "Python",
+    url: "/projects/FileTypeScanner_RafaelAngeloChristianto.pdf",
+  },
+  {
+    title: "Vulnerable Machine",
+    tech: "Ubuntu Server",
+    url: "/projects/TaskRunner_RafaelAngeloChristianto.pdf",
+  },
+  {
+    title: "DEFCON CTF Packet Capture Analysis",
+    tech: "Wireshark · Zeek · tshark",
+    url: "/projects/DEFCONCTF_PacketCaptureAnalysis_RafaelAngeloChristianto.pdf",
+  },
+  {
+    title: "Windows Host Intrusion Detection System",
+    tech: "Python",
+    url: "/projects/HIDS_RafaelAngeloChristianto.pdf",
+  },
+  {
+    title: "Static Malware Analysis — IT'S A TRAP!",
+    tech: "Wireshark",
+    url: "/projects/StaticMalwareAnalysis_RafaelAngeloChristianto.pdf",
+  },
+  {
+    title: "Implementing Firewall for Portfolio Website",
+    tech: "Cloudflare",
+    url: "/projects/PortfolioFirewall_RafaelAngeloChristianto.pdf",
+  },
+  {
+    title: "Behavior Based Malware Detector",
+    tech: "Python",
+    url: "/projects/BehaviorBasedMalwareDetector_RafaelAngeloChristianto.pdf",
+  },
+  {
+    title: "Nmap Packet Capture Lab",
+    tech: "Kali Linux · Ubuntu",
+    url: "/projects/NmapPacketCaptureLab_RafaelAngeloChristianto.pdf",
+  },
+  {
+    title: "Security Monitoring & Threat Detection",
+    tech: "Wazuh SIEM",
+    url: "/projects/WazuhLab_RafaelAngeloChristianto.pdf",
+  },
+  {
+    title: "Static Malware Analysis — XWorm Email Attachment",
+    tech: "Wireshark",
+    url: "/projects/XWormFromEmailAttachment_RafaelAngeloChristianto.pdf",
+  },
+  {
+    title: "Static Malware Analysis — SmartApeSG ClickFix",
+    tech: "Wireshark",
+    url: "/projects/StaticMalwareAnalysis - SmartApeSGClickFix - RafaelAngeloChristianto.pdf",
+  },
+  {
+    title: "Secure Authentication Lab",
+    tech: "React · Express · MySQL",
+    url: "/projects/SecureAuthLab_RafaelAngeloChristianto.pdf",
+  },
+  {
+    title: "Static Malware Analysis — Xloader (Formbook)",
+    tech: "Wireshark",
+    url: "/projects/XloaderFormbook_RafaelAngeloChristianto.pdf",
+  },
 ];
 
 const socials = [
-  { icon: <SiGithub />, label: "RafaelAngeloChristianto", url: "https://github.com/RafaelAngeloChristianto" },
-  { icon: <SiLinkedin />, label: "rafaaelangelo", url: "https://www.linkedin.com/in/rafaaelangelo/" },
-  { icon: <SiInstagram />, label: "rafaaelangelo", url: "https://www.instagram.com/rafaaelangelo" },
-  { icon: <SiTiktok />, label: "rafaaelangelo", url: "https://www.tiktok.com/@rafaaelangelo" },
-  { icon: <SiWhatsapp />, label: "+62 813 1972 7350", url: "https://wa.me/6281319727350?text=Hello%20Rafael%2C%20I%20want%20your%20service" },
+  {
+    icon: <SiGithub />,
+    label: "RafaelAngeloChristianto",
+    url: "https://github.com/RafaelAngeloChristianto",
+  },
+  {
+    icon: <SiLinkedin />,
+    label: "rafaaelangelo",
+    url: "https://www.linkedin.com/in/rafaaelangelo/",
+  },
+  {
+    icon: <SiInstagram />,
+    label: "rafaaelangelo",
+    url: "https://www.instagram.com/rafaaelangelo",
+  },
+  {
+    icon: <SiTiktok />,
+    label: "rafaaelangelo",
+    url: "https://www.tiktok.com/@rafaaelangelo",
+  },
+  {
+    icon: <SiWhatsapp />,
+    label: "+62 813 1972 7350",
+    url: "https://wa.me/6281319727350?text=Hello%20Rafael%2C%20I%20want%20your%20service",
+  },
 ];
 
 export const HomeScreen: React.FC = () => {
@@ -87,13 +168,17 @@ export const HomeScreen: React.FC = () => {
               <span className="block text-brand/50">Christianto</span>
             </motion.h1>
 
-            <motion.div {...fadeUp(0.32)} className="space-y-2.5 max-w-md mx-auto md:mx-0">
+            <motion.div
+              {...fadeUp(0.32)}
+              className="space-y-2.5 max-w-md mx-auto md:mx-0"
+            >
               <p className="text-base md:text-lg text-slate-700 font-medium">
                 Cybersecurity &amp; Computer Science
               </p>
               <p className="text-sm text-slate-500 leading-relaxed">
-                Double degree student at BINUS International and RMIT, building skills in
-                security analysis, digital forensics, and full-stack development.
+                Double degree student at BINUS International and RMIT, building
+                skills in security analysis, digital forensics, and full-stack
+                development.
               </p>
             </motion.div>
 
@@ -101,13 +186,21 @@ export const HomeScreen: React.FC = () => {
               {...fadeUp(0.44)}
               className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start pt-1"
             >
-              <a target="_blank" href={cv} download="Rafael Angelo - CV.pdf" rel="noopener noreferrer">
+              <a
+                target="_blank"
+                href={cv}
+                download="Rafael Angelo - CV.pdf"
+                rel="noopener noreferrer"
+              >
                 <button type="button" className="btn-primary w-full sm:w-auto">
                   Download CV
                 </button>
               </a>
               <Link to="/certifications">
-                <button type="button" className="btn-secondary w-full sm:w-auto">
+                <button
+                  type="button"
+                  className="btn-secondary w-full sm:w-auto"
+                >
                   Certifications
                 </button>
               </Link>
@@ -139,22 +232,31 @@ export const HomeScreen: React.FC = () => {
       >
         <div className="surface-card p-8 md:p-10">
           <p className="section-eyebrow mb-3">About</p>
-          <h2 className="text-2xl font-semibold text-brand mb-5 tracking-tight">Background</h2>
+          <h2 className="text-2xl font-semibold text-brand mb-5 tracking-tight">
+            Background
+          </h2>
           <p className="text-slate-600 leading-relaxed text-sm md:text-base">
-            I am Rafael Angelo Christianto, pursuing a double degree in Computer Science
-            through BINUS International University and RMIT University. Currently based in
-            Melbourne at RMIT, I am deepening my work in security analysis, digital forensics,
-            and secure software engineering. I bring a disciplined, collaborative approach to
-            technical projects — whether in internships, competitions, or independent research.
+            I am Rafael Angelo Christianto, pursuing a double degree in Computer
+            Science through BINUS International University and RMIT University.
+            Currently based in Melbourne at RMIT, I am deepening my work in
+            security analysis, digital forensics, and secure software
+            engineering. I bring a disciplined, collaborative approach to
+            technical projects — whether in internships, competitions, or
+            independent research.
           </p>
         </div>
       </motion.section>
 
       {/* ── Skills ── */}
-      <motion.section {...inView(0.05)} className="max-w-3xl mx-auto px-6 md:px-8 pb-16 md:pb-20">
+      <motion.section
+        {...inView(0.05)}
+        className="max-w-3xl mx-auto px-6 md:px-8 pb-16 md:pb-20"
+      >
         <div className="text-center mb-8">
           <p className="section-eyebrow mb-2">Focus areas</p>
-          <h2 className="text-2xl font-semibold text-brand tracking-tight">Skills &amp; interests</h2>
+          <h2 className="text-2xl font-semibold text-brand tracking-tight">
+            Skills &amp; interests
+          </h2>
         </div>
         <div className="flex flex-wrap justify-center gap-2">
           {skills.map((skill, i) => (
@@ -179,17 +281,41 @@ export const HomeScreen: React.FC = () => {
         className="flex flex-col lg:flex-row justify-center items-stretch gap-6 max-w-6xl mx-auto mb-16 md:mb-20 px-6 md:px-8"
       >
         <motion.div {...inView(0.1)} className="surface-card p-8 md:p-9 flex-1">
-          <h2 className="text-lg font-semibold text-brand mb-6 tracking-tight">Education</h2>
+          <h2 className="text-lg font-semibold text-brand mb-6 tracking-tight">
+            Education
+          </h2>
           <div className="space-y-5">
             {[
-              { school: "Royal Melbourne Institute of Technology (RMIT)", field: "Information Technology — Double degree", period: "Jul 2026 – Present", current: true },
-              { school: "BINUS International University", field: "Computer Science — Double degree", period: "Sep 2023 – Jun 2026", current: false },
-              { school: "Timedoor Academy", field: "Computer Science", period: "Apr 2021 – May 2023", current: false },
-              { school: "Lilin Bangsa Intercultural School", field: "Science", period: "Jul 2020 – May 2023", current: false },
+              {
+                school: "Royal Melbourne Institute of Technology (RMIT)",
+                field: "Information Technology — Double degree",
+                period: "Jul 2026 – Present",
+                current: true,
+              },
+              {
+                school: "BINUS International University",
+                field: "Computer Science — Double degree",
+                period: "Sep 2023 – Jun 2026",
+                current: false,
+              },
+              {
+                school: "Timedoor Academy",
+                field: "Computer Science",
+                period: "Apr 2021 – May 2023",
+                current: false,
+              },
+              {
+                school: "Lilin Bangsa Intercultural School",
+                field: "Science",
+                period: "Jul 2020 – May 2023",
+                current: false,
+              },
             ].map((edu, i) => (
               <div key={i} className="border-l-2 border-brand/15 pl-4">
                 <div className="flex flex-wrap items-center gap-2 mb-0.5">
-                  <h3 className="font-medium text-slate-800 text-sm">{edu.school}</h3>
+                  <h3 className="font-medium text-slate-800 text-sm">
+                    {edu.school}
+                  </h3>
                   {edu.current && (
                     <span className="text-[10px] uppercase tracking-wider font-semibold px-2 py-0.5 rounded-full bg-brand text-white">
                       Current
@@ -204,11 +330,19 @@ export const HomeScreen: React.FC = () => {
         </motion.div>
 
         <motion.div {...inView(0.2)} className="surface-card p-8 md:p-9 flex-1">
-          <h2 className="text-lg font-semibold text-brand mb-6 tracking-tight">Achievements</h2>
+          <h2 className="text-lg font-semibold text-brand mb-6 tracking-tight">
+            Achievements
+          </h2>
           <div className="border-l-2 border-brand/15 pl-4">
-            <h3 className="font-medium text-slate-800 text-sm">Entrepreneurship Finalist</h3>
-            <p className="text-slate-500 text-xs">BINUS International University</p>
-            <span className="text-slate-400 text-xs">September 2024 – January 2025</span>
+            <h3 className="font-medium text-slate-800 text-sm">
+              Entrepreneurship Finalist
+            </h3>
+            <p className="text-slate-500 text-xs">
+              BINUS International University
+            </p>
+            <span className="text-slate-400 text-xs">
+              September 2024 – January 2025
+            </span>
           </div>
         </motion.div>
       </motion.section>
@@ -222,20 +356,54 @@ export const HomeScreen: React.FC = () => {
           <motion.div {...inView(0.1)} className="surface-card p-8 md:p-9">
             <div className="flex items-center gap-2.5 mb-7">
               <FaBriefcase className="text-slate-400" />
-              <h2 className="text-lg font-semibold text-brand tracking-tight">Work experience</h2>
+              <h2 className="text-lg font-semibold text-brand tracking-tight">
+                Work Experience
+              </h2>
             </div>
             <div className="space-y-5">
               {[
-                { role: "Frontend Web Developer", company: "Xlerator", period: "July 2025 – August 2025" },
-                { role: "Frontend Web Developer", company: "Oh My Cake", period: "August 2025" },
-                { role: "Frontend Web Developer", company: "Bloome Flowers", period: "November 2025 – January 2026" },
-                { role: "Team Promotion", company: "BINUS Business School", period: "January 2026" },
-                { role: "Quality Assurance Intern", company: "WOM Finance", period: "February 2026 – June 2026" },
+                {
+                  role: "Frontend Web Developer",
+                  company: "Xlerator",
+                  period: "July 2025 – August 2025",
+                },
+                {
+                  role: "Frontend Web Developer",
+                  company: "Oh My Cake",
+                  period: "August 2025",
+                },
+                {
+                  role: "Frontend Web Developer",
+                  company: "Bloome Flowers",
+                  period: "November 2025 – January 2026",
+                },
+                {
+                  role: "Team Promotion",
+                  company: "BINUS Business School",
+                  period: "January 2026",
+                },
+                {
+                  role: "Quality Assurance Intern",
+                  company: "WOM Finance",
+                  period: "February 2026 – June 2026",
+                },
+                {
+                  role: "Kitchen Staff",
+                  company: "Pondok Nasi Bakar",
+                  period: "Auguast 2026 - ",
+                },
               ].map((exp, i) => (
-                <div key={i} className="pb-5 border-b border-slate-100 last:border-0 last:pb-0">
-                  <h3 className="font-medium text-slate-800 text-sm">{exp.role}</h3>
+                <div
+                  key={i}
+                  className="pb-5 border-b border-slate-100 last:border-0 last:pb-0"
+                >
+                  <h3 className="font-medium text-slate-800 text-sm">
+                    {exp.role}
+                  </h3>
                   <p className="text-slate-500 text-xs mt-0.5">{exp.company}</p>
-                  <span className="text-slate-400 text-xs mt-0.5 inline-block">{exp.period}</span>
+                  <span className="text-slate-400 text-xs mt-0.5 inline-block">
+                    {exp.period}
+                  </span>
                 </div>
               ))}
             </div>
@@ -244,20 +412,49 @@ export const HomeScreen: React.FC = () => {
           <motion.div {...inView(0.2)} className="surface-card p-8 md:p-9">
             <div className="flex items-center gap-2.5 mb-7">
               <FaUserFriends className="text-slate-400" />
-              <h2 className="text-lg font-semibold text-brand tracking-tight">Organizational experience</h2>
+              <h2 className="text-lg font-semibold text-brand tracking-tight">
+                Organizational Experience
+              </h2>
             </div>
             <div className="space-y-5">
               {[
-                { role: "Student Committee", company: "Lilin Bangsa Intercultural School", period: "September 2022 – May 2023" },
-                { role: "BINUS Modeling Club Activist", company: "BINUS International University", period: "September 2023 – May 2024" },
-                { role: "Freshmen Partner", company: "BINUS International University", period: "September 2025 – May 2026" },
-                { role: "BINUS English Club Speech Talent", company: "BINUS University", period: "September 2025 – Present" },
-                { role: "BINUS Youth Festival Committee", company: "BINUS University", period: "October 2025 – December 2025" },
+                {
+                  role: "Student Committee",
+                  company: "Lilin Bangsa Intercultural School",
+                  period: "September 2022 – May 2023",
+                },
+                {
+                  role: "BINUS Modeling Club Activist",
+                  company: "BINUS International University",
+                  period: "September 2023 – May 2024",
+                },
+                {
+                  role: "Freshmen Partner",
+                  company: "BINUS International University",
+                  period: "September 2025 – May 2026",
+                },
+                {
+                  role: "BINUS English Club Speech Talent",
+                  company: "BINUS University",
+                  period: "September 2025 – Present",
+                },
+                {
+                  role: "BINUS Youth Festival Committee",
+                  company: "BINUS University",
+                  period: "October 2025 – December 2025",
+                },
               ].map((exp, i) => (
-                <div key={i} className="pb-5 border-b border-slate-100 last:border-0 last:pb-0">
-                  <h3 className="font-medium text-slate-800 text-sm">{exp.role}</h3>
+                <div
+                  key={i}
+                  className="pb-5 border-b border-slate-100 last:border-0 last:pb-0"
+                >
+                  <h3 className="font-medium text-slate-800 text-sm">
+                    {exp.role}
+                  </h3>
                   <p className="text-slate-500 text-xs mt-0.5">{exp.company}</p>
-                  <span className="text-slate-400 text-xs mt-0.5 inline-block">{exp.period}</span>
+                  <span className="text-slate-400 text-xs mt-0.5 inline-block">
+                    {exp.period}
+                  </span>
                 </div>
               ))}
             </div>
@@ -273,7 +470,9 @@ export const HomeScreen: React.FC = () => {
       >
         <div className="text-center mb-10">
           <p className="section-eyebrow mb-2">Portfolio</p>
-          <h2 className="text-2xl font-semibold text-brand tracking-tight">Projects</h2>
+          <h2 className="text-2xl font-semibold text-brand tracking-tight">
+            Projects
+          </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -286,7 +485,9 @@ export const HomeScreen: React.FC = () => {
             >
               <div>
                 <div className="w-6 h-0.5 bg-brand/20 group-hover:bg-brand/60 rounded-full mb-3 transition-colors duration-300" />
-                <h3 className="font-medium text-brand text-sm leading-snug mb-1.5">{proj.title}</h3>
+                <h3 className="font-medium text-brand text-sm leading-snug mb-1.5">
+                  {proj.title}
+                </h3>
                 <p className="text-slate-400 text-xs mb-5">{proj.tech}</p>
               </div>
               <a target="_blank" rel="noopener noreferrer" href={proj.url}>
@@ -307,7 +508,9 @@ export const HomeScreen: React.FC = () => {
       >
         <div className="text-center mb-10">
           <p className="section-eyebrow mb-2">Hack The Box</p>
-          <h2 className="text-2xl font-semibold text-brand tracking-tight">Sherlock writeups</h2>
+          <h2 className="text-2xl font-semibold text-brand tracking-tight">
+            Sherlock writeups
+          </h2>
         </div>
 
         <div className="flex flex-col items-center gap-3 mb-8">
@@ -350,7 +553,8 @@ export const HomeScreen: React.FC = () => {
             .filter(
               (s) =>
                 (sherlockFilter === "All" || s.category === sherlockFilter) &&
-                (difficultyFilter === "All" || s.difficulty === difficultyFilter)
+                (difficultyFilter === "All" ||
+                  s.difficulty === difficultyFilter),
             )
             .slice(0, 8)
             .map((sherlock, i) => (
@@ -383,7 +587,9 @@ export const HomeScreen: React.FC = () => {
 
         <div className="flex justify-center mt-8">
           <Link to="/sherlocks">
-            <button type="button" className="btn-secondary">View all Sherlocks</button>
+            <button type="button" className="btn-secondary">
+              View all Sherlocks
+            </button>
           </Link>
         </div>
       </motion.section>
@@ -411,7 +617,9 @@ export const HomeScreen: React.FC = () => {
                 rel="noopener noreferrer"
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=rafaaelangelo@gmail.com"
               >
-                <button type="button" className="btn-primary">Send email</button>
+                <button type="button" className="btn-primary">
+                  Send email
+                </button>
               </a>
             </div>
 
